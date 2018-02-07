@@ -1,0 +1,102 @@
+\documentclass[11pt]{article}
+\usepackage[super,square,comma]{natbib}
+\usepackage[letterpaper, margin=1.25in]{geometry}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{multirow,color}
+\usepackage{fancyhdr,ifthen,lastpage}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{authblk}
+\usepackage[labelfont=bf]{caption}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\newcommand{\cn}{$^{\text{[citation needed]}}$} %citation needed
+\renewcommand*{\Authsep}{, }
+\renewcommand*{\Authand}{, }
+\renewcommand*{\Authands}{, }
+\renewcommand*{\Affilfont}{\normalsize\normalfont}
+\renewcommand*{\Authfont}{\bfseries}    % make author names boldface    
+\setlength{\affilsep}{2em}   % set the space between author and affiliation
+
+\newsavebox\affbox
+
+\author[1]{Colin Adams}
+\author[1]{Rachel Barcklay}
+\author[1,2]{Carla Becker}
+\affil[1]{%
+  \savebox\affbox{\Affilfont Department of Physics, Harvey Mudd College}%
+  \parbox[t]{\wd\affbox}{\protect\centering Department of Physics, Harvey Mudd College}} 
+\affil[2]{Department of Chemistry, Harvey Mudd College \par Claremont, CA 91711}
+\date{}  
+
+\renewcommand{\baselinestretch}{2}
+\newcommand{\shrug}[1][]{%
+\begin{tikzpicture}[baseline,x=0.8\ht\strutbox,y=0.8\ht\strutbox,line width=0.125ex,#1]
+\def\arm{(-2.5,0.95) to (-2,0.95) (-1.9,1) to (-1.5,0) (-1.35,0) to (-0.8,0)};
+\draw \arm;
+\draw[xscale=-1] \arm;
+\def\headpart{(0.6,0) arc[start angle=-40, end angle=40,x radius=0.6,y radius=0.8]};
+\draw \headpart;
+\draw[xscale=-1] \headpart;
+\def\eye{(-0.075,0.15) .. controls (0.02,0) .. (0.075,-0.15)};
+\draw[shift={(-0.3,0.8)}] \eye;
+\draw[shift={(0,0.85)}] \eye;
+% draw mouth
+\draw (-0.1,0.2) to [out=15,in=-100] (0.4,0.95); 
+\end{tikzpicture}}
+
+
+% \author{Colin Adams \and Rachel Barcklay \and Carla Becker}
+
+\title{
+    \textbf{MCM}
+    }
+
+\date{\today}
+        
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \singlespacing %sets spacing of abstract to single
+    \clearpage 
+    \maketitle
+    \thispagestyle{empty} %gets rid of page number at bottom 
+
+\begin{abstract}
+    \shrug\cite{townsend2000modern}
+\end{abstract}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\doublespacing
+\setcounter{page}{1} %set new page number to 1
+
+\section*{Introduction} 
+\label{sec: intro}
+
+\section*{Conclusion}
+\label{sec: conclusion}
+
+\section*{Acknowledgments}
+\label{sec: acknowledge}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+
+\bibliographystyle{plainnat}
+\bibliography{solution}
+
+\end{document}
