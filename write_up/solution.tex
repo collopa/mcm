@@ -1,28 +1,28 @@
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 \usepackage[super,square,comma]{natbib}
 \usepackage[letterpaper, margin=1.25in]{geometry}
 \usepackage{tikz}
 \usepackage{lipsum}
 \usepackage{setspace}
 \usepackage{enumerate}
+\usepackage[inline, shortlabels]{enumitem}
 \usepackage{amsmath}
-\usepackage{multirow,color}
-\usepackage{fancyhdr,ifthen,lastpage}
 \usepackage{csquotes}
 \usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}
 \usepackage{authblk}
 \usepackage[labelfont=bf]{caption}
+\usepackage{subcaption}
 
 \renewcommand{\thefootnote}{\arabic{footnote}}
 \newcommand{\cn}{$^{\text{[citation needed]}}$} %citation needed
+
+%%% Title Page Author Stuff %%%
 \renewcommand*{\Authsep}{, }
 \renewcommand*{\Authand}{, }
 \renewcommand*{\Authands}{, }
 \renewcommand*{\Affilfont}{\normalsize\normalfont}
-\renewcommand*{\Authfont}{\bfseries}    % make author names boldface    
-\setlength{\affilsep}{2em}   % set the space between author and affiliation
+% \renewcommand*{\Authfont}{\bfseries}    % make author names boldface    
+\setlength{\affilsep}{1em}   % set the space between author and affiliation
 
 \newsavebox\affbox
 
@@ -33,7 +33,7 @@
   \savebox\affbox{\Affilfont Department of Physics, Harvey Mudd College}%
   \parbox[t]{\wd\affbox}{\protect\centering Department of Physics, Harvey Mudd College}} 
 \affil[2]{Department of Chemistry, Harvey Mudd College \par Claremont, CA 91711}
-\date{}  
+\date{\today}  
 
 \renewcommand{\baselinestretch}{2}
 \newcommand{\shrug}[1][]{%
@@ -52,10 +52,8 @@
 \end{tikzpicture}}
 
 
-% \author{Colin Adams \and Rachel Barcklay \and Carla Becker}
-
 \title{
-    \textbf{MCM}
+    \textsc{{Mathematical Competition in Modeling}}
     }
 
 \date{\today}
