@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex solution"] 1518208877 "solution.aux" "solution.bbl" "solution" 1518208950
+["bibtex solution"] 1518213149 "solution.aux" "solution.bbl" "solution" 1518213155
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "solution.aux" 1518208950 383 a42551d0929865562b95040fab5f28c6 ""
+  "solution.aux" 1518213155 416 1e8cc11c96de925887635fa8449cf4ee ""
   "solution.bcf" 0 -1 0 ""
   "solution.bib" 1518208836 337 481cce05581a5de9327fe81793865c5f ""
   (generated)
-  "solution.bbl"
   "solution.blg"
-["pdflatex"] 1518208949 "solution.tex" "solution.pdf" "solution" 1518208950
+  "solution.bbl"
+["pdflatex"] 1518213155 "solution.tex" "solution.pdf" "solution" 1518213155
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm" 1136768653 1328 c834bbb027764024c09d3d2bf908b5f0 ""
@@ -119,12 +119,12 @@
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1432479679 3445950 7f6125c6eb78b33bcedbe55e49dbfd83 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
   "figs/mandelbrot.jpg" 1518040492 1312624 54d99530ad6812e953f08198805c5020 ""
-  "solution.aux" 1518208950 383 a42551d0929865562b95040fab5f28c6 ""
-  "solution.bbl" 1518208877 604 fcbd953097a263c53ac344c1c0a26170 "bibtex solution"
-  "solution.tex" 1518208949 3792 3c7476f669735bbe7c1ff78fa8008691 ""
+  "solution.aux" 1518213155 416 1e8cc11c96de925887635fa8449cf4ee ""
+  "solution.bbl" 1518213149 604 fcbd953097a263c53ac344c1c0a26170 "bibtex solution"
+  "solution.tex" 1518213154 3875 1d14c60e2923dd555b991fdfce1913df ""
   (generated)
-  "solution.aux"
-  "solution.out"
   "solution.log"
-  "solution.spl"
   "solution.pdf"
+  "solution.out"
+  "solution.spl"
+  "solution.aux"
