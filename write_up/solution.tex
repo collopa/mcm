@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage[super,square,comma]{natbib}
 \usepackage[letterpaper, margin=1.25in]{geometry}
 \usepackage{tikz}
@@ -13,28 +13,39 @@
 \usepackage[labelfont=bf]{caption}
 \usepackage{subcaption}
 
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Team 93463}
+\chead{Multi-hop High Frequency Radio Propagation}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+
+\usepackage{lastpage}
+
 \renewcommand{\thefootnote}{\arabic{footnote}}
 \newcommand{\cn}{$^{\text{[citation needed]}}$} %citation needed
 
-%%% Title Page Author Stuff %%%
-\renewcommand*{\Authsep}{, }
-\renewcommand*{\Authand}{, }
-\renewcommand*{\Authands}{, }
-\renewcommand*{\Affilfont}{\normalsize\normalfont}
-% \renewcommand*{\Authfont}{\bfseries}    % make author names boldface    
-\setlength{\affilsep}{1em}   % set the space between author and affiliation
+% %%% Title Page Author Stuff %%%
+% \renewcommand*{\Authsep}{, }
+% \renewcommand*{\Authand}{, }
+% \renewcommand*{\Authands}{, }
+% \renewcommand*{\Affilfont}{\normalsize\normalfont}
+% % \renewcommand*{\Authfont}{\bfseries}    % make author names boldface    
+% \setlength{\affilsep}{1em}   % set the space between author and affiliation
 
-\newsavebox\affbox
+% \newsavebox\affbox
 
-\author[1]{Colin M. Adams}
-\author[1]{Rachel L. Barcklay}
-\author[1,2]{Carla J. Becker}
-\affil[1]{%
-  \savebox\affbox{\Affilfont Department of Physics, Harvey Mudd College}%
-  \parbox[t]{\wd\affbox}{\protect\centering Department of Physics, Harvey Mudd College}} 
-\affil[2]{Department of Chemistry, Harvey Mudd College \par Claremont, CA 91711}
-\date{\today}  
+% \author[1]{Colin M. Adams}
+% \author[1]{Rachel L. Barcklay}
+% \author[1,2]{Carla J. Becker}
+% \affil[1]{%
+%   \savebox\affbox{\Affilfont Department of Physics, Harvey Mudd College}%
+%   \parbox[t]{\wd\affbox}{\protect\centering Department of Physics, Harvey Mudd College}} 
+% \affil[2]{Department of Chemistry, Harvey Mudd College \par Claremont, CA 91711}
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\baselinestretch}{2}
 \newcommand{\shrug}[1][]{%
 \begin{tikzpicture}[baseline,x=0.8\ht\strutbox,y=0.8\ht\strutbox,line width=0.125ex,#1]
@@ -56,6 +67,7 @@
     \textsc{{Mathematical Competition in Modeling}}
     }
 
+\author{\Large Team 93463}
 \date{\today}
         
 
@@ -79,8 +91,20 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Body
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\doublespacing
 \setcounter{page}{1} %set new page number to 1
+
+\section*{MCM Requirements}
+
+Hi team, here is what we \emph{need} to have in our report (according to the MCM overlords):
+\begin{itemize}
+    \item Restatement and clarification of the problem
+    \item Explain assumptions and rationale/justification
+    \item Include your model design and justification
+    \item Describe model testing and sensitivity analysis
+    \item Discuss the strengths and weaknesses
+\end{itemize}
+
+They also claim to judge the quality of our writing. So remember our good friend Williams.
 
 \section*{Introduction} 
 \label{sec: intro}
