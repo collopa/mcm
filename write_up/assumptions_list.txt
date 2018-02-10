@@ -1,0 +1,6 @@
+A. Radio-waves
+
+B. Ocean Waves
+
+C. Ionosphere
+    + Radio-waves only interact with electrons in ionosphere

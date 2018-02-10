@@ -81,10 +81,7 @@
     \thispagestyle{empty} %gets rid of page number at bottom 
 
 \begin{abstract}
-    \shrug\cite{townsend2000modern}\\\\
-    \begin{center}
-    \includegraphics[width = 5in]{figs/mandelbrot.jpg}
-    \end{center}
+    \shrug\cite{townsend2000modern}
 \end{abstract}
 \newpage
 
@@ -106,15 +103,55 @@ Hi team, here is what we \emph{need} to have in our report (according to the MCM
 
 They also claim to judge the quality of our writing. So remember our good friend Williams.
 
-\section*{Motivation} % (fold)
+\section{Motivation} % (fold)
 \label{sec:motivation}
 
 % section motivation (end)
 
-\section*{Introduction} 
+\section{Introduction} 
 \label{sec: intro}
 
-\section*{Conclusion}
+\section{Model} % (fold)
+\label{sec:model}
+
+\subsection{Radiowaves} % (fold)
+\label{sub:radiowaves}
+
+% subsection radiowaves (end)
+
+\subsection{The Ionosphere} % (fold)
+\label{sub:the_ionosphere}
+
+The ionosphere consists of roughly three layers that lie between 75--1000\,km above the Earth's surface:
+\begin{enumerate*}[(1)]
+    \item the F-region,
+    \item the E-region, and
+    \item the D-region
+\end{enumerate*}; each of these regions has charge-density dependent on the time of year, the sunspots number of sunspots present, the time of day, and the movement of the charged particles\footnote{The study of which has the impressive sounding name of magnetohydrodynamics.}(Figure \ref{fig:struct_ion}). X-rays, ultraviolet light, ejected plasma, and other high energy particles that are released by the sun interact with the atoms in the atmosphere and strip them of electrons.\cite{noauthor_tracking_nodate} The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
+
+Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are stripped atoms or molecules. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ the effect on a proton than an electron because $F \propto m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
+
+\begin{figure}[ht]
+    \begin{center}
+    \includegraphics[width = 3in]{figs/structure_iono.png}
+    \end{center}
+    \caption{The charge density as a function of height in the ionosphere. It also shows how the ionosphere changes at midnight and noon. Dashed lines are for January while solid lines are for June. Also given is the number of sunspots, $R$, at the time of data collection.  Figure is taken from K.G. Budden.\cite{budden1988propagation}}
+    \label{fig:struct_ion}
+\end{figure}
+
+As stated above, at a first approximation, we expect that the electron density, $N$, is only a function of the eight above the earth's surface height, $z$. More compactly, $N = N(z)$. 
+
+Before we can calculate how radio-waves are reflected off of the ionosphere, we
+
+\subsection{The Ocean} % (fold)
+\label{sub:the_ocean}
+
+% subsection the_ocean (end)
+
+% subsection the_ionosphere (end)
+% section model (end)
+
+\section{Conclusion}
 \label{sec: conclusion}
 
 \section*{Acknowledgments}
