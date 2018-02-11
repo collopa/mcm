@@ -1,5 +1,8 @@
 A. Radio-waves
-
+   + Polarization is parallel to the plane of incidence
+   + Air is linear medium with no free charge and no free current
+   + Perimittivity of air is permittivity of free space
+   + Dielectric constant of air is constant with temperture, pressure, and humidity
 B. Ocean Waves
 
 C. Ionosphere
