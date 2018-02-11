@@ -134,11 +134,21 @@ The ionosphere consists of roughly three layers that lie between 75--1000\,km ab
 Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are stripped atoms or molecules. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because $F \propto m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
 
 \begin{figure}[ht]
-    \begin{center}
+ \begin{center}
+ \begin{subfigure}[b]{0.44\textwidth}
     \includegraphics[width = 3in]{figs/structure_iono.png}
-    \end{center}
-    \caption{The charge density as a function of height in the ionosphere. It also shows how the ionosphere changes at midnight and noon. Dashed lines are for January while solid lines are for June. Also given is the number of sunspots, $R$, at the time of data collection.  Figure is taken from K.G. Budden.\cite{budden1988propagation}}
-    \label{fig:struct_ion}
+         \caption{}
+    \label{fig:struct_ion} 
+ \end{subfigure}
+~
+ \begin{subfigure}[b]{0.44\textwidth}
+         \includegraphics[width = 3.25in]{figs/chapman.png}
+          \caption{ }
+     \label{fig:chapman}
+ \end{subfigure}
+ \end{center}
+ \caption{\text{(a)} The charge density as a function of height in the ionosphere. It also shows how the ionosphere changes at midnight and noon. Dashed lines are for January while solid lines are for June. Also given is the number of sunspots, $R$, at the time of data collection.  Figure is taken from K.G. Budden (1961).\cite{budden1988propagation} \text{(b)} Contour plot of the Chapman Law for various azimuthal angles. Figure taken from K.G. Budden (1988).\cite{budden1988propagation} }
+ \label{fig:elect_density}
 \end{figure}
 
 As stated above, at a first approximation, we expect that the electron density, $N$, is only a function of the eight above the earth's surface height, $z$. More compactly, $N = N(z)$. 
@@ -169,6 +179,11 @@ As stated above, at a first approximation, we expect that the electron density, 
         \label{eq:rate_prod_elec}
     \end{equation}
 
+
+    \begin{figure}[ht]
+
+    \end{figure}
+
     Empirically---at least in the D and E-layers of the ionosphere\footnote{In the F-layer, this rate law may be equal to $dN/dt = q - b N$}---the variation of charge density is given by\cite{budden1961radio}
     \begin{equation}
         \frac{dN}{dt} = q - a N^2
@@ -178,7 +193,8 @@ As stated above, at a first approximation, we expect that the electron density, 
     \begin{equation}
         N(z) = N_0 \exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
     \end{equation}
-    where $N_0$ is a constant we can gather from experimental data.
+    where $N_0$ is a constant we can gather from experimental data. This is the Chapman Law.
+
 
     % subsubsection electron_density (end)
     
