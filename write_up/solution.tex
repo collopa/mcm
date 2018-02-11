@@ -7,6 +7,8 @@
 \usepackage{enumerate}
 \usepackage[inline, shortlabels]{enumitem}
 \usepackage{amsmath}
+\numberwithin{equation}{section}
+
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{authblk}
@@ -16,7 +18,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{Team 93463}
-\chead{Multi-hop, High-Frequency Radio Propagation}
+\chead{\textsc{Multi-hop, HF Radio Propagation Near S.\,America}}
 \rhead{Page \thepage\ of \pageref{LastPage}}
 \setlength{\headheight}{14pt}
 
@@ -64,7 +66,7 @@
 
 
 \title{
-    \textsc{{Multi-hop, High-Frequency Radio Propagation}}
+    \textsc{{Multi-hop, High-Frequency Radio Propagation Near South America}}
     }
 
 \author{\Large Team 93463}
@@ -81,10 +83,7 @@
     \thispagestyle{empty} %gets rid of page number at bottom 
 
 \begin{abstract}
-    \shrug\cite{townsend2000modern}\\\\
-    \begin{center}
-    \includegraphics[width = 5in]{figs/mandelbrot.jpg}
-    \end{center}
+    \shrug\cite{townsend2000modern}
 \end{abstract}
 \newpage
 
@@ -106,15 +105,150 @@ Hi team, here is what we \emph{need} to have in our report (according to the MCM
 
 They also claim to judge the quality of our writing. So remember our good friend Williams.
 
-\section*{Motivation} % (fold)
+\section{Motivation} % (fold)
 \label{sec:motivation}
 
 % section motivation (end)
 
-\section*{Introduction} 
+\section{Introduction} 
 \label{sec: intro}
 
-\section*{Conclusion}
+\section{Model} % (fold)
+\label{sec:model}
+
+To have an accurate model, there are three main components of this model that need to be described. 
+
+\subsection{Radiowaves} % (fold)
+\label{sub:radiowaves}
+
+% subsection radiowaves (end)
+
+\subsection{The Ionosphere} % (fold)
+\label{sub:the_ionosphere}
+
+The ionosphere consists of roughly three layers that lie between 75--1000\,km above the Earth's surface:
+\begin{enumerate*}[(1)]
+    \item the F-region,
+    \item the E-region, and
+    \item the D-region
+\end{enumerate*}; each of these regions has charge-density dependent on the time of year, the number of sunspots present, the time of day, and the movement of the charged particles\footnote{The study of which has the impressive sounding name of magnetohydrodynamics.}(Figure \ref{fig:struct_ion}). X-rays, ultraviolet light, ejected plasma, and other high energy particles that are released by the sun interact with the atoms in the atmosphere and strip them of electrons.\cite{noauthor_tracking_nodate} The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
+
+Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are stripped atoms or molecules. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because $F \propto m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
+
+\begin{figure}[ht]
+ \begin{center}
+ \begin{subfigure}[b]{0.44\textwidth}
+    \includegraphics[width = 3in]{figs/structure_iono.png}
+         \caption{}
+    \label{fig:struct_ion} 
+ \end{subfigure}
+\qquad
+ \begin{subfigure}[b]{0.44\textwidth}
+         \includegraphics[width = 2.35in]{figs/chapman.png}
+          \caption{ }
+     \label{fig:chapman}
+ \end{subfigure}
+ \end{center}
+ \caption{\textbf{(a)} The charge density as a function of height in the ionosphere. It also shows how the ionosphere changes at midnight and noon. Dashed lines are for January while solid lines are for June. Also given is the number of sunspots, $R$, at the time of data collection.  Figure is taken from K.G. Budden (1961).\cite{budden1988propagation} \textbf{(b)} Contour plot of the Chapman Law for various azimuthal angles of the incident sun. Figure taken from K.G. Budden (1988).\cite{budden1988propagation} }
+ \label{fig:elect_density}
+\end{figure}
+
+As stated above, at a first approximation, we expect that the electron density, $N$, is only a function of the eight above the earth's surface height, $z$. More compactly, $N = N(z)$. 
+
+    \subsubsection{Electron Density, $N(z)$} % (fold)
+    \label{ssub:electron_density}
+    Before we can calculate how radio-waves are reflected off of the ionosphere, we must model the ionosphere's electron density. In the early 1930's, a simple model for the electron density as a function was produced called the Chapman Law.\cite{chapman1931b,chapman1931a} 
+
+    If we assume the Earth is constant in composition and temperature (as well as neglect the curvature of the earth\footnote{See \texttt{https://www.tfes.org/} for more information.}), then the density of the atmosphere, $\rho = \rho(z)$, is given by 
+    \begin{equation}
+        \rho(z) = \rho_0 e^{-M g z/ RT} = \rho_0 e^{- z/\kappa} 
+        \label{eq:atm_den}
+    \end{equation} where $ \kappa \equiv RT/Mg$, $\rho_0 \equiv \rho(0)$, $M$ is the average molecular weight, $g$ is the gravitational acceleration (assumed constant), $R$ is the universal gas constant,\footnote{Since all of us are ``physicists,'' we feel the need to note the definition of $R$: $R\equiv k_B N_A$ where $k_B$ is Boltzmann's constant and $N_A$ is Avogadro's number.} and $T$ is the temperature. The result of (\ref{eq:atm_den}) comes by balancing the forces acting on infinitesimal layers of atmosphere that, on a whole, is taken to be static and solving the barometric equation.\cite{schroeder1999introduction}
+    
+    Next, we must find the intensity of the sun that passes through the earth's atmosphere. The intensity of the sun---not surprisingly---decreases as it goes through the atmosphere.\cite{budden1961radio} Since, the sun enters at an angle from the zenith, $\alpha$. By drawing a simple diagram,\footnote{Remember, we have a flat Earth; this is a subtle but important point in this derivation.} we can see that the area normal to the incident radiation of the sun will be a factor of secant too large than the area that the ground actually receives, i.e. $dA = dA_\perp \cos\alpha.$ Since intensity is inversely proportional to $dA$, we will have the relationship of 
+    \begin{equation}
+        dI = I \sigma \rho \sec(\alpha) \, dz.
+        \label{eq:diff_intensity}
+    \end{equation}
+    where $\sigma$ is a mass coefficient of absorption of the atmosphere. If we plug (\ref{eq:atm_den}) into (\ref{eq:diff_intensity}) and integrate, we get
+    \begin{align}
+        I(z)&= I_0 \exp\left[ -\sigma \kappa  \rho_0 \sec(\alpha) e^{- z/\kappa}\right] = I_0 \exp\left[ - \sec(\alpha) e^{- (z - z_0)/\kappa}\right]
+        \label{eq:inten_v_height}
+    \end{align}
+    if we (cleverly) define $z_0 \equiv \kappa \ln \left(\sigma \kappa  \rho_0\right)$. The rate of absorption of energy at height $z$ is $\cos(\alpha)(dI/dz)$. If we assume that the rate of production of electrons, $q$, is proportional to this, then we get 
+    \begin{equation}
+        q(z) = q_0 \exp\left[1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right].
+        \label{eq:rate_prod_elec}
+    \end{equation}
+
+
+    \begin{figure}[ht]
+
+    \end{figure}
+
+    Empirically---at least in the D and E-layers of the ionosphere\footnote{In the F-layer, this rate law may be equal to $dN/dt = q - b N$, but for the sake of simplicity we do not treat it as such.}---the variation of charge density is given by\cite{budden1961radio}
+    \begin{equation}
+        \frac{dN}{dt} = q - a N^2
+        \label{eq:charge_den_rate}
+    \end{equation}
+    where $a$ is a ``recombination constant.'' In the steady-state solution, where $dN/dt \approx 0$, we have $N = \sqrt{q/a}$ or
+    \begin{equation}
+        N(z) = N_0 \exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
+        \label{eq:chapman}
+    \end{equation}
+    where $N_0$ is a constant we can gather from experimental data. Quite simply, (\ref{eq:chapman}) is the Chapman Law.\cite{chapman1931a,chapman1931b,budden1961radio,budden1988propagation}
+
+
+    % subsubsection electron_density (end)
+    
+    \subsubsection{A Modified Chapman Law, $\overline N(z,t)$} % (fold)
+    \label{ssub:modified_chapman_law}
+    Unfortunately, the Chapman Law is a rather simple model. It is not time dependent. It is also almost entirely qualitative due to the $\sigma$ constant that is highly dependent on what chemical species are in the atmosphere and the energy of incident light. However, it provides a good starting place to begin modifying for more accurate and simulations.
+
+    Clearly, Fig.\ref{fig:struct_ion} demonstrates that the electron density of the ionosphere changes as a function season and time of day. In order to make the Chapman Law model of the time dependent, we can add a time dependent factor out front. To put another way, $\overline N(z,t) = T(t) N(z)$. A simple approximation is to make $T(t)$ linearly dependent on time. If we let
+    \begin{equation}
+        T(t) = 1 + d(t) + s(t)
+        \label{eq:time_dep}
+    \end{equation}
+    where $d(t)$ is the ionosphere dependence on the time of day and $s(t)$ is the dependence on the season. From Fig.\ref{fig:struct_ion} we restrict the range of $d(t)$ and $s(t)$, where $d(t) \in [0,1]$ and $s(t) \in [0,4]$, respectively. These range restrictions were chosen as Fig.\ref{fig:struct_ion} demonstrates that seasonal dependence is more important than the time of day by roughly a factor of four. In our model, we input a sawtooth function for both $s(t)$ and $d(t)$ with each function's respective range. At midday, $s(t_{noon}) = 1$ and at midnight $s(t_{mid}) = 0$. Similarly, $d(t_{dec}) = 4$ while $d(t_{jun}) = 0$.\footnote{Since we are focusing our attention near South America, the most intense solar radiation comes in the summer months, which is December for our friends in the Southern Hemisphere.}
+
+    In all, the electron-density as a function of height and time where $\overline N(t,z)$ is given by 
+    \begin{align}
+        \overline N(z,t) &= T(t)N(z) \nonumber \\
+        &= N_0(1 + d(t) + s(t))\exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
+        \label{eq:final_eden}
+    \end{align}
+    which is a simple, analytic model for the ionosphere that is used in our model.
+    % subsubsection our_modified_chapman_law (end)
+
+% subsection the_ionosphere (end)
+
+\subsection{The Ocean} % (fold)
+\label{sub:the_ocean}
+
+% subsection the_ocean (end)
+
+% section model (end)
+
+\section{Results} % (fold)
+\label{sec:results}
+
+ \subsection{Part I: A Turbulent Ocean} % (fold)
+ \label{sub:part_i}
+
+ \subsection{Part II: The Andes Mountains} % (fold)
+ \label{sub:part_ii}
+ 
+ \subsection{Part III: A Message to a Boat} % (fold)
+ \label{sub:part_iii}
+ 
+ % subsection part_iii (end)
+ % subsection part_ii (end)
+ 
+ % subsection part_i (end)
+% section results (end)
+
+\section{Conclusion}
 \label{sec: conclusion}
 
 \section*{Acknowledgments}

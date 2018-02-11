@@ -3,44 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: solution.aux
 The style file: plainnat.bst
 Database file #1: solution.bib
-You've used 2 entries,
+Warning--to sort, need author or key in noauthor_tracking_nodate
+Warning--empty year in noauthor_tracking_nodate
+You've used 8 entries,
             2773 wiz_defined-function locations,
-            602 strings with 5024 characters,
-and the built_in function-call counts, 625 in all, are:
-= -- 46
-> -- 20
-< -- 2
-+ -- 8
-- -- 6
-* -- 34
-:= -- 107
-add.period$ -- 6
-call.type$ -- 2
-change.case$ -- 7
-chr.to.int$ -- 2
-cite$ -- 4
-duplicate$ -- 40
-empty$ -- 65
-format.name$ -- 8
-if$ -- 125
-int.to.chr$ -- 1
+            632 strings with 5943 characters,
+and the built_in function-call counts, 2411 in all, are:
+= -- 195
+> -- 70
+< -- 7
++ -- 30
+- -- 21
+* -- 144
+:= -- 371
+add.period$ -- 22
+call.type$ -- 8
+change.case$ -- 28
+chr.to.int$ -- 7
+cite$ -- 19
+duplicate$ -- 150
+empty$ -- 267
+format.name$ -- 28
+if$ -- 509
+int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 4
-newline$ -- 18
-num.names$ -- 8
-pop$ -- 23
+missing$ -- 10
+newline$ -- 46
+num.names$ -- 28
+pop$ -- 88
 preamble$ -- 1
-purify$ -- 6
+purify$ -- 23
 quote$ -- 0
-skip$ -- 25
+skip$ -- 100
 stack$ -- 0
-substring$ -- 4
-swap$ -- 2
+substring$ -- 32
+swap$ -- 10
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 12
-warning$ -- 0
-while$ -- 6
+type$ -- 68
+warning$ -- 2
+while$ -- 23
 width$ -- 0
-write$ -- 32
+write$ -- 101
+(There were 2 warnings)
