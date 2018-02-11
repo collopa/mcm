@@ -18,7 +18,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{Team 93463}
-\chead{Multi-hop, HF Radio Propagation Near S. America}
+\chead{\textsc{Multi-hop, HF Radio Propagation Near S.\,America}}
 \rhead{Page \thepage\ of \pageref{LastPage}}
 \setlength{\headheight}{14pt}
 
@@ -129,7 +129,7 @@ The ionosphere consists of roughly three layers that lie between 75--1000\,km ab
     \item the F-region,
     \item the E-region, and
     \item the D-region
-\end{enumerate*}; each of these regions has charge-density dependent on the time of year, the sunspots number of sunspots present, the time of day, and the movement of the charged particles\footnote{The study of which has the impressive sounding name of magnetohydrodynamics.}(Figure \ref{fig:struct_ion}). X-rays, ultraviolet light, ejected plasma, and other high energy particles that are released by the sun interact with the atoms in the atmosphere and strip them of electrons.\cite{noauthor_tracking_nodate} The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
+\end{enumerate*}; each of these regions has charge-density dependent on the time of year, the number of sunspots present, the time of day, and the movement of the charged particles\footnote{The study of which has the impressive sounding name of magnetohydrodynamics.}(Figure \ref{fig:struct_ion}). X-rays, ultraviolet light, ejected plasma, and other high energy particles that are released by the sun interact with the atoms in the atmosphere and strip them of electrons.\cite{noauthor_tracking_nodate} The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
 
 Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are stripped atoms or molecules. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because $F \propto m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
 
@@ -194,11 +194,16 @@ As stated above, at a first approximation, we expect that the electron density, 
         N(z) = N_0 \exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
         \label{eq:chapman}
     \end{equation}
-    where $N_0$ is a constant we can gather fro{}m experimental data. Quite simply, (\ref{eq:chapman}) is the Chapman Law.
+    where $N_0$ is a constant we can gather from experimental data. Quite simply, (\ref{eq:chapman}) is the Chapman Law.\cite{chapman1931a,chapman1931b,budden1961radio,budden1988propagation}
 
 
     % subsubsection electron_density (end)
     
+    \subsubsection{A Modified Chapman Law} % (fold)
+    \label{ssub:modified_chapman_law}
+    Unfortunately, the Chapman Law is a rather simple model. It is not time dependent. It is also almost entirely qualitative due to the $\sigma$ constant that is highly dependent on what chemical species are in the atmosphere and the energy of incident light. However, it provides a good starting place to begin modifying for more accurate and simulations.
+    % subsubsection our_modified_chapman_law (end)
+
 % subsection the_ionosphere (end)
 
 \subsection{The Ocean} % (fold)
