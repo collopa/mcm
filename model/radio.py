@@ -16,7 +16,9 @@ Inputs: discrete signal vector as a function of time
         indices of refraction of ionosphere
         Angle of incidience (+ or - from parallel to Earth's surface)
         Distance to receiver
-Outputs:
+        Severity of Weather on a scale of 0-1, with 1 being the most intense
+Outputs: discrete signal vector as function of time
+         SNR at each N value         
 
 Where f(t) = \sum_{n=0}^{N} f_{n}(t), this file:
 -- decomposes the input signal into its Fourier components, f_{0_{n}}(t) --> f_{0_{n}}(w)
@@ -35,9 +37,19 @@ Notes:
 
 import os
 import numpy
+import math
 import constants as constants
 
 def get_num_refl(angle_of_incidence, distance):
+    d = distance
+    z = TxRx_height
+    h = iono_height
+    a = angle_of_incidence
+    N = d * math.tan(a) / (h - z)
+    return N
+
+def calc_noise(weather_severity, N):
+
     
 
 
@@ -50,9 +62,11 @@ if __name__ == '__main__':
     angle_of_incidence = args[3]
     distance =  args[4] # distance on Earth's surface to be travelled
     weather_severity = args[5]
-    f0_t = args[5] # input signal
+    input_file = args[5] # input signal
 
     # Decompose the input signal, f0_t, to it's Fourier components f0_w
+    input_data = numpy.genfromtxt(input_file, delimiter = ',')
+    time_vector = input_data
     f0_w = fft(f0_t)
 
     # Number of reflections
@@ -66,8 +80,9 @@ if __name__ == '__main__':
     f0_w_post_dispersion = dispersion(f0_w_post_Fresnel, constants)
     f_w = f0_w_post_dispersion
 
-    # Compose output signal
-    f_t = ifft(f_w)
+    # Compose output signal and add in accumulated noise
+    f_t_clean = ifft(f_w)
+    f_t = f_t + noise
 
     return f_t
 
