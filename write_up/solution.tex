@@ -161,8 +161,24 @@ As stated above, at a first approximation, we expect that the electron density, 
     where $\sigma$ is a mass coefficient of absorption of the atmosphere. If we plug (\ref{eq:atm_den}) into (\ref{eq:diff_intensity}) and integrate, we get
     \begin{align}
         I(z)&= I_0 \exp\left[ -\sigma \kappa  \rho_0 \sec(\alpha) e^{- z/\kappa}\right] = I_0 \exp\left[ - \sec(\alpha) e^{- (z - z_0)/\kappa}\right]
+        \label{eq:inten_v_height}
     \end{align}
-    if we (cleverly) define $z_0 \equiv \kappa \ln \left(\sigma \kappa  \rho_0\right)$.
+    if we (cleverly) define $z_0 \equiv \kappa \ln \left(\sigma \kappa  \rho_0\right)$. The rate of absorption of energy at height $z$ is $\cos(\alpha)(dI/dz)$. If we assume that the rate of production of electrons, $q$, is proportional to this, then we get 
+    \begin{equation}
+        q(z) = q_0 \exp\left[1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right].
+        \label{eq:rate_prod_elec}
+    \end{equation}
+
+    Empirically---at least in the D and E-layers of the ionosphere\footnote{In the F-layer, this rate law may be equal to $dN/dt = q - b N$}---the variation of charge density is given by\cite{budden1961radio}
+    \begin{equation}
+        \frac{dN}{dt} = q - a N^2
+        \label{eq:charge_den_rate}
+    \end{equation}
+    where $a$ is a ``recombination constant.'' In the steady solution where $dN/dt = 0$ we have $N = \sqrt{q/a}$ or
+    \begin{equation}
+        N = N_0 \exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
+    \end{equation}
+
     % subsubsection electron_density (end)
     
 % subsection the_ionosphere (end)
