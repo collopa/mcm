@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex solution"] 1518309659 "solution.aux" "solution.bbl" "solution" 1518309660
+["bibtex solution"] 1518309659 "solution.aux" "solution.bbl" "solution" 1518310027
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "solution.aux" 1518309660 2481 534abd559a0dfee10f8e19ee2a3c38ff ""
+  "solution.aux" 1518310026 2481 534abd559a0dfee10f8e19ee2a3c38ff ""
   "solution.bcf" 0 -1 0 ""
   "solution.bib" 1518302057 1789 73478f8ca6a48843b70adce1ea092a69 ""
   (generated)
-  "solution.bbl"
   "solution.blg"
-["pdflatex"] 1518309659 "solution.tex" "solution.pdf" "solution" 1518309660
+  "solution.bbl"
+["pdflatex"] 1518310026 "solution.tex" "solution.pdf" "solution" 1518310027
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -134,12 +134,12 @@
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1432479679 3445950 7f6125c6eb78b33bcedbe55e49dbfd83 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
   "figs/structure_iono.png" 1518297647 312059 e62904056a960d34945d3a679cce5998 ""
-  "solution.aux" 1518309660 2481 534abd559a0dfee10f8e19ee2a3c38ff ""
+  "solution.aux" 1518310026 2481 534abd559a0dfee10f8e19ee2a3c38ff ""
   "solution.bbl" 1518309659 1991 affa05dc4bc11f2ea0c2682e37781b73 "bibtex solution"
-  "solution.tex" 1518309658 9486 be66b4893cb44ad9c85eaf31ef759b9e ""
+  "solution.tex" 1518310026 9509 2e21700c8a3b011f2766e0a5ad23df35 ""
   (generated)
-  "solution.aux"
   "solution.out"
-  "solution.pdf"
   "solution.log"
   "solution.spl"
+  "solution.pdf"
+  "solution.aux"
