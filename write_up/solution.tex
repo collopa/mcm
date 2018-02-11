@@ -184,7 +184,7 @@ As stated above, at a first approximation, we expect that the electron density, 
 
     \end{figure}
 
-    Empirically---at least in the D and E-layers of the ionosphere\footnote{In the F-layer, this rate law may be equal to $dN/dt = q - b N$}---the variation of charge density is given by\cite{budden1961radio}
+    Empirically---at least in the D and E-layers of the ionosphere\footnote{In the F-layer, this rate law may be equal to $dN/dt = q - b N$, but for the sake of simplicity we do not treat it as such.}---the variation of charge density is given by\cite{budden1961radio}
     \begin{equation}
         \frac{dN}{dt} = q - a N^2
         \label{eq:charge_den_rate}
@@ -192,8 +192,9 @@ As stated above, at a first approximation, we expect that the electron density, 
     where $a$ is a ``recombination constant.'' In the steady-state solution, where $dN/dt \approx 0$, we have $N = \sqrt{q/a}$ or
     \begin{equation}
         N(z) = N_0 \exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
+        \label{eq:chapman}
     \end{equation}
-    where $N_0$ is a constant we can gather from experimental data. This is the Chapman Law.
+    where $N_0$ is a constant we can gather fro{}m experimental data. Quite simply, (\ref{eq:chapman}) is the Chapman Law.
 
 
     % subsubsection electron_density (end)

@@ -26,4 +26,15 @@ def N_z(z, angle_inc, sigma):
     inside = 0.5*(1 - (z - z0)/kappa - 1./np.cos(angle_inc) * np.exp(-(z - z0)/kappa))  
     return n0 * np.exp(inside)
 
+def refIndex(freq, height, angle_inc, sigma):
+    """
+        Refractive index for an isotropic medium without electron damping.
+        Based on a function of atmospheric height. Frequency of RF.
+    """
+    N = N_z(height, angle_inc, sigma)
+    ang_freq = 2*np.pi*freq
+    X = N * c.electron_charge**2/(c.free_perm * e_mass * ang_freq**2)
+    n2 = 1 - X
+    
+    return np.sqrt(n2)
 
