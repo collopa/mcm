@@ -1,12 +1,21 @@
 A. Radio-waves
    + Polarization is parallel to the plane of incidence
-   + Air is linear medium with no free charge and no free current
+   + Air is dispersive, linear medium with no free charge, but there is free current
    + Perimittivity of air is permittivity of free space
    + Dielectric constant of air is constant with temperture, pressure, and humidity
 B. Ocean Waves
 
 C. Ionosphere
+<<<<<<< HEAD
     + Radio-waves only interact with electrons in ionosphere
     + N = N(z) != N(x,y,z)
         ++ Neglect curvature of Earth
     
+=======
+   + Radio-waves only interact with electrons in ionosphere
+   + Ionosphere is uniform
+   + No free current, only free charge
+   + Radio-waves only interact with electrons in ionosphere
+   + N = N(z) != N(x,y,z)
+        ++ Neglect curvature of Earth
+>>>>>>> d76f34acbdcb703467af50afd5e8ab48c91b780e
