@@ -1,4 +1,4 @@
-#########################
+###########################
 # Packages
 ###########################
 from scipy import *
@@ -15,10 +15,10 @@ import constants as c
 ############################
 # Functions
 #############################
-def chargeDenHeight(z, angle_inc, recomb_coeff):
+def N_z(z, angle_inc, recomb_coeff):
     """
         Gives charge number of electrons per m^3
     """
     n0 = 1
-    kappa = c.R*c.T_tropo/(c.p0 * c.g)
+    kappa = c.gas_const*c.T_tropo/(c.p0 * c.grav)
     return kappa
