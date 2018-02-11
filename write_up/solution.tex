@@ -9,6 +9,7 @@
 \usepackage{amsmath}
 \numberwithin{equation}{section}
 
+\usepackage{siunitx}
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{authblk}
@@ -133,7 +134,7 @@ The ionosphere consists of roughly three layers that lie between 75--1000\,km ab
     \item the D-region
 \end{enumerate*}; each of these regions has charge-density dependent on the time of year, the number of sunspots present, the time of day, and the movement of the charged particles\footnote{The study of which has the impressive sounding name of magnetohydrodynamics.}(Figure \ref{fig:struct_ion}). X-rays, ultraviolet light, ejected plasma, and other high energy particles that are released by the sun interact with the atoms in the atmosphere and strip them of electrons.\cite{noauthor_tracking_nodate} The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
 
-Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are stripped atoms or molecules. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because $F \propto m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
+Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are  atoms or molecules stripped of an electron. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because $F \propto m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
 
 \begin{figure}[ht]
  \begin{center}
@@ -220,6 +221,60 @@ As stated above, at a first approximation, we expect that the electron density, 
     \end{align}
     which is a simple, analytic model for the ionosphere that is used in our model.
     % subsubsection our_modified_chapman_law (end)
+
+    \subsubsection{The Index of Refraction of the Ionosphere} % (fold)
+    \label{ssub:index_of_refraction}
+
+    To understand how to radio-waves will interact with the ionosphere, we must find an expression for the refractive index of light through the plasma. For simplicity, we are going to consider the ionosphere to be made of electrons that do not collide with one another and is isotropic throughout. When we do this, we can derive a relatively simple expression for the index of refraction of light through the medium.
+
+    Simply put, the index of refraction relates how fast an electromagnetic wave is able to pass through a medium.\cite{jackson1999classical,townsend2000modern} We denote the index of refraction of a medium with the letter $n$; if $n = 1$ then the ray of light is moving at one of Nature's fundamental constants, $c.$
+
+    To derive an expression for $n$ in an isotropic medium without electron collisions, we look at Maxwell's equations. In any upper-level textbook on Classical Electrodynamics, we have (from Faraday's Law of Induction)
+    \begin{subequations}
+           \begin{align}
+       & \nabla \times \mathbf{E} = -i k \mathcal{H} \\& \nabla \times \mathcal{H} = \frac{ik}{\epsilon_0} \mathbf{D} 
+    \end{align} 
+    \label{eq:curls}
+    \end{subequations}
+
+    where $k$ is the wavenumber defined as $k = 2\pi/\lambda$ (where $\lambda $ is the wavelength of light), $\mathcal{H} = Z_0 \mathbf{B}$ (where $Z_0 \equiv \mu_0/\epsilon_0$ is the characteristic impedance of free space and $\mathbf{B}$ is the external magnetic field\footnote{In this case, the Earth's. Near South America, this value is $|\mathbf{B}| \approx 30 \si{\micro\tesla}$.\cite{goguitchaichvili2015variation}}), and $\mu_0$ and $\epsilon_0$ are the permeability and permitivity of free space, respectively.\cite{jackson1999classical,griffiths2005introduction}
+    % subsubsection index_of_refraction (end)
+
+    If we are describing a progressive plane wave,\footnote{This simply means that there is no $x$ or $y$-dependence when the waves are traveling in the $z$-direction (for Cartesian coordinates). Since we haven't chosen any coordinate system, we are free to choose any direction that $z$ points in.} we have
+    \begin{align}
+         \frac{\partial}{\partial x} = \frac{\partial}{\partial y} = 0, \qquad \frac{\partial}{\partial z} = -i k n
+        \label{eq:plane_wave}
+    \end{align}
+    which when combined with equations (\ref{eq:curls}) we find
+    \begin{subequations}
+     \begin{align}
+        \mathcal{H}_x &= - n E_y \\
+        \mathcal{H}_y & = nE_x \\
+        \mathcal{H}_z & = 0
+    \end{align}
+    \label{eq:int_step}
+    \end{subequations}
+    Neglecting any damping, Newton's second law can relate the electric polarization, $\mathbf{P} = Ne\mathbf{r}$ and electric field via
+    \begin{align}
+         &\frac{Ne}{m}\mathbf{E}e = \frac{\partial^2 \mathbf{P}}{\partial t^2} \nonumber \\
+         \Rightarrow &\mathbf{P} = -\frac{Ne^2}{m\omega^2}\mathbf{E}
+         \label{eq:elec_polar}
+     \end{align} 
+     where we utilized the fact that the electric field varies with a phase factor, we see $\partial^2/\partial t^2 = -\omega^2$.\cite{budden1961radio,budden1988propagation} 
+
+     Using (\ref{eq:elec_polar}), defining $X \equiv  N e^2/\epsilon_0m \omega^2$, and enforcing our plane-wave relations of (\ref{eq:plane_wave}) we get 
+     \begin{subequations}
+         \begin{align}
+             n \mathcal{H}_y &= E_x(1 - X) \\
+            -n \mathcal{H}_x &= E_y(1 - X) \\
+            0 &= E_z
+         \end{align}
+     \end{subequations}
+     which, when utilizing equations (\ref{eq:int_step}), we can find the refractive index as
+     \begin{equation}
+          n^2 = 1 - X = 1 - \frac{N e^2}{\epsilon_0 m \omega^2}
+      \end{equation}
+      which is independent in of the direction that the radio-wave travels, but is dependent on its frequency and some fundamental constants.\footnote{So long as the radio-wave is purely a transverse wave and has no longitudinal component.}
 
 % subsection the_ionosphere (end)
 

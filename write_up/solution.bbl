@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{10}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -35,6 +35,20 @@ Sydney Chapman.
   radiation in an atmosphere on a rotating earth.
 \newblock \emph{Proceedings of the Physical Society}, 43\penalty0 (1):\penalty0
   26, 1931{\natexlab{b}}.
+
+\bibitem[Goguitchaichvili et~al.(2015)Goguitchaichvili, Morales, Schavelzon,
+  V{\'a}squez, Gogorza, Loponte, and Rapalini]{goguitchaichvili2015variation}
+Avto Goguitchaichvili, Juan Morales, Daniel Schavelzon, Carlos V{\'a}squez,
+  Claudia~SG Gogorza, Daniel Loponte, and Augusto Rapalini.
+\newblock Variation of the earth’s magnetic field strength in south america
+  during the last two millennia: New results from historical buildings of
+  buenos aires and re-evaluation of regional data.
+\newblock \emph{Physics of the Earth and Planetary Interiors}, 245:\penalty0
+  15--25, 2015.
+
+\bibitem[Griffiths(2005)]{griffiths2005introduction}
+David~J Griffiths.
+\newblock Introduction to electrodynamics, 2005.
 
 \bibitem[Jackson(1999)]{jackson1999classical}
 John~David Jackson.
