@@ -2,14 +2,17 @@
 # Authors: cadams@g.hmc.edu, rbarclay@g.hmc.edu, cbecker@g.hmc.edu
 
 ##### Default Parameters #####
-T_tropo =  288 # [Kelvin]
-T_stato = 270 # [Kelvin]
-T_meso = 183 # [Kelvin]
-T_thermo = 1773 # [Kelvin]
-T_iono = 350 # [Kelvin]
+T_tropo =  288.  # [Kelvin]
+T_stato = 270.   # [Kelvin]
+T_meso = 183.    # [Kelvin]
+T_thermo = 1773. # [Kelvin]
+T_iono = 350.    # [Kelvin]
+R = 8.3144598    # J/mol*Kelvin
+g = 9.80665      # m/s^2
+p0 = 1.225       # kg/m^3
 
 air_dielec_const = 1.000 # [Coulomb^2 Second^2 Meter^-3 Kilogram^-1]
-MW_air = 28.95 # [Grams Mole^-1]
+MW_air = 28.95           # [Grams Mole^-1]
 
 #---------------------------------------------------------------#
 
@@ -24,7 +27,10 @@ def get_default():
             },
         'atmosphere':{
             'air_dielec_const': air_dielec_const,
-            'MW_air': MW_air
+            'MW_air': MW_air,
+            'R': R,
+            'g': g,
+            'p0': p0 
             }
 }
 

@@ -7,11 +7,6 @@ B. Ocean Waves
 
 C. Ionosphere
     + Radio-waves only interact with electrons in ionosphere
-<<<<<<< HEAD
-<<<<<<< HEAD
     + N = N(z) != N(x,y,z)
         ++ Neglect curvature of Earth
-=======
->>>>>>> 7cfa8c40abc299f8f3ea636afc21d6405bd09564
-=======
->>>>>>> 7cfa8c40abc299f8f3ea636afc21d6405bd09564
+    
