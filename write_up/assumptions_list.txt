@@ -4,3 +4,5 @@ B. Ocean Waves
 
 C. Ionosphere
     + Radio-waves only interact with electrons in ionosphere
+    + N = N(z) != N(x,y,z)
+        ++ Neglect curvature of Earth
