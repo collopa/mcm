@@ -1,13 +1,20 @@
+#########################
+# Packages
+###########################
 from scipy import *
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+
+##############################
+# Dependencies
+#################################
 import constants as c
 
 
-##quick test
-print(c.T_tropo)
-
+############################
+# Functions
+#############################
 def chargeDenHeight(z, angle_inc, recomb_coeff):
     """
         Gives charge number of electrons per m^3
