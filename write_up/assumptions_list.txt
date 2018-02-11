@@ -9,7 +9,9 @@ C. Ionosphere
 <<<<<<< HEAD
     + Radio-waves only interact with electrons in ionosphere
     + N = N(z) != N(x,y,z)
-        ++ Neglect curvature of Earth
+        ++ Neglect curvature of Earth. 
+    + Refractive index:
+	++ Ignore Earth's magnetic field.					
     
 =======
    + Radio-waves only interact with electrons in ionosphere
