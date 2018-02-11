@@ -9,3 +9,6 @@ C. Ionosphere
    + Radio-waves only interact with electrons in ionosphere
    + Ionosphere is uniform
    + No free current, only free charge
+   + Radio-waves only interact with electrons in ionosphere
+   + N = N(z) != N(x,y,z)
+        ++ Neglect curvature of Earth

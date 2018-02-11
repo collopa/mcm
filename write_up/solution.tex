@@ -7,6 +7,8 @@
 \usepackage{enumerate}
 \usepackage[inline, shortlabels]{enumitem}
 \usepackage{amsmath}
+\numberwithin{equation}{section}
+
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{authblk}
@@ -16,7 +18,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{Team 93463}
-\chead{Multi-hop, High-Frequency Radio Propagation}
+\chead{Multi-hop, HF Radio Propagation Near S. America}
 \rhead{Page \thepage\ of \pageref{LastPage}}
 \setlength{\headheight}{14pt}
 
@@ -64,7 +66,7 @@
 
 
 \title{
-    \textsc{{Multi-hop, High-Frequency Radio Propagation}}
+    \textsc{{Multi-hop, High-Frequency Radio Propagation Near South America}}
     }
 
 \author{\Large Team 93463}
@@ -129,7 +131,7 @@ The ionosphere consists of roughly three layers that lie between 75--1000\,km ab
     \item the D-region
 \end{enumerate*}; each of these regions has charge-density dependent on the time of year, the sunspots number of sunspots present, the time of day, and the movement of the charged particles\footnote{The study of which has the impressive sounding name of magnetohydrodynamics.}(Figure \ref{fig:struct_ion}). X-rays, ultraviolet light, ejected plasma, and other high energy particles that are released by the sun interact with the atoms in the atmosphere and strip them of electrons.\cite{noauthor_tracking_nodate} The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
 
-Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are stripped atoms or molecules. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ the effect on a proton than an electron because $F \propto m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
+Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are stripped atoms or molecules. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because $F \propto m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
 
 \begin{figure}[ht]
     \begin{center}
@@ -141,15 +143,57 @@ Early experiments demonstrated that the electrons in the ionosphere are arranged
 
 As stated above, at a first approximation, we expect that the electron density, $N$, is only a function of the eight above the earth's surface height, $z$. More compactly, $N = N(z)$. 
 
-Before we can calculate how radio-waves are reflected off of the ionosphere, we
+    \subsubsection{Electron Density, $N(z)$} % (fold)
+    \label{ssub:electron_density}
+    Before we can calculate how radio-waves are reflected off of the ionosphere, we must model the ionosphere's electron density. In the early 1930's, a simple model for the electron density as a function was produced called the Chapman Law.\cite{chapman1931b,chapman1931a} 
+
+    If we assume the Earth is constant in composition and temperature (as well as neglect the curvature of the earth\footnote{See \texttt{https://www.tfes.org/} for more information.}), then the density of the atmosphere, $\rho = \rho(z)$, is given by 
+    \begin{equation}
+        \rho(z) = \rho_0 e^{-M g z/ RT} = \rho_0 e^{- z/\kappa} 
+        \label{eq:atm_den}
+    \end{equation} where $ \kappa \equiv RT/Mg$, $\rho_0 \equiv \rho(0)$, $M$ is the average molecular weight, $g$ is the gravitational acceleration (assumed constant), $R$ is the universal gas constant,\footnote{Since all of us are ``physicists,'' we feel the need to note the definition of $R$: $R\equiv k_B N_A$ where $k_B$ is Boltzmann's constant and $N_A$ is Avogadro's number.} and $T$ is the temperature. The result of (\ref{eq:atm_den}) comes by balancing the forces acting on infinitesimal layers of atmosphere that, on a whole, is taken to be static.\cite{schroeder1999introduction}
+    
+    Next, we must find the intensity of the sun that passes through the earth's atmosphere. The intensity of the sun---not surprisingly---decreases as it goes through the atmosphere.\cite{budden1961radio} Since, the sun enters at an angle from the zenith, $\alpha$. By drawing a simple diagram,\footnote{Remember, we have a flat Earth; this is a subtle but important point in this derivation.} we can see that the area normal to the incident radiation of the sun will be a factor of secant too large than the area that the ground actually receives, i.e. $dA = dA_\perp \cos\alpha.$ Since intensity is inversely proportional to $dA$, we will have the relationship of 
+    \begin{equation}
+        dI = I \sigma \rho \sec(\alpha) \, dz.
+        \label{eq:diff_intensity}
+    \end{equation}
+    where $\sigma$ is a mass coefficient of absorption of the atmosphere. If we plug (\ref{eq:atm_den}) into (\ref{eq:diff_intensity}) and integrate, we get
+    \begin{align}
+        I(z)&= I_0 \exp\left[ -\sigma \kappa  \rho_0 \sec(\alpha) e^{- z/\kappa}\right] = I_0 \exp\left[ - \sec(\alpha) e^{- (z - z_0)/\kappa}\right]
+        \label{eq:inten_v_height}
+    \end{align}
+    if we (cleverly) define $z_0 \equiv \kappa \ln \left(\sigma \kappa  \rho_0\right)$. The rate of absorption of energy at height $z$ is $\cos(\alpha)(dI/dz)$. If we assume that the rate of production of electrons, $q$, is proportional to this, then we get 
+    \begin{equation}
+        q(z) = q_0 \exp\left[1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right].
+        \label{eq:rate_prod_elec}
+    \end{equation}
+
+    Empirically---at least in the D and E-layers of the ionosphere\footnote{In the F-layer, this rate law may be equal to $dN/dt = q - b N$}---the variation of charge density is given by\cite{budden1961radio}
+    \begin{equation}
+        \frac{dN}{dt} = q - a N^2
+        \label{eq:charge_den_rate}
+    \end{equation}
+    where $a$ is a ``recombination constant.'' In the steady solution where $dN/dt = 0$ we have $N = \sqrt{q/a}$ or
+    \begin{equation}
+        N = N_0 \exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
+    \end{equation}
+
+    % subsubsection electron_density (end)
+    
+% subsection the_ionosphere (end)
 
 \subsection{The Ocean} % (fold)
 \label{sub:the_ocean}
 
 % subsection the_ocean (end)
 
-% subsection the_ionosphere (end)
 % section model (end)
+
+\section{Results} % (fold)
+\label{sec:results}
+
+% section results (end)
 
 \section{Conclusion}
 \label{sec: conclusion}
