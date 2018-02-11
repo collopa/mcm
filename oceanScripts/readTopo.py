@@ -7,6 +7,8 @@ import pandas
 import csv
 import math
 from functools import reduce
+from datetime import datetime
+from datetime import timedelta
 product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
 #from netCDF4 import Dataset
 
@@ -15,64 +17,90 @@ df = pandas.read_csv("OSMC_flattened_eff7_eca9_6785.csv", parse_dates=[0], heade
 
 def getColData(column):
 
-	avgs4 = []
+	avgList = []
+	times = []
 	nDate = df['time'][0][0:10]
 	dayData = []
 	numMeas = 0
 
-for i in range(df['time'].count()):
+	for i in range(df['time'].count()):
 
-	np1Date = df['time'][i][0:10]
+		np1Date = df['time'][i][0:10]
 
-	if nDate == np1Date:
-		dayTempData.append(df['ztmp'][i])
-		daySalData.append(df['zsal'][i])
-		numMeas +=1 #increment number of measurements in each day
-			
-	else: #new day- divide into 4 chunks and average each
-		secondStop = math.floor(numMeas/2)
-		firstStop = math.floor(secondStop/2)
-		thirdStop = math.floor(numMeas/2) + secondStop
+		if nDate == np1Date:
+			dayData.append(df[column][i])
+			numMeas +=1 #increment number of measurements in each day
+				
+		else: #new day- divide into 4 chunks and average each
+			secondStop = math.floor(numMeas/2)
+			firstStop = math.floor(secondStop/2)
+			thirdStop = math.floor(numMeas/2) + secondStop
 
-		l1 = list(filter(lambda x: not math.isnan(x), daySalData[0:firstStop]))
-		l2 = list(filter(lambda x: not math.isnan(x), daySalData[0:firstStop]))
-		l3 = list(filter(lambda x: not math.isnan(x), daySalData[0:firstStop]))
-		l4 = list(filter(lambda x: not math.isnan(x), daySalData[0:firstStop]))
+			l1 = list(filter(lambda x: not math.isnan(x), dayData[0:firstStop]))
+			l2 = list(filter(lambda x: not math.isnan(x), dayData[firstStop:secondStop]))
+			l3 = list(filter(lambda x: not math.isnan(x), dayData[secondStop:thirdStop]))
+			l4 = list(filter(lambda x: not math.isnan(x), dayData[thirdStop:]))
 
-		if len(l1) != 0:
-			avg1Sal = sum(l1)/len(l1)
-		else:
-			avg1Sal = 'nan'
+			if len(l1) != 0:
+				avg1 = sum(l1)/len(l1)
+			else:
+				avg1 = 'nan'
 
-		if len(l1) != 0:
-			avg2Sal = sum(l2)/len(l2)
-		else:
-			avg2Sal = 'nan'
+			if len(l2) != 0:
+				avg2 = sum(l2)/len(l2)
+			else:
+				avg2 = 'nan'
 
-		if len(l1) != 0:
-			avg3Sal = sum(l3)/len(l3)
-		else:
-			avg3Sal = 'nan'
+			if len(l3) != 0:
+				avg3 = sum(l3)/len(l3)
+			else:
+				avg3 = 'nan'
 
-		if len(l1) != 0:
-			avg4Sal = sum(l4)/len(l4)
-		else:
-			avg4Sal = 'nan'
+			if len(l4) != 0:
+				avg4 = sum(l4)/len(l4)
+			else:
+				avg4 = 'nan'
 
-		salToAppend = [avg1Sal, avg2Sal, avg3Sal, avg4Sal]
-		if i < 100:
-			print(salToAppend)
-		sal4.extend(salToAppend)
+			toAppend = [avg1, avg2, avg3, avg4]
 
-		tempToAppend = [sum(dayTempData[0:firstStop])/(firstStop-1), sum(dayTempData[firstStop:secondStop])/(secondStop - firstStop-1), 
-		sum(dayTempData[secondStop:thirdStop])/(thirdStop - secondStop - 1), sum(dayTempData[thirdStop:])/(numMeas - thirdStop - 1)]
-		temp4.extend(tempToAppend)
+			avgList.extend(toAppend)
+			times.extend(get4Times(nDate))
 
-		del dayTempData[:]
-		del daySalData[:]
-		numMeas = 0
-		nDate = np1Date
+			del dayData[:]
+			numMeas = 0
+			nDate = np1Date
+	return(avgList, times)
+
+def get4Times(day):
+	times4 = []
+	for i in range(4):
+		times4.append(datetime.strptime(day+"T01:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
+	return times4
 
 
-print(sal4[0:50])
+'''def getTimes(startDate, length):
+	datetimes = []
+	currentDatetime = datetime.strptime(startDate, "%Y-%m-%dT%H:%M:%SZ")
+	for i in range(length):
+		datetimes.append(currentDatetime)
+		currentDatetime += timedelta(hours = 3)
+	return datetimes
+	'''
+
+
+
+
+def main():
+	startDate = df['time'][0]
+
+	plt.subplot(211)
+	plt.scatter(getColData('ztmp')[1], getColData('ztmp')[0])
+
+	plt.subplot(212)
+	plt.scatter(getColData('zsal')[1], getColData('zsal')[0])
+	plt.show()
+
+if __name__ == "__main__":
+	main()
+
 
