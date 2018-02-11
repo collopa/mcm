@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  11 FEB 2018 00:37
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  11 FEB 2018 13:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -592,20 +592,16 @@ File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 99.
+ [1]
 File: figs/structure_iono.png Graphic file (type QTm)
 
 <use  "figs/structure_iono.png" >
-Overfull \hbox (26.01614pt too wide) in paragraph at lines 139--140
+Overfull \hbox (26.01614pt too wide) in paragraph at lines 141--142
 [][] 
  []
 
 File: figs/chapman.png Graphic file (type QTm)
-<use  "figs/chapman.png" >
-Overfull \hbox (44.08363pt too wide) in paragraph at lines 145--146
-[][] 
- []
-
-[1] [2] [3] [4] (./solution.bbl
+<use  "figs/chapman.png" > [2] [3] [4] (./solution.bbl
 Overfull \hbox (80.15504pt too wide) in paragraph at lines 9--12
 []\OT1/cmr/m/n/10.95 Tracking So-lar Flares.  URL \OT1/cmtt/m/n/10.95 http://so
 lar-center.stanford.edu/SID/activities/ionosphere.html\OT1/cmr/m/n/10.95 . 
@@ -615,12 +611,12 @@ lar-center.stanford.edu/SID/activities/ionosphere.html\OT1/cmr/m/n/10.95 .
 AED: lastpage setting LastPage
 [5] (./solution.aux) ) 
 Here is how much of TeX's memory you used:
- 14677 strings out of 493706
- 281404 string characters out of 6145769
- 439102 words of memory out of 5000000
- 17762 multiletter control sequences out of 15000+600000
+ 14682 strings out of 493706
+ 281471 string characters out of 6145769
+ 439104 words of memory out of 5000000
+ 17767 multiletter control sequences out of 15000+600000
  12052 words of font info for 44 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 55i,12n,54p,1175b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,54p,1175b,595s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on solution.pdf (6 pages).

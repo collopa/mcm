@@ -116,6 +116,8 @@ They also claim to judge the quality of our writing. So remember our good friend
 \section{Model} % (fold)
 \label{sec:model}
 
+To have an accurate model, there are three main components of this model that need to be described. 
+
 \subsection{Radiowaves} % (fold)
 \label{sub:radiowaves}
 
@@ -140,14 +142,14 @@ Early experiments demonstrated that the electrons in the ionosphere are arranged
          \caption{}
     \label{fig:struct_ion} 
  \end{subfigure}
-~
+\qquad
  \begin{subfigure}[b]{0.44\textwidth}
-         \includegraphics[width = 3.25in]{figs/chapman.png}
+         \includegraphics[width = 2.35in]{figs/chapman.png}
           \caption{ }
      \label{fig:chapman}
  \end{subfigure}
  \end{center}
- \caption{\text{(a)} The charge density as a function of height in the ionosphere. It also shows how the ionosphere changes at midnight and noon. Dashed lines are for January while solid lines are for June. Also given is the number of sunspots, $R$, at the time of data collection.  Figure is taken from K.G. Budden (1961).\cite{budden1988propagation} \text{(b)} Contour plot of the Chapman Law for various azimuthal angles. Figure taken from K.G. Budden (1988).\cite{budden1988propagation} }
+ \caption{\textbf{(a)} The charge density as a function of height in the ionosphere. It also shows how the ionosphere changes at midnight and noon. Dashed lines are for January while solid lines are for June. Also given is the number of sunspots, $R$, at the time of data collection.  Figure is taken from K.G. Budden (1961).\cite{budden1988propagation} \textbf{(b)} Contour plot of the Chapman Law for various azimuthal angles of the incident sun. Figure taken from K.G. Budden (1988).\cite{budden1988propagation} }
  \label{fig:elect_density}
 \end{figure}
 
@@ -199,9 +201,24 @@ As stated above, at a first approximation, we expect that the electron density, 
 
     % subsubsection electron_density (end)
     
-    \subsubsection{A Modified Chapman Law} % (fold)
+    \subsubsection{A Modified Chapman Law, $\overline N(z,t)$} % (fold)
     \label{ssub:modified_chapman_law}
     Unfortunately, the Chapman Law is a rather simple model. It is not time dependent. It is also almost entirely qualitative due to the $\sigma$ constant that is highly dependent on what chemical species are in the atmosphere and the energy of incident light. However, it provides a good starting place to begin modifying for more accurate and simulations.
+
+    Clearly, Fig.\ref{fig:struct_ion} demonstrates that the electron density of the ionosphere changes as a function season and time of day. In order to make the Chapman Law model of the time dependent, we can add a time dependent factor out front. To put another way, $\overline N(z,t) = T(t) N(z)$. A simple approximation is to make $T(t)$ linearly dependent on time. If we let
+    \begin{equation}
+        T(t) = 1 + d(t) + s(t)
+        \label{eq:time_dep}
+    \end{equation}
+    where $d(t)$ is the ionosphere dependence on the time of day and $s(t)$ is the dependence on the season. From Fig.\ref{fig:struct_ion} we restrict the range of $d(t)$ and $s(t)$, where $d(t) \in [0,1]$ and $s(t) \in [0,4]$, respectively. These range restrictions were chosen as Fig.\ref{fig:struct_ion} demonstrates that seasonal dependence is more important than the time of day by roughly a factor of four. In our model, we input a sawtooth function for both $s(t)$ and $d(t)$ with each function's respective range. At midday, $s(t_{noon}) = 1$ and at midnight $s(t_{mid}) = 0$. Similarly, $d(t_{dec}) = 4$ while $d(t_{jun}) = 0$.\footnote{Since we are focusing our attention near South America, the most intense solar radiation comes in the summer months, which is December for our friends in the Southern Hemisphere.}
+
+    In all, the electron-density as a function of height and time where $\overline N(t,z)$ is given by 
+    \begin{align}
+        \overline N(z,t) &= T(t)N(z) \nonumber \\
+        &= N_0(1 + d(t) + s(t))\exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
+        \label{eq:final_eden}
+    \end{align}
+    which is a simple, analytic model for the ionosphere that is used in our model.
     % subsubsection our_modified_chapman_law (end)
 
 % subsection the_ionosphere (end)
@@ -216,6 +233,19 @@ As stated above, at a first approximation, we expect that the electron density, 
 \section{Results} % (fold)
 \label{sec:results}
 
+ \subsection{Part I: A Turbulent Ocean} % (fold)
+ \label{sub:part_i}
+
+ \subsection{Part II: The Andes Mountains} % (fold)
+ \label{sub:part_ii}
+ 
+ \subsection{Part III: A Message to a Boat} % (fold)
+ \label{sub:part_iii}
+ 
+ % subsection part_iii (end)
+ % subsection part_ii (end)
+ 
+ % subsection part_i (end)
 % section results (end)
 
 \section{Conclusion}

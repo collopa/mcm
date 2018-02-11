@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex solution"] 1518337831 "solution.aux" "solution.bbl" "solution" 1518338255
+["bibtex solution"] 1518383660 "solution.aux" "solution.bbl" "solution" 1518383776
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "solution.aux" 1518338254 3249 3aca88296f5b8a3dc6a8b85c3860e1da ""
+  "solution.aux" 1518383775 3744 bb033fb8ded1f17f8617ee947c2d5684 ""
   "solution.bcf" 0 -1 0 ""
   "solution.bib" 1518333712 1789 73478f8ca6a48843b70adce1ea092a69 ""
   (generated)
-  "solution.bbl"
   "solution.blg"
-["pdflatex"] 1518338253 "solution.tex" "solution.pdf" "solution" 1518338255
+  "solution.bbl"
+["pdflatex"] 1518383775 "solution.tex" "solution.pdf" "solution" 1518383776
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -133,14 +133,14 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1432479679 3445950 7f6125c6eb78b33bcedbe55e49dbfd83 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "figs/chapman.png" 1518331034 224836 b49b3f8fbd13cc98486ad89b784b8111 ""
+  "figs/chapman.png" 1518382343 188845 41948b29020543f405686100ee85ef5d ""
   "figs/structure_iono.png" 1518297647 312059 e62904056a960d34945d3a679cce5998 ""
-  "solution.aux" 1518338254 3249 3aca88296f5b8a3dc6a8b85c3860e1da ""
-  "solution.bbl" 1518337831 1991 affa05dc4bc11f2ea0c2682e37781b73 "bibtex solution"
-  "solution.tex" 1518338253 11772 21273aea003345bdaa2ab64fb827bd58 ""
+  "solution.aux" 1518383775 3744 bb033fb8ded1f17f8617ee947c2d5684 ""
+  "solution.bbl" 1518383660 1991 affa05dc4bc11f2ea0c2682e37781b73 "bibtex solution"
+  "solution.tex" 1518383774 13971 64d42d889406374270f0cca5971a1f2d ""
   (generated)
-  "solution.spl"
   "solution.pdf"
   "solution.out"
-  "solution.log"
   "solution.aux"
+  "solution.spl"
+  "solution.log"

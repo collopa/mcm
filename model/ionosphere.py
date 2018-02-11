@@ -42,14 +42,14 @@ def N0(daytime, season):
     """
         Need to hack some way to make the charge density go up.
     """
-    newN = 10e12 * (season + daytime)
+    newN = 10e12 * (1 + 4.0 * season + daytime)
     return newN
 
 
-def ionosphere_output():
-    """
-        dictionary mapping frequency to index of refraction.
-    """ 
-    n0 = N0(time, season)
-    ionoDict[freq] = refIndex(freq, c.iono_height, angle_inc, z0)
-    return ionoDict
+# def ionosphere_output():
+#     """
+#         dictionary mapping frequency to index of refraction.
+#     """ 
+#     n0 = N0(time, season)
+#     ionoDict[freq] = refIndex(freq, c.iono_height, angle_inc, z0)
+#     return ionoDict
