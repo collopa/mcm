@@ -132,7 +132,7 @@ As radio-waves propagate over a certain distance, we expect them to pick up some
      \begin{center}
         \animategraphics[width=3.9in]{12}{gif/frame-}{0}{99}
      \end{center}
-     \caption{Click image to see animation. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.)}
+     \caption{\small An animation (click to view) of signal decay over the first 30 seconds as it propagates with an incident angle 30 degrees above parallel to Earth’s surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. Visit \texttt{https://get.adobe.com/reader/} to download.)}
  \end{figure}
 
 % subsubsection noise (end)
@@ -169,11 +169,15 @@ where $A$ and $\lambda_s$ are the amplitude and wavelengths of the ocean waves, 
 \chead{\textsc{Multi-hop, HF Radio Propagation Near Japan}}
 \section{Results} % (fold)
 \label{sec:results}
+ 
+ We implemented our models in a combination of \texttt{python} and \texttt{Matlab} to run the necessary simulations. We only had the time to solve the first problem given: namely, how HF signal quality is changed by reflecting off of calm and turbulent ocean waves. We found that the HF signal could reflect eight times off of the ocean and ionosphere each before degrading. Presumably, the only thing that in our model that is dependent on the terrain is the index and quasi-index of refraction for our medium So our solution could readily be applied to a terrestrial system with mountains interfering. Because terrestrial mediums absorb radio-waves more readily than the ocean, we would expect the number of skips to decrease as compared to a turbulent ocean. The turbulent ocean would likely be the main source of distortion for a boat moving in the its rough waters.
 
 % section results (end)
 
 \section{Conclusion}
 \label{sec: conclusion}
+
+Using simple models for both the ionosphere and the ocean, we were successfully able to model how many times a 100\,\si{\watt} HF signal could be skip off of the ocean and ionosphere before the signal integrity decays and the messages original meaning was lost. We found it can skip off the ionosphere and ocean eight times each before signal loss. Presumably, our model can be readily applied to terrestrial mediums by changing the relative indices and quasi-indices of refraction for our new medium. Although we did not have time to solve, because boats tend to travel at a velocity $v$ that is much less than the speed of light, will likely only have signal distortion from the turbulent waters rather than any sort of Doppler shift.
 
 \section*{Acknowledgments}
 \label{sec: acknowledge}

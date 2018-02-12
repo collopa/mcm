@@ -1,4 +1,4 @@
-\begin{thebibliography}{18}
+\begin{thebibliography}{19}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -96,6 +96,11 @@ Claude~E Shannon.
 \newblock Communication in the presence of noise.
 \newblock \emph{Proceedings of the IEEE}, 72\penalty0 (9):\penalty0 1192--1201,
   1984.
+
+\bibitem[Taylor(2005)]{taylor2005classical}
+John~R Taylor.
+\newblock \emph{Classical mechanics}.
+\newblock University Science Books, 2005.
 
 \bibitem[Townsend(2000)]{townsend2000modern}
 John~S Townsend.

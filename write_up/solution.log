@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 13:22
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 14:24
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1293,7 +1293,10 @@ File: gif/frame-98.png Graphic file (type QTm)
 
 <use  "gif/frame-98.png" >
 File: gif/frame-99.png Graphic file (type QTm)
- <use  "gif/frame-99.png" > [3]
+ <use  "gif/frame-99.png" >
+Missing character: There is no ’ in font cmr10!
+Missing character: There is no ’ in font cmr10!
+ [3]
 File: figs/radio_curve.png Graphic file (type QTm)
 
 <use  "figs/radio_curve.png" > [4]
@@ -1346,24 +1349,24 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--51
 See also:
  []
 
-) 
+[15]) 
 AED: lastpage setting LastPage
-Package atenddvi Info: Last page = 16.
-[15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 485.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 485.
+Package atenddvi Info: Last page = 17.
+[16]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 491.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 491.
  (./solution.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 485.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 485.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 485.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 491.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 491.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 491.
  ) 
 Here is how much of TeX's memory you used:
- 26835 strings out of 493706
- 538414 string characters out of 6145769
- 716849 words of memory out of 5000000
- 29676 multiletter control sequences out of 15000+600000
+ 26839 strings out of 493706
+ 538515 string characters out of 6145769
+ 719249 words of memory out of 5000000
+ 29680 multiletter control sequences out of 15000+600000
  16439 words of font info for 59 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  55i,13n,61p,10396b,1717s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on solution.pdf (16 pages).
+Output written on solution.pdf (17 pages).

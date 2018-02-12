@@ -209,11 +209,11 @@ where $\kappa$, derived from Maxwell's equations for linear, conducting media\ci
 where $\sigma$ is the electrical conductivity of air, $\epsilon$ is the permittivity of air, and $\mu$ is the permeability of air.
 \par For a full listing of constants used throughout our modeling, see the Appendix and the file \verb|constants.py|.
 
- \begin{figure}
+ \begin{figure}[ht]
      \begin{center}
         \animategraphics[width=4.25in]{12}{gif/frame-}{0}{99}
      \end{center}
-     \caption{ Click image to see animation. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.)}
+     \caption{An animation (click to view) of signal decay over the first 30 seconds as it propagates with an incident angle 30 degrees above parallel to Earth’s surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. Please visit \texttt{https://get.adobe.com/reader/} to download.)}
  \end{figure}
  
 As an introduction to the results of our modeling, we have produced an animation of signal decay over the first 30 seconds as it propagates toward Los Angeles from Tokyo, with incident angle 30 degrees above parallel to Earth's surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. The signal above has two Fourier components and is not a simple carrier wave. The animation represents signal propagation under ``nice" weather conditions. The addition of noise, though accounted for in our model, is not shown in the animation. 
@@ -430,7 +430,7 @@ The amplitude difference between the incoming and out-coming light must be propo
     R =  \cos^2\left(\frac\phi2\right).
     \label{eq:refl_coef_phi}
 \end{equation}
-By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals. It is important to note, however, that taken together (\ref{eq:refl_coef_phi}) and (\ref{eq:quasi_index}) suggests that $m \le 1$. For physical refractive indices, this does not make sense. However, since we have a ``quasi-refractive index,'' we are not necessarily bound by the same conditions. Consequently, this is still meaningful in our model.
+By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals (See \ref{sub:implementation}). It is important to note, however, that taken together (\ref{eq:refl_coef_phi}) and (\ref{eq:quasi_index}) suggests that $m \le 1$. For physical refractive indices, this does not make sense. However, since we have a ``quasi-refractive index,'' we are not necessarily bound by the same conditions. Consequently, this is still meaningful and useful in our model.
 
 % subsubsection curve_fitting (end)
 
@@ -440,21 +440,27 @@ By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index})
 % section model (end)
 
 \subsection{Implementation in Python and Matlab}
+\label{sub:implementation}
 
 
 \section{Results} % (fold)
 \label{sec:results}
 
- \subsection{Problem I: A Turbulent Ocean} % (fold)
+ \subsection{Problem 1: A Turbulent Ocean} % (fold)
  \label{sub:part_i}
 
- \subsection{Problem II: The Japanese Alps} % (fold)
+ \subsection{Problem 2: The Japanese Alps} % (fold)
  \label{sub:part_ii}
- West and southwest of Tokyo, Japan, there is an extensive mountain range called the Japanese Alps. This mountain range is perfect for testing how rugged, mountainous terrain affect the integrity of a signal as compared to smooth terrain or ocean.
+ West and southwest of Tokyo, Japan, there is an extensive mountain range called the Japanese Alps. This mountain range is perfect for testing how rugged, mountainous terrain affect the integrity of a signal as compared to smooth terrain or ocean. In fact, both Problem \ref{pr:turb_ocean} and Problem \ref{pr:mount} can be folded into the same problem. In reference to Section \ref{sub:implementation}, the only thing that would change in our model would be the index of refraction and the quasi-index of refraction. We would map a turbulent ocean (See Section \ref{sub:the_ocean}) to  a``rugged, mountainous terrain.'' This would require us to find a new refractive index for land rather than sea.
 
- \subsection{Problem III: A Message to a Boat} % (fold)
+ Unfortunately, as you may have seen coming, we did not have enough time to search for literature values of an index of refraction for terrestrial mediums for HF signals. However, we expect\footnote{Although we are almost certain that we are missing some subtleties that we likely could have worked out if we had more time. }  that the results would identical to the turbulent ocean as a first approximation. Terrestrial mediums are better absorbers of HF waves that ocean. Because of this, we would expect there to be fewer hops than we saw in Section \ref{sub:part_i}.
+
+ \subsection{Problem 3: A Message to a Boat} % (fold)
  \label{sub:part_iii}
  
+ Unfortunately, we did not have enough time to try and tackle Problem \ref{pr:boat} as part of our model. However, our basic approach would be to try and account for a moving target---which will inherently have a Doppler shift of the signal.\cite{taylor2005classical} It is unclear how much the boat's speed will integrity of the signal as the boat's velocity, $v$, will be significantly slower than the speed of light, $c$, i.e. $v\ll c$. If this condition is met, then we often would expect a negligible Doppler shift in both the receiving and transmission of a signal.
+
+ If this is the case, then we would expect the largest distortion of our signal to come from the turbulent waters that the boat is apart of. This would be addressed almost identically as it was in Section \ref{sub:the_ocean}. 
 
 \section{Conclusion}
 \label{sec:conclusion} 

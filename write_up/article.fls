@@ -452,6 +452,7 @@ INPUT gif/frame-98.png
 INPUT gif/frame-99.png
 INPUT gif/frame-99.png
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
+INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
 INPUT article.bbl
 INPUT article.bbl
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm
