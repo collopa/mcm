@@ -43,11 +43,14 @@ ylabel('Amplitude (V/m)')
 
 
 % Plot the first frame:
-t = exp(-kappa.*zI);
+t = exp(-kappa.*zI*10);
 
 figure(3)
 input = plot(zI,f_tI*t(1));
-axis([0,maxZ,minAmp*3, maxAmp*3])
+axis([0,maxZ,minAmp*1.5, maxAmp*1.5])
+xlabel('Distance (m)');
+ylabel('Real Part of Electric Field (V/m)')
+title('Decay of Signal Over Time')
 
 gif('results.gif','DelayTime',2,'frame',gcf)
 

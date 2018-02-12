@@ -38,6 +38,7 @@ import sys
 import numpy as numpy
 import math as math
 import constants as constants
+from ocean import *
 from operator import add
 factor = 1.0e4
 c = 3e8 # speed of light
@@ -181,7 +182,10 @@ if __name__ == '__main__':
     f_t = map(add, f_t_real, noise)
 
     numpy.savetxt('radio_output.csv', (z, t, f_t), delimiter = ',', fmt='%1.3f')
-    
+
+    # Calculate SNR
+    # Calculate how many hops (a number leq N) for SNR leg 10dB
+    # Calculate
     
 
     
