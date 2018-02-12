@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  11 FEB 2018 18:16
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  11 FEB 2018 18:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,8 +1013,13 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 79.
 \c__siunitx_mathsf_int=\count210
 \c__siunitx_mathtt_int=\count211
+
+Underfull \hbox (badness 10000) in paragraph at lines 89--94
+
+ []
+
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 94.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
@@ -1318,7 +1323,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 370.
 Here is how much of TeX's memory you used:
  25418 strings out of 493706
  517966 string characters out of 6145769
- 702152 words of memory out of 5000000
+ 702162 words of memory out of 5000000
  28283 multiletter control sequences out of 15000+600000
  17608 words of font info for 64 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191

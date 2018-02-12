@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex solution"] 1518401709 "solution.aux" "solution.bbl" "solution" 1518401798
+["bibtex solution"] 1518402195 "solution.aux" "solution.bbl" "solution" 1518402354
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "solution.aux" 1518401796 5640 b3fdf38620634e2b38272908e214ac4b ""
+  "solution.aux" 1518402353 5647 21727ffaad5eadc88b4cb5f5814d6ae1 ""
   "solution.bcf" 0 -1 0 ""
   "solution.bib" 1518399749 3896 acfb35cfeb59b42f88ec816d03ff0670 ""
   (generated)
   "solution.blg"
   "solution.bbl"
-["pdflatex"] 1518401795 "solution.tex" "solution.pdf" "solution" 1518401798
+["pdflatex"] 1518402352 "solution.tex" "solution.pdf" "solution" 1518402354
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1136768653 1536 b3387106d9afecbfe14bde2de6eadf47 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -279,12 +279,12 @@
   "gif/frame-97.png" 1518400560 3750 0ec1ac310fe7cb28bbc444a6263c8066 ""
   "gif/frame-98.png" 1518400560 3746 74f6383fea3ee91f3e6123284af7edd1 ""
   "gif/frame-99.png" 1518400560 3733 bd1f54937180ab334558c12f4f275b26 ""
-  "solution.aux" 1518401796 5640 b3fdf38620634e2b38272908e214ac4b ""
-  "solution.bbl" 1518401709 3036 3aedc8bae7f039d5d5703e81d6d388cb "bibtex solution"
-  "solution.tex" 1518401795 23383 12d420f87bd5b55508123fe18d534542 ""
+  "solution.aux" 1518402353 5647 21727ffaad5eadc88b4cb5f5814d6ae1 ""
+  "solution.bbl" 1518402195 3036 3aedc8bae7f039d5d5703e81d6d388cb "bibtex solution"
+  "solution.tex" 1518402352 23404 dd43ad33faa8b05450df792a8982636a ""
   (generated)
+  "solution.spl"
   "solution.log"
   "solution.out"
-  "solution.pdf"
-  "solution.spl"
   "solution.aux"
+  "solution.pdf"
