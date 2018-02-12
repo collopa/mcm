@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex solution"] 1518388273 "solution.aux" "solution.bbl" "solution" 1518388299
+["bibtex solution"] 1518395707 "solution.aux" "solution.bbl" "solution" 1518395802
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "solution.aux" 1518388298 4469 ecc74cf5f5b99032393f1b0160bca3dd ""
+  "solution.aux" 1518395800 5275 c2088614b0a7ffd7c9eeb9752d6e6e9b ""
   "solution.bcf" 0 -1 0 ""
-  "solution.bib" 1518387033 2472 8b0c95a01ae41e5bf487eb12b7b3291d ""
+  "solution.bib" 1518394460 3656 b98298dae1ecc0e2c7072264386b2b26 ""
   (generated)
-  "solution.blg"
   "solution.bbl"
-["pdflatex"] 1518388298 "solution.tex" "solution.pdf" "solution" 1518388299
+  "solution.blg"
+["pdflatex"] 1518395800 "solution.tex" "solution.pdf" "solution" 1518395802
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm" 1136768653 1536 b3387106d9afecbfe14bde2de6eadf47 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm" 1136768653 1536 12e8c510d3e158fdd0e9a42e75118bd9 ""
@@ -158,13 +158,14 @@
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1432479679 3445950 7f6125c6eb78b33bcedbe55e49dbfd83 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
   "figs/chapman.png" 1518382343 188845 41948b29020543f405686100ee85ef5d ""
+  "figs/japan.png" 1518393554 3364498 008d653b43afd5cd73bf29255ba59443 ""
   "figs/structure_iono.png" 1518297647 312059 e62904056a960d34945d3a679cce5998 ""
-  "solution.aux" 1518388298 4469 ecc74cf5f5b99032393f1b0160bca3dd ""
-  "solution.bbl" 1518388273 2702 0e7021fa26f32f7aca92704c652fddb9 "bibtex solution"
-  "solution.tex" 1518388298 18029 a177c297e865268f6978f94a7dc6f917 ""
+  "solution.aux" 1518395800 5275 c2088614b0a7ffd7c9eeb9752d6e6e9b ""
+  "solution.bbl" 1518395707 3036 3aedc8bae7f039d5d5703e81d6d388cb "bibtex solution"
+  "solution.tex" 1518395799 22419 79b5034469d047590b4f684e91a4b4d2 ""
   (generated)
-  "solution.pdf"
-  "solution.spl"
-  "solution.log"
   "solution.out"
+  "solution.spl"
   "solution.aux"
+  "solution.log"
+  "solution.pdf"
