@@ -11,6 +11,20 @@
 \numberwithin{equation}{section}
 
 \usepackage{listings}
+
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
 \usepackage{animate}
 \usepackage{siunitx}
 \usepackage{csquotes}
@@ -375,7 +389,7 @@ The amplitude difference between the incoming and out-coming light must be propo
     R =  \cos^2\left(\frac\phi2\right).
     \label{eq:refl_coef_phi}
 \end{equation}
-By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals. It is important to note, however, that taken together (\ref{eq:refl_coef_phi}) and (\ref{eq:quasi_index}) suggests that $m \le 1$.
+By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals. It is important to note, however, that taken together (\ref{eq:refl_coef_phi}) and (\ref{eq:quasi_index}) suggests that $m \le 1$. For physical refractive indices, this does not make sense. However, since we have a ``quasi-refractive index,'' we are not necessarily bound by the same conditions. Consequently, this is still meaningful in our model.
 
 % subsubsection curve_fitting (end)
 
@@ -397,21 +411,17 @@ By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index})
  \subsection{Problem III: A Message to a Boat} % (fold)
  \label{sub:part_iii}
  
- % subsection part_iii (end)
- % subsection part_ii (end)
- 
- % subsection part_i (end)
-% section results (end)
 
 \section{Conclusion}
-\label{sec: conclusion} 
+\label{sec:conclusion} 
 
 \section*{Acknowledgments}
-\label{sec: acknowledge}
+\label{sec:acknowledge}
 We would like to thank our professors for lending us resources and pointing us in the direction of others. Additionally, we would also like to thank the beautiful community of StackExchange for teaching us everything we could ever need to know when we have questions we can't solve ourselves. 
 
  We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun. \shrug\cite{townsend2000modern} 
 
+\newpage
 \section*{Appendix: Constants Used in Code}
 \lstinputlisting[language=Python]{../model/constants.py}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
