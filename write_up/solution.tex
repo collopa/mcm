@@ -125,7 +125,7 @@ showstringspaces=false            %
 
 Quickly after its invention in the late 19th century, radio was adopted worldwide as the main form of communication for long distances near instantaneously.\cite{hilmes2002radio} When utilized correctly, the radio has accomplished remarkable things. Radios have inspired generations of scientists and tinkerers; they have allowed world-leaders to communicate with their people, soldiers to their brothers-in-arms,\footnote{Yes, we know. This terminology is a little dated.} they have allowed music to spread across cultures, and they have allowed Alex Jones spout gibberish to conspiracy theorists across the United States.\footnote{Enjoy. \texttt{https://youtu.be/aCiVsJ3b160}} 
 
-However, the often the catastrophic failures of radio have been a result of not understanding the science behind them. For example, a poor understanding of the Titanic's radio contributed to the deaths of 1,514 passengers and crew from April 14--15, 1912.\cite{noauthor_radio_2011} While much---if not most---of the engineering difficulties of radio have been overcome, some of the fundamental science behind it has not, e.g. ground-wave propagation.\cite{budden1961radio} To avoid other horrendous accidents at sea, such as the Titanic, it's important to have an accurate model of how radio-waves propagate through the atmosphere to determine the maximum distance a signal can travel at sea.
+However, the often catastrophic failures of radio have been a result of not understanding the science behind them. For example, a poor understanding of the Titanic's radio contributed to the deaths of 1,514 passengers and crew from April 14--15, 1912.\cite{noauthor_radio_2011} While much---if not most---of the engineering difficulties of radio have been overcome, some of the fundamental science behind it has not, e.g. ground-wave propagation.\cite{budden1961radio} To avoid other horrendous accidents at sea, such as the Titanic, it's important to have an accurate model of how radio-waves propagate through the atmosphere to determine the maximum distance a signal can travel at sea.
 
 Our task, if we choose to accept it,\footnote{Cue the \emph{Mission Impossible} theme song: Dun Dun Dun da dada Dun dun dun da dada dun dun dun da dada, de da doo de da doo de da doo do dut.} is to solve the following three problems:
 \begin{problem}
@@ -151,7 +151,7 @@ Our task, if we choose to accept it,\footnote{Cue the \emph{Mission Impossible} 
  \begin{center}
      \includegraphics[width = 4.55in]{figs/japan.png}
  \end{center}
- \caption{The region we are studying of choice. Japan was chosen due to it being an island surrounded by ocean water and it is a very mountainous and rugged country. Image taken from Google Maps.}
+ \caption{The region we are studying. Japan was chosen due to it being a very mountainous and rugged island surrounded by ocean water. Image taken from Google Maps.}
  \label{fig:jap} 
 \end{figure} 
 
@@ -166,9 +166,48 @@ With this in mind, we decided to focus on a region of with a radius of roughly 5
 \section{Model} % (fold)
 \label{sec:model}
 
-To have an accurate model, there are three main components of this model that need to be described. Primarily, we need to be able to describe HF radio-waves and how they change with reflections and gather inherent noise gathered as it travels through a medium. Because our signal reflects off of two different interfaces as it travels---the ocean and the ionosphere---it is important to model each with accurate physical properties. We would like to see how they change with time of day and time of year. 
+To have an accurate model, there are three main components of this model that need to be described. Primarily, we need to be able to describe HF radio-waves and how they change with reflections and gather inherent noise when travelling through a medium. Because our signal reflects off of two different interfaces as it travels---the ocean and the ionosphere---it is important to model each with accurate physical properties. We would like to see how they change with time of day and time of year. 
 \subsection{Radio-waves} % (fold)
 \label{sub:radiowaves}
+
+\subsubsection{Underlying Electromagnetic Theory} % (fold)
+\label{ssub:emtheory}
+
+Any rightful modeling of radio waves begins with Maxwell's Equations. For our purposes, we will only model the electric field component of the radio waves and we will consider a two-dimensional problem wherein the reflected and transmitted waves are in the plane of incidence. Let this electric field component of a single Fourier component of the incident radio wave be given by
+\begin{equation}
+{\bf \tilde{E}}_{I}({\bf r}, t) = {\bf \tilde{E}}_{0_I} e^{i({\bf k}_{I} \cdot {\bf r} - \omega t)}
+\end{equation}
+where ${\bf \tilde{E}}_{0_I}$ is the complex magnitude of the component, $\theta_{I}$ is the angle of incidence to the surface (which will eventually be either ocean or ionosphere), ${\bf k}_{I}$ is the wave vector of the incident component, and $\omega$ is the frequency characterizing this Fourier component.
+\par We then also consider the Law of Reflection \ref{eq:refl} and Law of Refraction \ref{eq:refr}:
+\begin{equation}
+\theta_{I} = \theta_{R}
+\label{refl}
+\end{equation}
+\begin{equation}
+\frac{\sin\theta_{T}}{\sin\theta_{I}} = \frac{n_1}{n_2}
+\label{refr}
+\end{equation}
+where the subscripts $R$ and $T$ refer to reflection and transmission respectively. Using Fresnel's equations \ref{eq:fresnel} for light polarized horizontal to Earth's surface (as this polarization can reach larger distances with less attenuation)
+\begin{equation}
+\tilde{E}_{0_R} = \left( \frac{\alpha - \beta}{\alpha + \beta} \right)\tilde{E}_{0_I}, \qquad 
+\tilde{E}_{0_T} = \left( \frac{2}{\alpha + \beta} \right)\tilde{E}_{0_I}
+\label{fresnel}
+\end{equation}
+along with the angle of incidence $alpha$, average altitude of the ionosphere $h$, height of the transmission tower $z$, index of refraction of the ionosphere and ocean (as a function of incident frequency, time of day, time of year, and roughness of sea), and dielectric constant of air, we can calculate how the signal is attenuated in frequency space. In \ref{eq:fresnel}, $\alpha$ and $\beta$ are given by
+\begin{equation}
+\alpha = \frac{\cos\theta_{T}}{\cos\theta_{I}}, \qquad \beta \approx \frac{n_1}{n_2}
+\end{equation}
+where we have made the approximation that the permeability of all materials involved is approximately the vacuum permeability, which is a solid assumption for most materials\cite{griffiths2005}. 
+\par We also assume that both the ocean and ionosphere are conducting, linear, dispersive media such that a wave reflected has its amplitude attenuated by the term
+\[
+e^{-\kappa z}
+\]
+where $\kappa$, derived from Maxwell's equations for linear, conducting media\cite{griffiths2005}, is given by
+\begin{equation}
+\kappa = \omega \sqrt{\frac{\epsilon\mu}{2}}\left[ \sqrt{1 + \left( \frac{\sigma}{\epsilon\omega} \right)^2} - 1 \right]^{1/2}
+\end{equation}
+where $\sigma$ is the electrical conductivity of air, $\epsilon$ is the permittivity of air, and $\mu$ is the permeability of air.
+\par For a full listing of constants used throughout our modeling, see the Appendix and the file \verb|constants.py|.
 
  \begin{figure}
      \begin{center}
@@ -176,6 +215,8 @@ To have an accurate model, there are three main components of this model that ne
      \end{center}
      \caption{ Click image to see animation. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.)}
  \end{figure}
+ 
+As an introduction to the results of our modeling, we have produced an animation of signal decay over the first 30 seconds as it propagates toward Los Angeles from Tokyo, with incident angle 30 degrees above parallel to Earth's surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. The signal above has two Fourier components and is not a simple carrier wave. The animation represents signal propagation under ``nice" weather conditions. The addition of noise, though accounted for in our model, is not shown in the animation. 
 
 \subsubsection{Noise} % (fold)
 \label{ssub:noise}
@@ -397,6 +438,9 @@ By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index})
 % subsection the_ocean (end)
 
 % section model (end)
+
+\subsection{Implementation in Python and Matlab}
+
 
 \section{Results} % (fold)
 \label{sec:results}
