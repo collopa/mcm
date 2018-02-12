@@ -142,6 +142,34 @@ def add_dispersion(z, t, k, f0_t, f0_k_post_Fresnel):
         f0_k_post_dispersion[n] = fn_k
         kappa[n] = kappa_n
     return [kappa, f0_k_post_dispersion]
+
+def calc_SNR(kappa, z):
+    SNR = []
+    for n in range(len(kappa)):
+        arg = math.exp(-2 * kappa[n] * z[n])
+        SNR.append(10 * math.log10(arg))
+    return SNR
+
+def calc_hops(SNR, N, kappa, z, f0_t):
+    remainder = len(SNR) % N
+    multiplier = (len(SNR) - remainder) / N
+    Ns = []
+    max_hops = N
+    for n in range(N+1):
+        for i in range(multiplier):
+            Ns.append(n)
+    for s in range(len(SNR)):
+        if SNR[s] < -10:
+            max_hops = Ns[s]
+            break
+    for n in range(len(Ns)):
+        if Ns[n]>1:
+            kappa_1 = kappa[n]
+            z_1 = z[n]
+            break
+    og_strength = 10 * math.log10(max(f0_t)**2)
+    strength = 10 * math.log10(math.exp(-2 * kappa_1 * z_1))
+    return [max_hops, og_strength, strength]
     
 #-----------------------------------------------------------------------#
 
@@ -183,9 +211,16 @@ if __name__ == '__main__':
 
     numpy.savetxt('radio_output.csv', (z, t, f_t), delimiter = ',', fmt='%1.3f')
 
-    # Calculate SNR
+    # Calculate SNR vector
+    SNR = calc_SNR(kappa, z)
+    
     # Calculate how many hops (a number leq N) for SNR leg 10dB
-    # Calculate
+    # and calculate strength after 1 reflection
+    [max_hops, og_strength, strength] =  calc_hops(SNR, int(N), kappa, z, f0_t)
+
+    print 'Number of Hops until SNR \leq 10dB: ', max_hops
+    print 'Strength of original signal: ', og_strength, ' dB'
+    print 'Strength of signal after 1st reflection: ', strength, ' dB'
     
 
     
