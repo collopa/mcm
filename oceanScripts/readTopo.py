@@ -9,8 +9,9 @@ from datetime import datetime
 from datetime import timedelta
 import time
 import numpy as np
-from numpy import pi, r_
+from numpy import pi, r_, array, savetxt
 from scipy.interpolate import UnivariateSpline
+from scipy.optimize import curve_fit
 
 df = pandas.read_csv("OSMC_flattened_6977_e409_1aff.csv", parse_dates=[0], header=0,delimiter=",") #data for 32.3N - 144.6E
 #df = pandas.read_csv("OSMC_flattened_eff7_eca9_6785.csv", parse_dates=[0], header=0,delimiter=",")
@@ -74,7 +75,7 @@ def getColData(column):
 def get4Times(day):
 	times4 = []
 	for i in range(4):
-		date = datetime.strptime(day+"T01:00:00Z", "%Y-%m-%dT%H:%M:%SZ") + timedelta(hours = (1 + 3*i))
+		date = datetime.strptime(day+"T01:00:00Z", "%Y-%m-%dT%H:%M:%SZ") + timedelta(hours = (2 + 6*i))
 		times4.append(date.timestamp())
 	return times4
 
@@ -90,7 +91,7 @@ def get4Times(day):
 
 def refractiveIndexList(salList, tempList):
 	rIndices = []
-	l = 500 #nm
+	l = 10e10 #nm
 	if len(salList) == len(tempList):
 		for i in range(len(salList)):
 			t = float(tempList[i])
@@ -101,6 +102,17 @@ def refractiveIndexList(salList, tempList):
 				rIndices.append(np.nan)
 	return rIndices
 
+def func(t, a, b, c, d, e, f):
+	return (a*math.cos(b*t + c) + d*math.sin(e*t + f))
+
+def clean(x,y):
+	newX = []
+	newY = []
+	for i in range(len(x)):
+		if not np.isnan(y[i]):
+			newX.append(x[i])
+			newY.append(y[i])
+	return newX, newY
 
 
 def main():
@@ -128,12 +140,21 @@ def main():
 	# plt.subplot(312)
 	# plt.scatter(times, salData)
 
-	# plt.subplot(313)
+	#plt.subplot(313)
+	#valid = ~(np.isnan(np.array(times)) | np.isnan(np.array(rIndices)))
+	#print(times[valid])
+	#x, y = clean(times, rIndices)
+	#popt, pcov = curve_fit(func, x, y)
+	#plt.plot(times, func(rIndices, *popt))
+
+	with open('newData.csv','w') as f:
+		writer = csv.writer(f, delimiter=",")
+		writer.writerows(zip(times, rIndices))
 
 	spl = UnivariateSpline(times, rIndices)
 	xs = np.linspace(1478163600, 1508349600, 100000)
 	plt.plot(xs, spl(xs), 'g', lw=3)
-	plt.plot(times, rIndices)
+	plt.plot(array(times), array(rIndices))
 	plt.ylim(1.34,1.345)
 	plt.show()
 
