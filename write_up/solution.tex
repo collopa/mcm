@@ -10,6 +10,7 @@
 \newtheorem{problem}{Problem}
 \numberwithin{equation}{section}
 
+\usepackage{animate}
 \usepackage{siunitx}
 \usepackage{csquotes}
 \usepackage{graphicx}
@@ -84,6 +85,12 @@
     \maketitle
     \thispagestyle{empty} %gets rid of page number at bottom 
 
+    To whom it may concern, \\
+    When reading our solution, we hope that you are can read our document in Adobe Acrobat Reader as we have \texttt{.gif} files that can only play with that PDF reader. Please visit \texttt{https://get.adobe.com/reader/} to download it if need be. It is worth it. We promise.
+    \begin{center}
+        \rule{11cm}{0.4pt}  
+    \end{center}
+
 \begin{abstract}
     Hi team, here is what we \emph{need} to have in our report (according to the MCM overlords):
 \begin{itemize}
@@ -110,11 +117,9 @@ Quickly after its invention in the late 19th century, radio was adopted worldwid
 
 However, the often the catastrophic failures of radio have been a result of not understanding the science behind them. For example, a poor understanding of the Titanic's radio contributed to the deaths of 1,514 passengers and crew from April 14--15, 1912.\cite{noauthor_radio_2011} While much---if not most---of the engineering difficulties of radio have been overcome, some of the fundamental science behind it has not, e.g. ground-wave propagation.\cite{budden1961radio} To avoid other horrendous accidents at sea, such as the Titanic, it's important to have an accurate model of how radio-waves propagate through the atmosphere to determine the maximum distance a signal can travel at sea.
 
-Our task, if we choose to accept it,\footnote{Cue Mission Impossible music: Dun dun dada Dun dun dada Dun dun dada Dun dun dada Dun dun dada Dun dun dada doo de doo doo de doo doo de doo doo do.} is to solve the following three problems:
+Our task, if we choose to accept it,\footnote{Cue the Mission Impossible theme song: Dun Dun Dun da dada Dun dun dun da dada dun dun dun da dada, de da doo de da doo de da doo do dut.} is to solve the following three problems:
 \begin{problem}
- The first problem we are trying to solve is to determine how many times a HF radio-wave can be reflected off of the ocean. The first reflection of the signal is off of a turbulent ocean. We must characterize how the signal strength changes after this first reflection.
-
- After the first reflection, we are looking to characterize how the signal changes as it reflects off of calm oceans before falling below a signal to noise ratio (SNR) of 10\,\si{\dB}.
+ The first problem we are trying to solve is to determine how many times a HF radio-wave can be reflected off of the ocean. The first reflection of the signal is off of a turbulent ocean. We must characterize how the signal strength changes after this first reflection. After the first reflection, we are looking to characterize how the signal changes as it reflects off of calm oceans before falling below a signal to noise ratio (SNR) of 10\,\si{\dB}.
  \label{pr:turb_ocean}
 \end{problem}
 
@@ -130,17 +135,17 @@ Our task, if we choose to accept it,\footnote{Cue Mission Impossible music: Dun 
 % section motivation (end)
 
 \section{Introduction} 
-\label{sec: intro}
+\label{sec: intro} 
 
  \begin{figure}[ht]
  \begin{center}
-     \includegraphics[width = 4.25in]{figs/japan.png}
+     \includegraphics[width = 4.55in]{figs/japan.png}
  \end{center}
  \caption{The region we are studying of choice. Japan was chosen due to it being an island surrounded by ocean water and it is a very mountainous and rugged country. Image taken from Google Maps.}
- \label{fig:jap}
+ \label{fig:jap} 
 \end{figure} 
 
-High frequency radio-waves (defined to be between 3--30\,\si{\mega\hertz}) can travel through the atmosphere---by one mechanism---by multiple reflections off of the Earth's ionosphere and the its surface. For frequencies below the maximum usable frequency (MUF), they will skip from the surface of the earth to the ionosphere and back again indefinitely until the signal dies down and becomes unusable. If the frequencies are larger than the MUF, then they pass through the ionosphere and are lost to space forever. The MUF varies with the season, time of day, and solar conditions.\cite{mcm_statement}
+High frequency radio-waves (defined to be between 3--30\,\si{\mega\hertz}) can travel through the atmosphere---by one mechanism---by multiple reflections off of the Earth's ionosphere and the its surface. For frequencies below the maximum usable frequency (MUF), they will skip from the surface of the earth to the ionosphere and back again indefinitely until the signal dies down and becomes unusable. If the frequencies are larger than the MUF, then they pass through the ionosphere and are lost to space forever. The MUF varies with the season, time of day, and solar conditions.\cite{mcm_statement} In our model, we will neglect solar conditions for simplicity.
 
 
 Empirically, radio-waves reflect off of the ocean differently depending on whether the ocean is turbulent or calm, impacting the distance the signal can faithfully.\cite{mcm_statement} Not surprisingly, radio-waves will reflect off rugged terrain differently than smooth, making it important to model how these radio-waves travel over mountains as well.
@@ -151,15 +156,23 @@ With this in mind, we decided to focus on a region of with a radius of roughly 5
 \section{Model} % (fold)
 \label{sec:model}
 
-To have an accurate model, there are three main components of this model that need to be described. 
-
+To have an accurate model, there are three main components of this model that need to be described. Primarily, we need to be able to describe HF radio-waves and how they change with reflections and gather inherent noise gathered as it travels through a medium. Because our signal reflects off of two different interfaces as it travels---the ocean and the ionosphere---it is important to model each with accurate physical properties. We would like to see how they change with time of day and time of year. 
 \subsection{Radio-waves} % (fold)
 \label{sub:radiowaves}
+
+ \begin{figure}
+     \begin{center}
+        \animategraphics[width=4.25in]{12}{gif/frame-}{0}{99}
+     \end{center}
+     \caption{A test \texttt{.gif} file. Click image to see animation. \\\\You need to use Adobe Acrobat Reader to view. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.}
+ \end{figure}
 
 \subsubsection{Noise} % (fold)
 \label{ssub:noise}
 
-CENTRAL LIMIT THEOREM   
+As radio-waves propagate over a certain distance, we expect them to pick up some noise as they go, degrading the integrity of the information they are trying to transmit. If they didn't, you could presumably use a \$5 hand-held radio to communicate with police officers in Australia.\footnote{It doesn't. One of the authors tried as a child.} A reasonable question becomes, how should we try and model this.
+
+The Central Limit Theorem states that when using independent, random variables\footnote{We are assuming this in our model.} are added together, their properly normalized sums tend toward a normal distribution.\cite{central} So as the radio-wave travels, we add this Gaussian noise to the signal to degrade it as its path length increases. It turns out that this is used quite often in Information Theory, and is called Additive White Gaussian Noise (AWGN).\cite{shannon1984communication,kailath1968innovations}
 
 % subsubsection noise (end)
 % subsection radiowaves (end)
@@ -174,7 +187,7 @@ The ionosphere consists of roughly three layers that lie between 75--1000\,km ab
     \item the D-region
 \end{enumerate*}; each of these regions has charge-density dependent on the time of year, the number of sunspots present, the time of day, and the movement of the charged particles\footnote{The study of which has the impressive sounding name of magnetohydrodynamics.}(Figure \ref{fig:struct_ion}). X-rays, ultraviolet light, ejected plasma, and other high energy particles that are released by the sun interact with the atoms in the atmosphere and strip them of electrons.\cite{noauthor_tracking_nodate} The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
 
-Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are  atoms or molecules stripped of an electron. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because its acceleration $\mathbf{a} \propto 1/m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
+Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are  atoms or molecules stripped of an electron. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10^{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because its acceleration $\mathbf{a} \propto 1/m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
 
 \begin{figure}[ht]
  \begin{center}
@@ -221,11 +234,6 @@ As stated above, at a first approximation, we expect that the electron density, 
         q(z) = q_0 \exp\left[1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right].
         \label{eq:rate_prod_elec}
     \end{equation}
-
-
-    \begin{figure}[ht]
-
-    \end{figure}
 
     Empirically---at least in the D and E-layers of the ionosphere\footnote{In the F-layer, this rate law may be equal to $dN/dt = q - b N$, but for the sake of simplicity we do not treat it as such.}---the variation of charge density is given by\cite{budden1961radio}
     \begin{equation}
@@ -297,7 +305,7 @@ As stated above, at a first approximation, we expect that the electron density, 
     Neglecting any damping, Newton's second law can relate the electric polarization, $\mathbf{P} = Ne\mathbf{r}$ and electric field via
     \begin{align}
          &\frac{Ne}{m}\mathbf{E}e = \frac{\partial^2 \mathbf{P}}{\partial t^2}
-         &\Rightarrow &\mathbf{P} = -\frac{Ne^2}{m\omega^2}\mathbf{E}
+         &\Rightarrow \mathbf{P} = -\frac{Ne^2}{m\omega^2}\mathbf{E}
          \label{eq:elec_polar}
      \end{align} 
      where we utilized the fact that the electric field varies with a phase factor, implying that $\partial^2/\partial t^2 = -\omega^2$.\cite{budden1961radio,budden1988propagation} 
@@ -314,13 +322,22 @@ As stated above, at a first approximation, we expect that the electron density, 
      \begin{equation}
           n^2 = 1 - X = 1 - \frac{N e^2}{\epsilon_0 m \omega^2}
       \end{equation}
-      which is independent in of the direction that the radio-wave travels, but is dependent on its frequency and some fundamental constants.\footnote{So long as the radio-wave is purely a transverse wave and has no longitudinal component.}
+      which is independent in of the direction that the radio-wave travels, but is dependent on its frequency and some fundamental constants.\footnote{So long as the radio-wave is purely a transverse wave and has no longitudinal component or the longitudinal component is negligible, this holds.}
 
 % subsection the_ionosphere (end)
 
 \subsection{The Ocean} % (fold)
 \label{sub:the_ocean}
 
+\subsubsection{Data Collection} % (fold)  
+\label{ssub:data_collection}
+
+\subsubsection{Curve Fitting} % (fold)
+\label{ssub:curve_fitting}
+
+% subsubsection curve_fitting (end)
+
+% subsubsection data_collection (end)
 % subsection the_ocean (end)
 
 % section model (end)
@@ -331,7 +348,7 @@ As stated above, at a first approximation, we expect that the electron density, 
  \subsection{Problem I: A Turbulent Ocean} % (fold)
  \label{sub:part_i}
 
- \subsection{Problem II: The Andes Mountains} % (fold)
+ \subsection{Problem II: The Japanese Alps} % (fold)
  \label{sub:part_ii}
  
  \subsection{Problem III: A Message to a Boat} % (fold)
