@@ -160,7 +160,7 @@ To have an accurate model, there are three main components of this model that ne
      \begin{center}
         \animategraphics[width=4.25in]{12}{gif/frame-}{0}{99}
      \end{center}
-     \caption{A test \texttt{.gif} file. Click image to see animation. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.)}
+     \caption{ Click image to see animation. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.)}
  \end{figure}
 
 \subsubsection{Noise} % (fold)
@@ -169,6 +169,14 @@ To have an accurate model, there are three main components of this model that ne
 As radio-waves propagate over a certain distance, we expect them to pick up some noise as they go, degrading the integrity of the information they are trying to transmit. If they didn't, you could presumably use a \$5 hand-held radio to communicate with police officers in Australia.\footnote{It doesn't. One of the authors tried as a child.} A reasonable question becomes, how should we try and model this.
 
 The Central Limit Theorem states that when using independent, random variables\footnote{We are assuming this in our model.} are added together, their properly normalized sums tend toward a normal distribution.\cite{central} So as the radio-wave travels, we add this Gaussian noise to the signal to degrade it as its path length increases. It turns out that this is used quite often in Information Theory, and is called Additive White Gaussian Noise (AWGN).\cite{shannon1984communication,kailath1968innovations}
+
+\begin{figure}[ht]
+ \begin{center}
+     \includegraphics[width = 3.5in]{figs/radio_curve.png}
+ \end{center}
+ \caption{hi}
+ \label{fig:radio_curve}
+\end{figure}
 
 % subsubsection noise (end)
 % subsection radiowaves (end)
@@ -350,7 +358,15 @@ where $n$ is the index of refraction of air (in our case) and $m$ is our quasi-i
     \label{eq:quasi_index}
 \end{equation}
 
-Next, we need to determine how much of $R$ we expect given ocean conditions. If we consider a simple model of ocean waves as a square wave with amplitude $A$ and a wavelength $\lambda_s$. Drawing parallel rays of light with an incident angle $\theta$, we can see that the rays of light that travel and reflect off the well of the square wave travel an extra distance of $2d$. This leads to a phase factor where the light from one wave can interfere with another by creating a phase shift between light that hits the crest and light that hits the trough. We will define this phase shift as $\phi$ where 
+\begin{figure}[ht]
+ \begin{center}
+     \includegraphics[width = 3.5in]{figs/ocean.png}
+ \end{center}
+ \caption{Diagram showing our simple model of an ocean wave with an incident HF signal interacting with the ocean wave.}
+ \label{fig:ocean}
+\end{figure}
+
+Next, we need to determine how much of $R$ we expect given ocean conditions. If we consider a simple model of ocean waves as a square wave with amplitude $A$ and a wavelength $\lambda_s$. Drawing parallel rays of light with an incident angle $\theta$, we can see that the rays of light that travel and reflect off the well of the square wave travel an extra distance of $2d$ (Fig.\ref{fig:ocean}). This leads to a phase factor where the light from one wave can interfere with another by creating a phase shift between light that hits the crest and light that hits the trough. We will define this phase shift as $\phi$ where 
 \begin{equation}
     \phi = \frac{2d}{\lambda} = \frac{2}{\lambda}\sqrt{A^2 + (\lambda_s/4)^2}.
 \end{equation}
@@ -359,7 +375,7 @@ The amplitude difference between the incoming and out-coming light must be propo
     R = \cos^2\left(\frac\phi2\right).
     \label{eq:refl_coef_phi}
 \end{equation}
-By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}).
+By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals.
 
 % subsubsection curve_fitting (end)
 
