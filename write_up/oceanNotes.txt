@@ -1,0 +1,9 @@
+Data from NOAA Pacific Marine Environmental Laboratory Ocean Climate Stations
+-Station number (Mooring WMO number): 280401
+-Data format:
+	- recorded sea surface temperature and salinity multiple times per day (though the times were not recorded)
+	- I assumed that the measurements were taken at regular intervals, then took 4 averages- avg values at 2:00, 8:00, 14:00, and 18:00.
+	-I used the average salinity and temperature values to calulate the index of refraction from an empirically derived formula
+	- see page 1: http://kepler.am.gdynia.pl/~zot/pracownie/refr-sal-temper.pdf
+	- right now I'm using a constant wavelength of 500nm
+	-once I figure out the curve fitting stuff, I'll have a continuous function that outputs index of refraction as a funciton of (time of day/year) and (wavelength).
