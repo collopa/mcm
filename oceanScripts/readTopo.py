@@ -1,18 +1,18 @@
 import os
 import clawpack.geoclaw.topotools as topotools
 import matplotlib.pyplot as plt
-#from numpy import genfromtxt
-import numpy
 import pandas
 import csv
 import math
 from functools import reduce
 from datetime import datetime
 from datetime import timedelta
-product = reduce((lambda x, y: x * y), [1, 2, 3, 4])
-#from netCDF4 import Dataset
+import time
+import numpy as np
+from numpy import pi, r_
+from scipy.interpolate import UnivariateSpline
 
-df = pandas.read_csv("OSMC_flattened_eff7_eca9_6785.csv", parse_dates=[0], header=0,delimiter=",") #data for 32.3N - 144.6E
+df = pandas.read_csv("OSMC_flattened_6977_e409_1aff.csv", parse_dates=[0], header=0,delimiter=",") #data for 32.3N - 144.6E
 
 
 def getColData(column):
@@ -74,7 +74,8 @@ def getColData(column):
 def get4Times(day):
 	times4 = []
 	for i in range(4):
-		times4.append(datetime.strptime(day+"T01:00:00Z", "%Y-%m-%dT%H:%M:%SZ"))
+		date = datetime.strptime(day+"T01:00:00Z", "%Y-%m-%dT%H:%M:%SZ") + timedelta(hours = (1 + 3*i))
+		times4.append(date.timestamp())
 	return times4
 
 
@@ -94,10 +95,10 @@ def refractiveIndexList(salList, tempList):
 		for i in range(len(salList)):
 			t = float(tempList[i])
 			s = float(salList[i])
-			if (not numpy.isnan(t)) and (not numpy.isnan(s)):
+			if (not np.isnan(t)) and (not np.isnan(s)):
 				rIndices.append(1.3247 - 2.5e-6*t**2 + s*(2e-4 - 8e-7*t) + 3300*l**(-2) - 3.2e7*l**(-4))
 			else:
-				rIndices.append(numpy.nan)
+				rIndices.append(np.nan)
 	return rIndices
 
 
@@ -108,6 +109,18 @@ def main():
 	salData = getColData('zsal')[0]
 	tempData = getColData('ztmp')[0]
 	times = getColData('zsal')[1]
+	rIndices = refractiveIndexList(salData, tempData)
+
+	print(times[0])
+
+	# Fit the first set
+	# fitfunc = lambda p, x: p[0]*np.cos(2*np.pi/p[1]*x+p[2]) + p[3]*x # Target function
+	# errfunc = lambda p, x, y: fitfunc(p, x) - y # Distance to the target function
+	# p0 = [-15., 0.8, 0., -1.] # Initial guess for the parameters
+	# p1, success = optimize.leastsq(errfunc, p0[:], args=(Tx, tX))
+
+	# time = np.linspace(Tx.min(), Tx.max(), 100)
+	# plt.plot(Tx, tX, "ro", time, fitfunc(p1, time), "r-")
 
 	# plt.subplot(311)
 	# plt.scatter(times, tempData)
@@ -116,7 +129,12 @@ def main():
 	# plt.scatter(times, salData)
 
 	# plt.subplot(313)
-	plt.scatter(times, refractiveIndexList(salData, tempData))
+
+	spl = UnivariateSpline(times, rIndices)
+	xs = np.linspace(1478163600, 1508349600, 100000)
+	plt.plot(xs, spl(xs), 'g', lw=3)
+	plt.plot(times, rIndices)
+	plt.ylim(1.34,1.345)
 	plt.show()
 
 if __name__ == "__main__":
