@@ -86,9 +86,9 @@
     \thispagestyle{empty} %gets rid of page number at bottom 
 
     \begin{center}
-        \rule{12cm}{0.4pt}  
+        \rule{13cm}{0.4pt}  
     \end{center}
-    
+
     \noindent To whom it may concern, \vspace{4pt}\\
     %
     \indent When reading our solution, we hope that you are can read it using Adobe Acrobat Reader. This is because we have \texttt{.gif} files that can only be played with that particular PDF reader. Please visit \texttt{https://get.adobe.com/reader/} to download it if necessary. We are trying to put our best foot forward and we would appreciate if you receive our work as intended. We believe it is worth it. Thank you.
@@ -96,7 +96,7 @@
     Respectfully,\vspace{3pt}\\
     \indent Team 93463
     \begin{center}
-        \rule{12cm}{0.4pt}  
+        \rule{13cm}{0.4pt}  
     \end{center}
 
 \newpage
@@ -255,7 +255,7 @@ As stated above, at a first approximation, we expect that the electron density, 
         T(t) = 1 + d(t) + s(t)
         \label{eq:time_dep}
     \end{equation}
-    where $d(t)$ is the ionosphere dependence on the time of day and $s(t)$ is the dependence on the season. From Fig.\ref{fig:struct_ion} we restrict the range of $d(t)$ and $s(t)$, where $d(t) \in [0,1]$ and $s(t) \in [0,4]$, respectively. These range restrictions were chosen as Fig.\ref{fig:struct_ion} demonstrates that seasonal dependence is more important than the time of day by roughly a factor of four. In our model, we input a sawtooth function for both $s(t)$ and $d(t)$ with each function's respective range. At midday, $s(t_{noon}) = 1$ and at midnight $s(t_{mid}) = 0$. Similarly, $d(t_{dec}) = 4$ while $d(t_{jun}) = 0$.\footnote{Since we are focusing our attention near South America, the most intense solar radiation comes in the summer months, which is December for our friends in the Southern Hemisphere.}
+    where $d(t)$ is the ionosphere dependence on the time of day and $s(t)$ is the dependence on the season. From Fig.\ref{fig:struct_ion} we restrict the range of $d(t)$ and $s(t)$, where $d(t) \in [0,1]$ and $s(t) \in [0,4]$, respectively. These range restrictions were chosen as Fig.\ref{fig:struct_ion} demonstrates that seasonal dependence is more important than the time of day by roughly a factor of four. In our model, we input a sawtooth function for both $s(t)$ and $d(t)$ with each function's respective range. At midday, $s(t_{noon}) = 1$ and at midnight $s(t_{mid}) = 0$. Similarly, $d(t_{jun}) = 4$ while $d(t_{dec}) = 0$.
 
     In all, the electron-density as a function of height and time where $\overline N(t,z)$ is given by 
     \begin{align}

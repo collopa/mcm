@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex article"] 1518434024 "article.aux" "article.bbl" "article" 1518434511
+["bibtex article"] 1518438502 "article.aux" "article.bbl" "article" 1518438504
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "article.aux" 1518434509 2651 dbe414404248da7bfe784ced19473cb7 ""
+  "article.aux" 1518438503 2262 9934c92e74e995ad4cae331de9030304 ""
   "article.bcf" 0 -1 0 ""
   "solution.bib" 1518425319 4608 846df7d2b9dbde6d12c1207ccf7e21e0 ""
   (generated)
   "article.bbl"
   "article.blg"
-["pdflatex"] 1518434509 "article.tex" "article.pdf" "article" 1518434511
+["pdflatex"] 1518438502 "article.tex" "article.pdf" "article" 1518438504
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -161,9 +161,9 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1432479679 3445950 7f6125c6eb78b33bcedbe55e49dbfd83 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "article.aux" 1518434509 2651 dbe414404248da7bfe784ced19473cb7 ""
-  "article.bbl" 1518434024 2500 9648d226bc6f7e5b98b838f20b2cb836 "bibtex article"
-  "article.tex" 1518434508 9449 9795717899be71a05b5d7f7cd9423ac7 ""
+  "article.aux" 1518438503 2262 9934c92e74e995ad4cae331de9030304 ""
+  "article.bbl" 1518438502 2500 9648d226bc6f7e5b98b838f20b2cb836 "bibtex article"
+  "article.tex" 1518438499 9383 97e7048ecfa54406d657628c2b211769 ""
   "gif/frame-0.png" 1518432355 2111 98dede62b4916a49003b81a3717a63c6 ""
   "gif/frame-1.png" 1518432355 2483 1641f5b991aa9d5ed2eea0602ee69e19 ""
   "gif/frame-10.png" 1518432355 3074 d2e71bf8287c0b303f9f056c7853a41d ""
@@ -265,6 +265,6 @@
   "gif/frame-98.png" 1518432357 5444 462615616f47828990c1fe65c2926117 ""
   "gif/frame-99.png" 1518432357 5501 cf05826233916cf0440836c8ce33c5b5 ""
   (generated)
-  "article.aux"
   "article.log"
+  "article.aux"
   "article.pdf"

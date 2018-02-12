@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 03:21
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 04:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1282,14 +1282,18 @@ Overfull \hbox (15.83446pt too wide) in paragraph at lines 133--134
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[1
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
 ]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
- (./article.bbl
+
+(./article.bbl
 Underfull \hbox (badness 10000) in paragraph at lines 38--42
 \OT1/cmr/m/it/10.95 https://www.cia.gov/library/publications/the-
  []
@@ -1298,18 +1302,18 @@ Underfull \hbox (badness 10000) in paragraph at lines 38--42
 AED: lastpage setting LastPage
 Package atenddvi Info: Last page = 2.
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 204.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 204.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 191.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 191.
  (./article.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 204.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 204.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 191.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 191.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 191.
  ) 
 Here is how much of TeX's memory you used:
- 25288 strings out of 493706
- 515378 string characters out of 6145769
- 697016 words of memory out of 5000000
- 28177 multiletter control sequences out of 15000+600000
+ 25285 strings out of 493706
+ 515339 string characters out of 6145769
+ 697210 words of memory out of 5000000
+ 28174 multiletter control sequences out of 15000+600000
  11227 words of font info for 41 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  55i,13n,61p,10395b,747s stack positions out of 5000i,500n,10000p,200000b,80000s
