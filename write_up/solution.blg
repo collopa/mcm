@@ -8,45 +8,45 @@ Warning--to sort, need author or key in mcm_statement
 Warning--to sort, need author or key in noauthor_tracking_nodate
 Warning--empty year in noauthor_tracking_nodate
 Warning--empty journal in maus2010us
-You've used 14 entries,
+You've used 17 entries,
             2773 wiz_defined-function locations,
-            657 strings with 6637 characters,
-and the built_in function-call counts, 4433 in all, are:
-= -- 362
-> -- 177
-< -- 10
-+ -- 69
-- -- 54
-* -- 287
-:= -- 658
-add.period$ -- 36
-call.type$ -- 14
-change.case$ -- 56
-chr.to.int$ -- 13
-cite$ -- 36
-duplicate$ -- 254
-empty$ -- 462
-format.name$ -- 67
-if$ -- 943
+            680 strings with 7043 characters,
+and the built_in function-call counts, 5531 in all, are:
+= -- 466
+> -- 207
+< -- 13
++ -- 81
+- -- 63
+* -- 362
+:= -- 827
+add.period$ -- 45
+call.type$ -- 17
+change.case$ -- 68
+chr.to.int$ -- 16
+cite$ -- 42
+duplicate$ -- 313
+empty$ -- 574
+format.name$ -- 79
+if$ -- 1173
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 14
-newline$ -- 72
-num.names$ -- 44
-pop$ -- 172
+missing$ -- 17
+newline$ -- 87
+num.names$ -- 56
+pop$ -- 195
 preamble$ -- 1
-purify$ -- 46
+purify$ -- 55
 quote$ -- 0
-skip$ -- 187
+skip$ -- 226
 stack$ -- 0
-substring$ -- 46
-swap$ -- 17
+substring$ -- 108
+swap$ -- 20
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 129
+type$ -- 162
 warning$ -- 5
-while$ -- 35
+while$ -- 48
 width$ -- 0
-write$ -- 164
+write$ -- 202
 (There were 5 warnings)

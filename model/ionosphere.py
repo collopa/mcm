@@ -42,7 +42,7 @@ def N0(daytime, season):
     """
         Need to hack some way to make the charge density go up.
     """
-    newN = 10e12 * (1 + 4.0 * season + daytime)
+    newN = 10e12 * (1.0 + 4.0 * season + daytime)
     return newN
 
 

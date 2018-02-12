@@ -13,7 +13,7 @@ from numpy import pi, r_
 from scipy.interpolate import UnivariateSpline
 
 df = pandas.read_csv("OSMC_flattened_6977_e409_1aff.csv", parse_dates=[0], header=0,delimiter=",") #data for 32.3N - 144.6E
-
+#df = pandas.read_csv("OSMC_flattened_eff7_eca9_6785.csv", parse_dates=[0], header=0,delimiter=",")
 
 def getColData(column):
 

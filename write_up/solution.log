@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  11 FEB 2018 18:25
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  11 FEB 2018 19:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,17 +1013,12 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 79.
 \c__siunitx_mathsf_int=\count210
 \c__siunitx_mathtt_int=\count211
-
-Underfull \hbox (badness 10000) in paragraph at lines 89--94
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 94.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 97.
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 94.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
@@ -1281,22 +1276,26 @@ File: gif/frame-98.png Graphic file (type QTm)
 
 <use  "gif/frame-98.png" >
 File: gif/frame-99.png Graphic file (type QTm)
- <use  "gif/frame-99.png" > [2]
-File: figs/structure_iono.png Graphic file (type QTm)
+ <use  "gif/frame-99.png" >
+Underfull \hbox (badness 10000) in paragraph at lines 167--167
 
-<use  "figs/structure_iono.png" >
-Overfull \hbox (26.01614pt too wide) in paragraph at lines 190--191
+ []
+
+[2] [3]
+File: figs/structure_iono.png Graphic file (type QTm)
+ <use  "figs/structure_iono.png" >
+Overfull \hbox (26.01614pt too wide) in paragraph at lines 195--196
 [][] 
  []
 
 File: figs/chapman.png Graphic file (type QTm)
-<use  "figs/chapman.png" > [3] [4] [5]
+<use  "figs/chapman.png" > [4] [5] [6]
 LaTeX Font Info:    Try loading font information for TS1+cmr on input line 288.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [6] [7] [8]
+) [7] [8]
 (./solution.bbl
 Overfull \hbox (16.6458pt too wide) in paragraph at lines 9--11
 []\OT1/cmr/m/n/10.95 Tracking So-lar Flares.  URL \OT1/cmtt/m/n/10.95 solar-cen
@@ -1306,25 +1305,25 @@ ter.stanford.edu/SID/activities/ionosphere\OT1/cmr/m/n/10.95 .
 
 Underfull \hbox (badness 10000) in paragraph at lines 47--51
 []\OT1/cmr/m/n/10.95 CIA Fact-book.  The world fact-book.  \OT1/cmr/m/it/10.95 
-See also: https://www. cia.
+See also:
  []
 
 ) 
 AED: lastpage setting LastPage
 Package atenddvi Info: Last page = 10.
 [9]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 370.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 370.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 379.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 379.
  (./solution.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 370.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 370.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 370.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 379.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 379.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 379.
  ) 
 Here is how much of TeX's memory you used:
- 25418 strings out of 493706
- 517966 string characters out of 6145769
- 702162 words of memory out of 5000000
- 28283 multiletter control sequences out of 15000+600000
+ 25429 strings out of 493706
+ 518239 string characters out of 6145769
+ 694715 words of memory out of 5000000
+ 28294 multiletter control sequences out of 15000+600000
  17608 words of font info for 64 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  55i,13n,61p,10396b,864s stack positions out of 5000i,500n,10000p,200000b,80000s
