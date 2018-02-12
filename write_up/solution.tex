@@ -10,6 +10,7 @@
 \newtheorem{problem}{Problem}
 \numberwithin{equation}{section}
 
+\usepackage{listings}
 \usepackage{animate}
 \usepackage{siunitx}
 \usepackage{csquotes}
@@ -47,7 +48,6 @@
 %   \savebox\affbox{\Affilfont Department of Physics, Harvey Mudd College}%
 %   \parbox[t]{\wd\affbox}{\protect\centering Department of Physics, Harvey Mudd College}} 
 % \affil[2]{Department of Chemistry, Harvey Mudd College \par Claremont, CA 91711}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%
@@ -213,12 +213,11 @@ The Central Limit Theorem states that when using independent, random variables\f
 
 \begin{figure}[ht]
  \begin{center}
-     \includegraphics[width = 3.5in]{figs/radio_curve.png}
+     \includegraphics[width = 3.in]{figs/radio_curve.png}
  \end{center}
- \caption{hi}
+ \caption{A side diagram of how the HF signals travel through the atmosphere.}
  \label{fig:radio_curve}
 \end{figure}
-
 % subsubsection noise (end)
 % subsection radiowaves (end)
 
@@ -388,6 +387,14 @@ It turns out that the refractive index for ratio-waves is approximately constant
 \label{ssub:ocean_ind_of_ref}
 We found that ocean waves behave essentially as a mirror with an reflection coefficient of 1, so there is no appreciable index of refraction that is measured.\cite{seawater_index} However, we expect that for very turbulent waters, that the intensity of incident light will decrease as it gets scattered in various directions. Essentially, turbulent waters create a quasi-index of refraction, which we will call $m.$
 
+\begin{figure}[ht]
+ \begin{center}
+     \includegraphics[width = 3.in]{figs/ocean.png}
+ \end{center}
+ \caption{Diagram showing our simple model of an ocean wave with an incident HF signal interacting with the ocean wave.}
+ \label{fig:ocean}
+\end{figure}
+
 When a radio-wave (or any electromagnetic wave for that matter) reflect off of surface with a different index of refraction, we can find the reflection coefficient, $R$, where $R$ is defined to be the ratio of intensity of reflected light to the intensity of incident light. The relationship between $R$ and the two indices of refraction is given by a well known relation\cite{jackson1999classical,griffiths2005introduction}
 \begin{equation}
     R \equiv \frac{I_r}{I_0} = \left(\frac{n-m}{n+m}\right)^2.
@@ -399,13 +406,6 @@ where $n$ is the index of refraction of air (in our case) and $m$ is our quasi-i
     \label{eq:quasi_index}
 \end{equation}
 
-\begin{figure}[ht]
- \begin{center}
-     \includegraphics[width = 3.5in]{figs/ocean.png}
- \end{center}
- \caption{Diagram showing our simple model of an ocean wave with an incident HF signal interacting with the ocean wave.}
- \label{fig:ocean}
-\end{figure}
 
 Next, we need to determine how much of $R$ we expect given ocean conditions. If we consider a simple model of ocean waves as a square wave with amplitude $A$ and a wavelength $\lambda_s$. Drawing parallel rays of light with an incident angle $\theta$, we can see that the rays of light that travel and reflect off the well of the square wave travel an extra distance of $2d$ (Fig.\ref{fig:ocean}). This leads to a phase factor where the light from one wave can interfere with another by creating a phase shift between light that hits the crest and light that hits the trough. We will define this phase shift as $\phi$ where 
 \begin{equation}
@@ -413,10 +413,10 @@ Next, we need to determine how much of $R$ we expect given ocean conditions. If 
 \end{equation}
 The amplitude difference between the incoming and out-coming light must be proportional to the phase difference between them up to a constant. In other words, $R \propto |1+e^{i\phi}|^2 = 4 \cos^2(\phi/2)$. To find out what the constant of proportionally is between them, we consider a limiting case where we have a single incident photon. At best, we get a perfect reflection. At worst, we have the photon absorbed. Consequently, $R \in [0,1]$. Thus, we have
 \begin{equation}
-    R = \cos^2\left(\frac\phi2\right).
+    R =  \cos^2\left(\frac\phi2\right).
     \label{eq:refl_coef_phi}
 \end{equation}
-By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals.
+By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals. It is important to note, however, that taken together (\ref{eq:refl_coef_phi}) and (\ref{eq:quasi_index}) suggests that $m \le 1$.
 
 % subsubsection curve_fitting (end)
 
@@ -448,7 +448,7 @@ By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index})
 % section results (end)
 
 \section{Conclusion}
-\label{sec: conclusion}
+\label{sec: conclusion} 
 
 \section*{Acknowledgments}
 \label{sec: acknowledge}
@@ -456,7 +456,8 @@ We would like to thank our professors for lending us resources and pointing us i
 
  We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun. \shrug\cite{townsend2000modern} 
 
-
+\section*{Appendix: Constants Used in Code}
+\lstinputlisting[language=Python]{../model/constants.py}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
