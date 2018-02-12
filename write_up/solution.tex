@@ -10,6 +10,7 @@
 \newtheorem{problem}{Problem}
 \numberwithin{equation}{section}
 
+\usepackage{animate}
 \usepackage{siunitx}
 \usepackage{csquotes}
 \usepackage{graphicx}
@@ -85,6 +86,9 @@
     \thispagestyle{empty} %gets rid of page number at bottom 
 
 \begin{abstract}
+    To whom it may concern, \\
+    When reading our solution, we hope that you are can read our document in Adobe Acrobat Reader as we have \texttt{.gif} files that can only play in that PDF reader. Visit \texttt{https://get.adobe.com/reader/} to download if need be.
+
     Hi team, here is what we \emph{need} to have in our report (according to the MCM overlords):
 \begin{itemize}
     \item Restatement and clarification of the problem
@@ -110,11 +114,9 @@ Quickly after its invention in the late 19th century, radio was adopted worldwid
 
 However, the often the catastrophic failures of radio have been a result of not understanding the science behind them. For example, a poor understanding of the Titanic's radio contributed to the deaths of 1,514 passengers and crew from April 14--15, 1912.\cite{noauthor_radio_2011} While much---if not most---of the engineering difficulties of radio have been overcome, some of the fundamental science behind it has not, e.g. ground-wave propagation.\cite{budden1961radio} To avoid other horrendous accidents at sea, such as the Titanic, it's important to have an accurate model of how radio-waves propagate through the atmosphere to determine the maximum distance a signal can travel at sea.
 
-Our task, if we choose to accept it,\footnote{Cue Mission Impossible music: Dun dun dada Dun dun dada Dun dun dada Dun dun dada Dun dun dada Dun dun dada doo de doo doo de doo doo de doo doo do.} is to solve the following three problems:
+Our task, if we choose to accept it,\footnote{Cue the Mission Impossible theme song: Dun Dun Dun da dada Dun dun dun da dada dun dun dun da dada, de da doo de da doo de da doo do dut.} is to solve the following three problems:
 \begin{problem}
- The first problem we are trying to solve is to determine how many times a HF radio-wave can be reflected off of the ocean. The first reflection of the signal is off of a turbulent ocean. We must characterize how the signal strength changes after this first reflection.
-
- After the first reflection, we are looking to characterize how the signal changes as it reflects off of calm oceans before falling below a signal to noise ratio (SNR) of 10\,\si{\dB}.
+ The first problem we are trying to solve is to determine how many times a HF radio-wave can be reflected off of the ocean. The first reflection of the signal is off of a turbulent ocean. We must characterize how the signal strength changes after this first reflection. After the first reflection, we are looking to characterize how the signal changes as it reflects off of calm oceans before falling below a signal to noise ratio (SNR) of 10\,\si{\dB}.
  \label{pr:turb_ocean}
 \end{problem}
 
@@ -134,7 +136,7 @@ Our task, if we choose to accept it,\footnote{Cue Mission Impossible music: Dun 
 
  \begin{figure}[ht]
  \begin{center}
-     \includegraphics[width = 4.25in]{figs/japan.png}
+     \includegraphics[width = 4.55in]{figs/japan.png}
  \end{center}
  \caption{The region we are studying of choice. Japan was chosen due to it being an island surrounded by ocean water and it is a very mountainous and rugged country. Image taken from Google Maps.}
  \label{fig:jap}
@@ -151,10 +153,16 @@ With this in mind, we decided to focus on a region of with a radius of roughly 5
 \section{Model} % (fold)
 \label{sec:model}
 
-To have an accurate model, there are three main components of this model that need to be described. 
-
+To have an accurate model, there are three main components of this model that need to be described. Primarily, we need to be able to describe HF radio-waves and how they change with reflections and gather inherent noise gathered as it travels through a medium. Because our signal reflects off of two different interfaces as it travels---the ocean and the ionosphere---it is important to model each with accurate physical properties. We would like to see how they change with time of day and time of year. 
 \subsection{Radio-waves} % (fold)
 \label{sub:radiowaves}
+
+ \begin{figure}
+     \begin{center}
+        \animategraphics[width=4.25in]{12}{gif/frame-}{0}{99}
+     \end{center}
+     \caption{A test \texttt{.gif} file. Need to use Adobe Acrobat Reader to view. Visit \texttt{https://get.adobe.com/reader/} to download if need be.}
+ \end{figure}
 
 \subsubsection{Noise} % (fold)
 \label{ssub:noise}
@@ -331,7 +339,7 @@ As stated above, at a first approximation, we expect that the electron density, 
  \subsection{Problem I: A Turbulent Ocean} % (fold)
  \label{sub:part_i}
 
- \subsection{Problem II: The Andes Mountains} % (fold)
+ \subsection{Problem II: The Japanese Alps} % (fold)
  \label{sub:part_ii}
  
  \subsection{Problem III: A Message to a Boat} % (fold)
