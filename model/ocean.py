@@ -15,14 +15,7 @@ def getN(R):
 
 #gets pseudo index of refraction as a function of 
 #amplitude (A), ocean wavelength (ls), and radiowave length (lr)
-def output(A, ls, freq): 
-	return getN(getR(getPhi(A,ls,freqToLs(freq))))
+def ocean_index_of_refr(amp_ocean, lambda_ocean, freq_radio): 
+	return getN(getR(getPhi(amp_ocean,lambda_ocean,freqToLs(freq_radio))))
 
-def main():
-	print(output(10,15,10e6))
-	print(freqToLs(3000))
-	print(getPhi(10, 10, 1e5))
-	print(getR(getPhi(10,10,freqToLs(10e6))))
 
-if __name__ == "__main__":
-	main()

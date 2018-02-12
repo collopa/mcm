@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# Authors: cadams@g.hmc.edu, rbarclay@g.hmc.edu, cbecker@g.hmc.edu
 
 import math as math
 
@@ -19,7 +18,7 @@ MW_air = 0.02895 # [Kiloram Mole^-1]
 electron_charge = 1.60217662e-19 #[Coulomb]
 mag_field = 50e-6 #[Tesla]
 epsilon_perm = 8.854187817e-12 #[Farad Meter^-1]
-mu_perm = 4*(math.pi)e-7 # [Henries Meter^-1]
+mu_perm = 4*(math.pi)*10**(-7) # [Henries Meter^-1]
 e_mass = 9.10938356e-31 # kg
 
 ##### Radio #####

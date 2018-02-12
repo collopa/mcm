@@ -10,6 +10,21 @@
 \newtheorem{problem}{Problem}
 \numberwithin{equation}{section}
 
+\usepackage{listings}
+
+\newcommand\pythonstyle{\lstset{
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=tb,                         % Any extra options here
+showstringspaces=false            % 
+}}
+
+
 \usepackage{animate}
 \usepackage{siunitx}
 \usepackage{csquotes}
@@ -49,7 +64,6 @@
 % \affil[2]{Department of Chemistry, Harvey Mudd College \par Claremont, CA 91711}
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%
 \renewcommand{\baselinestretch}{2}
 \newcommand{\shrug}[1][]{%
@@ -81,34 +95,24 @@
 % Title Page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \singlespacing %sets spacing of abstract to single
-    \clearpage 
+    \clearpage
     \maketitle
     \thispagestyle{empty} %gets rid of page number at bottom 
 
-    \noindent To whom it may concern, \vspace{5.5pt}\\
-    %
-    \indent When reading our solution, we hope that you are can read our document in Adobe Acrobat Reader as we have \texttt{.gif} files that can only be played with that PDF reader. Please visit \texttt{https://get.adobe.com/reader/} to download it if need be. 
-
-    We are trying to put our best foot forward and we would appreciate if you receive our work as intended. It is worth it. We promise. Thank you.
-    \vspace{4pt} \\ 
-    Respectfully,\\
-    Team 93463
     \begin{center}
-        \rule{11cm}{0.4pt}  
+        \rule{13cm}{0.4pt}  
     \end{center}
 
-\begin{abstract}
-    Hi team, here is what we \emph{need} to have in our report (according to the MCM overlords):
-\begin{itemize}
-    \item Restatement and clarification of the problem
-    \item Explain assumptions and rationale/justification
-    \item Include your model design and justification
-    \item Describe model testing and sensitivity analysis
-    \item Discuss the strengths and weaknesses
-\end{itemize}
+    \noindent To whom it may concern, \vspace{4pt}\\
+    %
+    \indent When reading our solution, we hope that you are can read it using Adobe Acrobat Reader. This is because we have \texttt{.gif} files that can only be played with that particular PDF reader. Please visit \texttt{https://get.adobe.com/reader/} to download it if necessary. We are trying to put our best foot forward and we would appreciate if you receive our work as intended. We believe it is worth it. Thank you.
+    \vspace{4pt} \\ 
+    Respectfully,\vspace{3pt}\\
+    \indent Team 93463
+    \begin{center}
+        \rule{13cm}{0.4pt}  
+    \end{center}
 
-They also claim to judge the quality of our writing. So remember our good friend Williams. \shrug\cite{townsend2000modern}
-\end{abstract}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -121,7 +125,7 @@ They also claim to judge the quality of our writing. So remember our good friend
 
 Quickly after its invention in the late 19th century, radio was adopted worldwide as the main form of communication for long distances near instantaneously.\cite{hilmes2002radio} When utilized correctly, the radio has accomplished remarkable things. Radios have inspired generations of scientists and tinkerers; they have allowed world-leaders to communicate with their people, soldiers to their brothers-in-arms,\footnote{Yes, we know. This terminology is a little dated.} they have allowed music to spread across cultures, and they have allowed Alex Jones spout gibberish to conspiracy theorists across the United States.\footnote{Enjoy. \texttt{https://youtu.be/aCiVsJ3b160}} 
 
-However, the often the catastrophic failures of radio have been a result of not understanding the science behind them. For example, a poor understanding of the Titanic's radio contributed to the deaths of 1,514 passengers and crew from April 14--15, 1912.\cite{noauthor_radio_2011} While much---if not most---of the engineering difficulties of radio have been overcome, some of the fundamental science behind it has not, e.g. ground-wave propagation.\cite{budden1961radio} To avoid other horrendous accidents at sea, such as the Titanic, it's important to have an accurate model of how radio-waves propagate through the atmosphere to determine the maximum distance a signal can travel at sea.
+However, the often catastrophic failures of radio have been a result of not understanding the science behind them. For example, a poor understanding of the Titanic's radio contributed to the deaths of 1,514 passengers and crew from April 14--15, 1912.\cite{noauthor_radio_2011} While much---if not most---of the engineering difficulties of radio have been overcome, some of the fundamental science behind it has not, e.g. ground-wave propagation.\cite{budden1961radio} To avoid other horrendous accidents at sea, such as the Titanic, it's important to have an accurate model of how radio-waves propagate through the atmosphere to determine the maximum distance a signal can travel at sea.
 
 Our task, if we choose to accept it,\footnote{Cue the \emph{Mission Impossible} theme song: Dun Dun Dun da dada Dun dun dun da dada dun dun dun da dada, de da doo de da doo de da doo do dut.} is to solve the following three problems:
 \begin{problem}
@@ -147,7 +151,7 @@ Our task, if we choose to accept it,\footnote{Cue the \emph{Mission Impossible} 
  \begin{center}
      \includegraphics[width = 4.55in]{figs/japan.png}
  \end{center}
- \caption{The region we are studying of choice. Japan was chosen due to it being an island surrounded by ocean water and it is a very mountainous and rugged country. Image taken from Google Maps.}
+ \caption{The region we are studying. Japan was chosen due to it being a very mountainous and rugged island surrounded by ocean water. Image taken from Google Maps.}
  \label{fig:jap} 
 \end{figure} 
 
@@ -162,16 +166,57 @@ With this in mind, we decided to focus on a region of with a radius of roughly 5
 \section{Model} % (fold)
 \label{sec:model}
 
-To have an accurate model, there are three main components of this model that need to be described. Primarily, we need to be able to describe HF radio-waves and how they change with reflections and gather inherent noise gathered as it travels through a medium. Because our signal reflects off of two different interfaces as it travels---the ocean and the ionosphere---it is important to model each with accurate physical properties. We would like to see how they change with time of day and time of year. 
+To have an accurate model, there are three main components of this model that need to be described. Primarily, we need to be able to describe HF radio-waves and how they change with reflections and gather inherent noise when travelling through a medium. Because our signal reflects off of two different interfaces as it travels---the ocean and the ionosphere---it is important to model each with accurate physical properties. We would like to see how they change with time of day and time of year. 
 \subsection{Radio-waves} % (fold)
 \label{sub:radiowaves}
 
- \begin{figure}
+\subsubsection{Underlying Electromagnetic Theory} % (fold)
+\label{ssub:emtheory}
+
+Any rightful modeling of radio waves begins with Maxwell's Equations. For our purposes, we will only model the electric field component of the radio waves and we will consider a two-dimensional problem wherein the reflected and transmitted waves are in the plane of incidence. Let this electric field component of a single Fourier component of the incident radio wave be given by
+\begin{equation}
+{\bf \tilde{E}}_{I}({\bf r}, t) = {\bf \tilde{E}}_{0_I} e^{i({\bf k}_{I} \cdot {\bf r} - \omega t)}
+\end{equation}
+where ${\bf \tilde{E}}_{0_I}$ is the complex magnitude of the component, $\theta_{I}$ is the angle of incidence to the surface (which will eventually be either ocean or ionosphere), ${\bf k}_{I}$ is the wave vector of the incident component, and $\omega$ is the frequency characterizing this Fourier component.
+\par We then also consider the Law of Reflection (\ref{eq:refl}) and Law of Refraction (\ref{eq:refr}):
+\begin{equation}
+\theta_{I} = \theta_{R}
+\label{eq:refl}
+\end{equation}
+\begin{equation}
+\frac{\sin\theta_{T}}{\sin\theta_{I}} = \frac{n_1}{n_2}
+\label{eq:refr}
+\end{equation}
+where the subscripts $R$ and $T$ refer to reflection and transmission respectively. Using Fresnel's equations \ref{eq:fresnel} for light polarized horizontal to Earth's surface (as this polarization can reach larger distances with less attenuation)
+\begin{equation}
+\tilde{E}_{0_R} = \left( \frac{\alpha - \beta}{\alpha + \beta} \right)\tilde{E}_{0_I}, \qquad 
+\tilde{E}_{0_T} = \left( \frac{2}{\alpha + \beta} \right)\tilde{E}_{0_I}
+\label{eq:fresnel}
+\end{equation}
+along with the angle of incidence $alpha$, average altitude of the ionosphere $h$, height of the transmission tower $z$, index of refraction of the ionosphere and ocean (as a function of incident frequency, time of day, time of year, and roughness of sea), and dielectric constant of air, we can calculate how the signal is attenuated in frequency space. In \ref{eq:fresnel}, $\alpha$ and $\beta$ are given by
+\begin{equation}
+\alpha = \frac{\cos\theta_{T}}{\cos\theta_{I}}, \qquad \beta \approx \frac{n_1}{n_2}
+\end{equation}
+where we have made the approximation that the permeability of all materials involved is approximately the vacuum permeability, which is a solid assumption for most materials.\cite{griffiths2005introduction} 
+\par We also assume that both the ocean and ionosphere are conducting, linear, dispersive media such that a wave reflected has its amplitude attenuated by the term
+\[
+e^{-\kappa z}
+\]
+where $\kappa$, derived from Maxwell's equations for linear, conducting media\cite{griffiths2005introduction}, is given by
+\begin{equation}
+\kappa = \omega \sqrt{\frac{\epsilon\mu}{2}}\left[ \sqrt{1 + \left( \frac{\sigma}{\epsilon\omega} \right)^2} - 1 \right]^{1/2}
+\end{equation}
+where $\sigma$ is the electrical conductivity of air, $\epsilon$ is the permittivity of air, and $\mu$ is the permeability of air.
+\par For a full listing of constants used throughout our modeling, see the Appendix and the file \verb|constants.py|.
+
+ \begin{figure}[ht]
      \begin{center}
         \animategraphics[width=4.25in]{12}{gif/frame-}{0}{99}
      \end{center}
-     \caption{A test \texttt{.gif} file. Click image to see animation. \\\\You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.}
+     \caption{An animation (click to view) of signal decay over the first 30 seconds as it propagates with an incident angle 30 degrees above parallel to Earth’s surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. Please visit \texttt{https://get.adobe.com/reader/} to download.)}
  \end{figure}
+ 
+As an introduction to the results of our modeling, we have produced an animation of signal decay over the first 30 seconds as it propagates toward Los Angeles from Tokyo, with incident angle 30 degrees above parallel to Earth's surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. The signal above has two Fourier components and is not a simple carrier wave. The animation represents signal propagation under ``nice" weather conditions. The addition of noise, though accounted for in our model, is not shown in the animation. 
 
 \subsubsection{Noise} % (fold)
 \label{ssub:noise}
@@ -180,6 +225,13 @@ As radio-waves propagate over a certain distance, we expect them to pick up some
 
 The Central Limit Theorem states that when using independent, random variables\footnote{We are assuming this in our model.} are added together, their properly normalized sums tend toward a normal distribution.\cite{central} So as the radio-wave travels, we add this Gaussian noise to the signal to degrade it as its path length increases. It turns out that this is used quite often in Information Theory, and is called Additive White Gaussian Noise (AWGN).\cite{shannon1984communication,kailath1968innovations}
 
+\begin{figure}[ht]
+ \begin{center}
+     \includegraphics[width = 3.in]{figs/radio_curve.png}
+ \end{center}
+ \caption{A side diagram of how the HF signals travel through the atmosphere.}
+ \label{fig:radio_curve}
+\end{figure}
 % subsubsection noise (end)
 % subsection radiowaves (end)
 
@@ -265,7 +317,7 @@ As stated above, at a first approximation, we expect that the electron density, 
         T(t) = 1 + d(t) + s(t)
         \label{eq:time_dep}
     \end{equation}
-    where $d(t)$ is the ionosphere dependence on the time of day and $s(t)$ is the dependence on the season. From Fig.\ref{fig:struct_ion} we restrict the range of $d(t)$ and $s(t)$, where $d(t) \in [0,1]$ and $s(t) \in [0,4]$, respectively. These range restrictions were chosen as Fig.\ref{fig:struct_ion} demonstrates that seasonal dependence is more important than the time of day by roughly a factor of four. In our model, we input a sawtooth function for both $s(t)$ and $d(t)$ with each function's respective range. At midday, $s(t_{noon}) = 1$ and at midnight $s(t_{mid}) = 0$. Similarly, $d(t_{dec}) = 4$ while $d(t_{jun}) = 0$.\footnote{Since we are focusing our attention near South America, the most intense solar radiation comes in the summer months, which is December for our friends in the Southern Hemisphere.}
+    where $d(t)$ is the ionosphere dependence on the time of day and $s(t)$ is the dependence on the season. From Fig.\ref{fig:struct_ion} we restrict the range of $d(t)$ and $s(t)$, where $d(t) \in [0,1]$ and $s(t) \in [0,4]$, respectively. These range restrictions were chosen as Fig.\ref{fig:struct_ion} demonstrates that seasonal dependence is more important than the time of day by roughly a factor of four. In our model, we input a sawtooth function for both $s(t)$ and $d(t)$ with each function's respective range. At midday, $s(t_{noon}) = 1$ and at midnight $s(t_{mid}) = 0$. Similarly, $d(t_{jun}) = 4$ while $d(t_{dec}) = 0$.
 
     In all, the electron-density as a function of height and time where $\overline N(t,z)$ is given by 
     \begin{align}
@@ -342,16 +394,24 @@ To have the most accurate physical model of the ocean near Japan, we decided to 
 
 Each day, the station recorded the sea surface temperature and salinity multiple times per day. The times at which they took each sample, unfortunately, were not recorded. Because of this, we assumed that the measurements were taken at regular intervals. Using this assumption, we took four averages of the temperature and salinity of the ocean corresponding to times of 2:00\,am, 8:00\,am, 2:00\,pm, and 8:00\,pm each day. 
  
-It turns out that the refractive index for ratio-waves is approximately constant and the reflection coefficient is essentially one.\cite{seawater_index} So there was no temperature or salinity dependence. So that was a huge waste of time on our part.\footnote{sigh.}
+It turns out that the refractive index for ratio-waves is approximately constant and the reflection coefficient is essentially one.\cite{seawater_index} So there was no temperature or salinity dependence. So that was a huge waste of time on our part.\footnote{sigh.} 
 
 
 \subsubsection{Quasi-Index of Refraction of Turbulent Oceans} % (fold)
 \label{ssub:ocean_ind_of_ref}
 We found that ocean waves behave essentially as a mirror with an reflection coefficient of 1, so there is no appreciable index of refraction that is measured.\cite{seawater_index} However, we expect that for very turbulent waters, that the intensity of incident light will decrease as it gets scattered in various directions. Essentially, turbulent waters create a quasi-index of refraction, which we will call $m.$
 
+\begin{figure}[ht]
+ \begin{center}
+     \includegraphics[width = 3.in]{figs/ocean.png}
+ \end{center}
+ \caption{Diagram showing our simple model of an ocean wave with an incident HF signal interacting with the ocean wave.}
+ \label{fig:ocean}
+\end{figure}
+
 When a radio-wave (or any electromagnetic wave for that matter) reflect off of surface with a different index of refraction, we can find the reflection coefficient, $R$, where $R$ is defined to be the ratio of intensity of reflected light to the intensity of incident light. The relationship between $R$ and the two indices of refraction is given by a well known relation\cite{jackson1999classical,griffiths2005introduction}
 \begin{equation}
-    R \equiv \frac{I_r}{I_0} = \left(\frac{n-m}{n+m}\right)^2
+    R \equiv \frac{I_r}{I_0} = \left(\frac{n-m}{n+m}\right)^2.
     \label{eq:refl_coef}
 \end{equation}
 where $n$ is the index of refraction of air (in our case) and $m$ is our quasi-index of refraction for turbulent water. Solving (\ref{eq:refl_coef}) for $m$ we obtain
@@ -360,16 +420,17 @@ where $n$ is the index of refraction of air (in our case) and $m$ is our quasi-i
     \label{eq:quasi_index}
 \end{equation}
 
-Next, we need to determine how much of $R$ we expect given ocean conditions. If we consider a simple model of ocean waves as a square wave with amplitude $A$ and a wavelength $\lambda_s$. Drawing parallel rays of light with an incident angle $\theta$, we can see that the rays of light that travel and reflect off the well of the square wave travel an extra distance of $2d$. This leads to a phase factor where the light from one wave can interfere with another by creating a phase shift between light that hits the crest and light that hits the trough. We will define this phase shift as $\phi$ where 
+
+Next, we need to determine how much of $R$ we expect given ocean conditions. If we consider a simple model of ocean waves as a square wave with amplitude $A$ and a wavelength $\lambda_s$. Drawing parallel rays of light with an incident angle $\theta$, we can see that the rays of light that travel and reflect off the well of the square wave travel an extra distance of $2d$ (Fig.\ref{fig:ocean}). This leads to a phase factor where the light from one wave can interfere with another by creating a phase shift between light that hits the crest and light that hits the trough. We will define this phase shift as $\phi$ where 
 \begin{equation}
-    \phi = \frac{2d}{\lambda} = \frac{2}{\lambda}\sqrt{A^2 + (\lambda_s/4)^2}
+    \phi = \frac{2d}{\lambda} = \frac{2}{\lambda}\sqrt{A^2 + (\lambda_s/4)^2}.
 \end{equation}
 The amplitude difference between the incoming and out-coming light must be proportional to the phase difference between them up to a constant. In other words, $R \propto |1+e^{i\phi}|^2 = 4 \cos^2(\phi/2)$. To find out what the constant of proportionally is between them, we consider a limiting case where we have a single incident photon. At best, we get a perfect reflection. At worst, we have the photon absorbed. Consequently, $R \in [0,1]$. Thus, we have
 \begin{equation}
-    R = \cos^2\left(\frac\phi2\right)
+    R =  \cos^2\left(\frac\phi2\right).
     \label{eq:refl_coef_phi}
 \end{equation}
-By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}).
+By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals (See \ref{sub:implementation}). It is important to note, however, that taken together (\ref{eq:refl_coef_phi}) and (\ref{eq:quasi_index}) suggests that $m \le 1$. For physical refractive indices, this does not make sense. However, since we have a ``quasi-refractive index,'' we are not necessarily bound by the same conditions. Consequently, this is still meaningful and useful in our model.
 
 % subsubsection curve_fitting (end)
 
@@ -378,33 +439,50 @@ By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index})
 
 % section model (end)
 
+\subsection{Implementation in Python and Matlab}
+\label{sub:implementation}
+
+
 \section{Results} % (fold)
 \label{sec:results}
 
- \subsection{Problem I: A Turbulent Ocean} % (fold)
+ \subsection{Problem 1: A Turbulent Ocean} % (fold)
  \label{sub:part_i}
 
- \subsection{Problem II: The Japanese Alps} % (fold)
+ \subsection{Problem 2: The Japanese Alps} % (fold)
  \label{sub:part_ii}
- West and southwest of Tokyo, Japan, there is an extensive mountain range called the Japanese Alps. This mountain range is perfect for testing how rugged, mountainous terrain affect the integrity of a signal as compared to smooth terrain or ocean.
+ West and southwest of Tokyo, Japan, there is an extensive mountain range called the Japanese Alps. This mountain range is perfect for testing how rugged, mountainous terrain affect the integrity of a signal as compared to smooth terrain or ocean. In fact, both Problem \ref{pr:turb_ocean} and Problem \ref{pr:mount} can be folded into the same problem. In reference to Section \ref{sub:implementation}, the only thing that would change in our model would be the index of refraction and the quasi-index of refraction. We would map a turbulent ocean (See Section \ref{sub:the_ocean}) to  a``rugged, mountainous terrain.'' This would require us to find a new refractive index for land rather than sea.
 
- \subsection{Problem III: A Message to a Boat} % (fold)
+ Unfortunately, as you may have seen coming, we did not have enough time to search for literature values of an index of refraction for terrestrial mediums for HF signals. However, we expect\footnote{Although we are almost certain that we are missing some subtleties that we likely could have worked out if we had more time. }  that the results would identical to the turbulent ocean as a first approximation. Terrestrial mediums are better absorbers of HF waves that ocean. Because of this, we would expect there to be fewer hops than we saw in Section \ref{sub:part_i}.
+
+ \subsection{Problem 3: A Message to a Boat} % (fold)
  \label{sub:part_iii}
  
- % subsection part_iii (end)
- % subsection part_ii (end)
- 
- % subsection part_i (end)
-% section results (end)
+ Unfortunately, we did not have enough time to try and tackle Problem \ref{pr:boat} as part of our model. However, our basic approach would be to try and account for a moving target---which will inherently have a Doppler shift of the signal.\cite{taylor2005classical} It is unclear how much the boat's speed will integrity of the signal as the boat's velocity, $v$, will be significantly slower\footnote{At least for every boat I've ever seen.} than the speed of light, $c$, i.e. $v\ll c$. If this condition is met, then we often would expect a negligible Doppler shift in both the receiving and transmission of a signal.
+
+ If this is the case, then we would expect the largest distortion of our signal to come from the turbulent waters that the boat is apart of. This would be addressed almost identically as it was in Section \ref{sub:the_ocean}. 
 
 \section{Conclusion}
-\label{sec: conclusion}
+\label{sec:conclusion}
+
+Using simple models for both the ionosphere and the ocean, we were successfully able to model how many times a 100\,\si{\watt} HF signal could be skip off of the ocean and ionosphere before the signal integrity decays and the messages original meaning was lost. We found it can skip off the ionosphere and ocean eight times each before signal loss. Presumably, our model can be readily applied to terrestrial mediums by changing the relative indices and quasi-indices of refraction for our new medium. Although we did not have time to solve, because boats tend to travel at a velocity $v$ that is much less than the speed of light, will likely only have signal distortion from the turbulent waters rather than any sort of Doppler shift. 
+
+\subsection{Analysis} % (fold)
+\label{sub:analysis}
+    RACHEL: YOU NEED TO LOOK AT SECTION 4 OF \texttt{http://www.comap.com/undergraduate/contests/mcm/instructions.php}
+
+
+% subsection analysis (end)
 
 \section*{Acknowledgments}
-\label{sec: acknowledge}
+\label{sec:acknowledge}
 We would like to thank our professors for lending us resources and pointing us in the direction of others. Additionally, we would also like to thank the beautiful community of StackExchange for teaching us everything we could ever need to know when we have questions we can't solve ourselves. 
 
+ We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun or sleep deprived. \shrug\cite{townsend2000modern} 
 
+\newpage
+\section*{Appendix: Constants Used in Code}
+\lstinputlisting[language=Python]{../model/constants.py}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

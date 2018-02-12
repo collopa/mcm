@@ -11,45 +11,45 @@ Warning--empty journal in seawater_index
 Warning--empty year in seawater_index
 Warning--empty year in seawater_index
 Warning--empty journal in maus2010us
-You've used 18 entries,
+You've used 19 entries,
             2773 wiz_defined-function locations,
-            684 strings with 7212 characters,
-and the built_in function-call counts, 5827 in all, are:
-= -- 489
-> -- 217
-< -- 14
-+ -- 85
-- -- 66
-* -- 381
-:= -- 873
-add.period$ -- 47
-call.type$ -- 18
-change.case$ -- 72
-chr.to.int$ -- 17
-cite$ -- 47
-duplicate$ -- 332
-empty$ -- 604
-format.name$ -- 83
-if$ -- 1232
+            687 strings with 7264 characters,
+and the built_in function-call counts, 6119 in all, are:
+= -- 511
+> -- 227
+< -- 15
++ -- 89
+- -- 69
+* -- 396
+:= -- 921
+add.period$ -- 50
+call.type$ -- 19
+change.case$ -- 75
+chr.to.int$ -- 18
+cite$ -- 49
+duplicate$ -- 352
+empty$ -- 636
+format.name$ -- 87
+if$ -- 1293
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 18
-newline$ -- 91
-num.names$ -- 60
-pop$ -- 210
+missing$ -- 20
+newline$ -- 96
+num.names$ -- 64
+pop$ -- 222
 preamble$ -- 1
-purify$ -- 58
+purify$ -- 61
 quote$ -- 0
-skip$ -- 236
+skip$ -- 248
 stack$ -- 0
-substring$ -- 110
-swap$ -- 20
+substring$ -- 112
+swap$ -- 21
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 173
+type$ -- 179
 warning$ -- 8
-while$ -- 51
+while$ -- 54
 width$ -- 0
-write$ -- 211
+write$ -- 223
 (There were 8 warnings)
