@@ -142,6 +142,12 @@ INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstmisc.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/listings/listings.cfg
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/animate/animate.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/animate/animate.sty
 INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty
@@ -479,6 +485,13 @@ INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm0900.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm0600.tfm
 INPUT /usr/local/texlive/2015/texmf-dist/fonts/tfm/jknappen/ec/tcrm0500.tfm
 INPUT figs/ocean.png
+INPUT ../model/constants.py
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/listings/lstlang1.sty
+INPUT ../model/constants.py
+INPUT ../model/constants.py
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
+INPUT /usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 INPUT solution.bbl
 INPUT solution.bbl
 INPUT solution.aux

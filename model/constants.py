@@ -1,5 +1,4 @@
 #!/usr/bin/python
-# Authors: cadams@g.hmc.edu, rbarclay@g.hmc.edu, cbecker@g.hmc.edu
 
 import math as math
 
