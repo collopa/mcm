@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 07:31
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 13:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1046,279 +1046,259 @@ Package lastpage Info: Please have a look at the pageslts package at
 ]
 File: figs/japan.png Graphic file (type QTm)
  <use  "figs/japan.png" > [1] [2]
-
-LaTeX Warning: Reference `eq:refl' on page 3 undefined on input line 181.
-
-
-LaTeX Warning: Reference `eq:refr' on page 3 undefined on input line 181.
-
-
-LaTeX Warning: Reference `eq:fresnel' on page 3 undefined on input line 190.
-
-
-LaTeX Warning: Reference `eq:fresnel' on page 3 undefined on input line 196.
-
-
-Package natbib Warning: Citation `griffiths2005' on page 3 undefined on input l
-ine 200.
-
-
-Package natbib Warning: Citation `griffiths2005' on page 3 undefined on input l
-ine 205.
-
 File: gif/frame-0.png Graphic file (type QTm)
-<use  "gif/frame-0.png" >
+ <use  "gif/frame-0.png" >
 File: gif/frame-1.png Graphic file (type QTm)
- <use  "gif/frame-1.png" >
+
+<use  "gif/frame-1.png" >
 File: gif/frame-2.png Graphic file (type QTm)
  <use  "gif/frame-2.png" >
 File: gif/frame-3.png Graphic file (type QTm)
-
-<use  "gif/frame-3.png" >
+ <use  "gif/frame-3.png" >
 File: gif/frame-4.png Graphic file (type QTm)
- <use  "gif/frame-4.png" >
+
+<use  "gif/frame-4.png" >
 File: gif/frame-5.png Graphic file (type QTm)
  <use  "gif/frame-5.png" >
 File: gif/frame-6.png Graphic file (type QTm)
-
-<use  "gif/frame-6.png" >
+ <use  "gif/frame-6.png" >
 File: gif/frame-7.png Graphic file (type QTm)
- <use  "gif/frame-7.png" >
+
+<use  "gif/frame-7.png" >
 File: gif/frame-8.png Graphic file (type QTm)
  <use  "gif/frame-8.png" >
 File: gif/frame-9.png Graphic file (type QTm)
-
-<use  "gif/frame-9.png" >
+ <use  "gif/frame-9.png" >
 File: gif/frame-10.png Graphic file (type QTm)
- <use  "gif/frame-10.png" >
+
+<use  "gif/frame-10.png" >
 File: gif/frame-11.png Graphic file (type QTm)
-
-<use  "gif/frame-11.png" >
+ <use  "gif/frame-11.png" >
 File: gif/frame-12.png Graphic file (type QTm)
- <use  "gif/frame-12.png" >
+
+<use  "gif/frame-12.png" >
 File: gif/frame-13.png Graphic file (type QTm)
-
-<use  "gif/frame-13.png" >
+ <use  "gif/frame-13.png" >
 File: gif/frame-14.png Graphic file (type QTm)
- <use  "gif/frame-14.png" >
+
+<use  "gif/frame-14.png" >
 File: gif/frame-15.png Graphic file (type QTm)
-
-<use  "gif/frame-15.png" >
+ <use  "gif/frame-15.png" >
 File: gif/frame-16.png Graphic file (type QTm)
- <use  "gif/frame-16.png" >
+
+<use  "gif/frame-16.png" >
 File: gif/frame-17.png Graphic file (type QTm)
-
-<use  "gif/frame-17.png" >
+ <use  "gif/frame-17.png" >
 File: gif/frame-18.png Graphic file (type QTm)
- <use  "gif/frame-18.png" >
+
+<use  "gif/frame-18.png" >
 File: gif/frame-19.png Graphic file (type QTm)
-
-<use  "gif/frame-19.png" >
+ <use  "gif/frame-19.png" >
 File: gif/frame-20.png Graphic file (type QTm)
- <use  "gif/frame-20.png" >
+
+<use  "gif/frame-20.png" >
 File: gif/frame-21.png Graphic file (type QTm)
-
-<use  "gif/frame-21.png" >
+ <use  "gif/frame-21.png" >
 File: gif/frame-22.png Graphic file (type QTm)
- <use  "gif/frame-22.png" >
+
+<use  "gif/frame-22.png" >
 File: gif/frame-23.png Graphic file (type QTm)
-
-<use  "gif/frame-23.png" >
+ <use  "gif/frame-23.png" >
 File: gif/frame-24.png Graphic file (type QTm)
- <use  "gif/frame-24.png" >
+
+<use  "gif/frame-24.png" >
 File: gif/frame-25.png Graphic file (type QTm)
-
-<use  "gif/frame-25.png" >
+ <use  "gif/frame-25.png" >
 File: gif/frame-26.png Graphic file (type QTm)
- <use  "gif/frame-26.png" >
+
+<use  "gif/frame-26.png" >
 File: gif/frame-27.png Graphic file (type QTm)
-
-<use  "gif/frame-27.png" >
+ <use  "gif/frame-27.png" >
 File: gif/frame-28.png Graphic file (type QTm)
- <use  "gif/frame-28.png" >
+
+<use  "gif/frame-28.png" >
 File: gif/frame-29.png Graphic file (type QTm)
-
-<use  "gif/frame-29.png" >
+ <use  "gif/frame-29.png" >
 File: gif/frame-30.png Graphic file (type QTm)
- <use  "gif/frame-30.png" >
+
+<use  "gif/frame-30.png" >
 File: gif/frame-31.png Graphic file (type QTm)
-
-<use  "gif/frame-31.png" >
+ <use  "gif/frame-31.png" >
 File: gif/frame-32.png Graphic file (type QTm)
- <use  "gif/frame-32.png" >
+
+<use  "gif/frame-32.png" >
 File: gif/frame-33.png Graphic file (type QTm)
-
-<use  "gif/frame-33.png" >
+ <use  "gif/frame-33.png" >
 File: gif/frame-34.png Graphic file (type QTm)
- <use  "gif/frame-34.png" >
+
+<use  "gif/frame-34.png" >
 File: gif/frame-35.png Graphic file (type QTm)
-
-<use  "gif/frame-35.png" >
+ <use  "gif/frame-35.png" >
 File: gif/frame-36.png Graphic file (type QTm)
- <use  "gif/frame-36.png" >
+
+<use  "gif/frame-36.png" >
 File: gif/frame-37.png Graphic file (type QTm)
-
-<use  "gif/frame-37.png" >
+ <use  "gif/frame-37.png" >
 File: gif/frame-38.png Graphic file (type QTm)
- <use  "gif/frame-38.png" >
+
+<use  "gif/frame-38.png" >
 File: gif/frame-39.png Graphic file (type QTm)
-
-<use  "gif/frame-39.png" >
+ <use  "gif/frame-39.png" >
 File: gif/frame-40.png Graphic file (type QTm)
- <use  "gif/frame-40.png" >
+
+<use  "gif/frame-40.png" >
 File: gif/frame-41.png Graphic file (type QTm)
-
-<use  "gif/frame-41.png" >
+ <use  "gif/frame-41.png" >
 File: gif/frame-42.png Graphic file (type QTm)
- <use  "gif/frame-42.png" >
+
+<use  "gif/frame-42.png" >
 File: gif/frame-43.png Graphic file (type QTm)
-
-<use  "gif/frame-43.png" >
+ <use  "gif/frame-43.png" >
 File: gif/frame-44.png Graphic file (type QTm)
- <use  "gif/frame-44.png" >
+
+<use  "gif/frame-44.png" >
 File: gif/frame-45.png Graphic file (type QTm)
-
-<use  "gif/frame-45.png" >
+ <use  "gif/frame-45.png" >
 File: gif/frame-46.png Graphic file (type QTm)
- <use  "gif/frame-46.png" >
+
+<use  "gif/frame-46.png" >
 File: gif/frame-47.png Graphic file (type QTm)
-
-<use  "gif/frame-47.png" >
+ <use  "gif/frame-47.png" >
 File: gif/frame-48.png Graphic file (type QTm)
- <use  "gif/frame-48.png" >
+
+<use  "gif/frame-48.png" >
 File: gif/frame-49.png Graphic file (type QTm)
-
-<use  "gif/frame-49.png" >
+ <use  "gif/frame-49.png" >
 File: gif/frame-50.png Graphic file (type QTm)
- <use  "gif/frame-50.png" >
+
+<use  "gif/frame-50.png" >
 File: gif/frame-51.png Graphic file (type QTm)
-
-<use  "gif/frame-51.png" >
+ <use  "gif/frame-51.png" >
 File: gif/frame-52.png Graphic file (type QTm)
- <use  "gif/frame-52.png" >
+
+<use  "gif/frame-52.png" >
 File: gif/frame-53.png Graphic file (type QTm)
-
-<use  "gif/frame-53.png" >
+ <use  "gif/frame-53.png" >
 File: gif/frame-54.png Graphic file (type QTm)
- <use  "gif/frame-54.png" >
+
+<use  "gif/frame-54.png" >
 File: gif/frame-55.png Graphic file (type QTm)
-
-<use  "gif/frame-55.png" >
+ <use  "gif/frame-55.png" >
 File: gif/frame-56.png Graphic file (type QTm)
- <use  "gif/frame-56.png" >
+
+<use  "gif/frame-56.png" >
 File: gif/frame-57.png Graphic file (type QTm)
-
-<use  "gif/frame-57.png" >
+ <use  "gif/frame-57.png" >
 File: gif/frame-58.png Graphic file (type QTm)
- <use  "gif/frame-58.png" >
+
+<use  "gif/frame-58.png" >
 File: gif/frame-59.png Graphic file (type QTm)
-
-<use  "gif/frame-59.png" >
+ <use  "gif/frame-59.png" >
 File: gif/frame-60.png Graphic file (type QTm)
- <use  "gif/frame-60.png" >
+
+<use  "gif/frame-60.png" >
 File: gif/frame-61.png Graphic file (type QTm)
-
-<use  "gif/frame-61.png" >
+ <use  "gif/frame-61.png" >
 File: gif/frame-62.png Graphic file (type QTm)
- <use  "gif/frame-62.png" >
+
+<use  "gif/frame-62.png" >
 File: gif/frame-63.png Graphic file (type QTm)
-
-<use  "gif/frame-63.png" >
+ <use  "gif/frame-63.png" >
 File: gif/frame-64.png Graphic file (type QTm)
- <use  "gif/frame-64.png" >
+
+<use  "gif/frame-64.png" >
 File: gif/frame-65.png Graphic file (type QTm)
-
-<use  "gif/frame-65.png" >
+ <use  "gif/frame-65.png" >
 File: gif/frame-66.png Graphic file (type QTm)
- <use  "gif/frame-66.png" >
+
+<use  "gif/frame-66.png" >
 File: gif/frame-67.png Graphic file (type QTm)
-
-<use  "gif/frame-67.png" >
+ <use  "gif/frame-67.png" >
 File: gif/frame-68.png Graphic file (type QTm)
- <use  "gif/frame-68.png" >
+
+<use  "gif/frame-68.png" >
 File: gif/frame-69.png Graphic file (type QTm)
-
-<use  "gif/frame-69.png" >
+ <use  "gif/frame-69.png" >
 File: gif/frame-70.png Graphic file (type QTm)
- <use  "gif/frame-70.png" >
+
+<use  "gif/frame-70.png" >
 File: gif/frame-71.png Graphic file (type QTm)
-
-<use  "gif/frame-71.png" >
+ <use  "gif/frame-71.png" >
 File: gif/frame-72.png Graphic file (type QTm)
- <use  "gif/frame-72.png" >
+
+<use  "gif/frame-72.png" >
 File: gif/frame-73.png Graphic file (type QTm)
-
-<use  "gif/frame-73.png" >
+ <use  "gif/frame-73.png" >
 File: gif/frame-74.png Graphic file (type QTm)
- <use  "gif/frame-74.png" >
+
+<use  "gif/frame-74.png" >
 File: gif/frame-75.png Graphic file (type QTm)
-
-<use  "gif/frame-75.png" >
+ <use  "gif/frame-75.png" >
 File: gif/frame-76.png Graphic file (type QTm)
- <use  "gif/frame-76.png" >
+
+<use  "gif/frame-76.png" >
 File: gif/frame-77.png Graphic file (type QTm)
-
-<use  "gif/frame-77.png" >
+ <use  "gif/frame-77.png" >
 File: gif/frame-78.png Graphic file (type QTm)
- <use  "gif/frame-78.png" >
+
+<use  "gif/frame-78.png" >
 File: gif/frame-79.png Graphic file (type QTm)
-
-<use  "gif/frame-79.png" >
+ <use  "gif/frame-79.png" >
 File: gif/frame-80.png Graphic file (type QTm)
- <use  "gif/frame-80.png" >
+
+<use  "gif/frame-80.png" >
 File: gif/frame-81.png Graphic file (type QTm)
-
-<use  "gif/frame-81.png" >
+ <use  "gif/frame-81.png" >
 File: gif/frame-82.png Graphic file (type QTm)
- <use  "gif/frame-82.png" >
+
+<use  "gif/frame-82.png" >
 File: gif/frame-83.png Graphic file (type QTm)
-
-<use  "gif/frame-83.png" >
+ <use  "gif/frame-83.png" >
 File: gif/frame-84.png Graphic file (type QTm)
- <use  "gif/frame-84.png" >
+
+<use  "gif/frame-84.png" >
 File: gif/frame-85.png Graphic file (type QTm)
-
-<use  "gif/frame-85.png" >
+ <use  "gif/frame-85.png" >
 File: gif/frame-86.png Graphic file (type QTm)
- <use  "gif/frame-86.png" >
+
+<use  "gif/frame-86.png" >
 File: gif/frame-87.png Graphic file (type QTm)
-
-<use  "gif/frame-87.png" >
+ <use  "gif/frame-87.png" >
 File: gif/frame-88.png Graphic file (type QTm)
- <use  "gif/frame-88.png" >
+
+<use  "gif/frame-88.png" >
 File: gif/frame-89.png Graphic file (type QTm)
-
-<use  "gif/frame-89.png" >
+ <use  "gif/frame-89.png" >
 File: gif/frame-90.png Graphic file (type QTm)
- <use  "gif/frame-90.png" >
+
+<use  "gif/frame-90.png" >
 File: gif/frame-91.png Graphic file (type QTm)
-
-<use  "gif/frame-91.png" >
+ <use  "gif/frame-91.png" >
 File: gif/frame-92.png Graphic file (type QTm)
- <use  "gif/frame-92.png" >
+
+<use  "gif/frame-92.png" >
 File: gif/frame-93.png Graphic file (type QTm)
-
-<use  "gif/frame-93.png" >
+ <use  "gif/frame-93.png" >
 File: gif/frame-94.png Graphic file (type QTm)
- <use  "gif/frame-94.png" >
+
+<use  "gif/frame-94.png" >
 File: gif/frame-95.png Graphic file (type QTm)
-
-<use  "gif/frame-95.png" >
+ <use  "gif/frame-95.png" >
 File: gif/frame-96.png Graphic file (type QTm)
- <use  "gif/frame-96.png" >
+
+<use  "gif/frame-96.png" >
 File: gif/frame-97.png Graphic file (type QTm)
-
-<use  "gif/frame-97.png" >
+ <use  "gif/frame-97.png" >
 File: gif/frame-98.png Graphic file (type QTm)
- <use  "gif/frame-98.png" >
+
+<use  "gif/frame-98.png" >
 File: gif/frame-99.png Graphic file (type QTm)
-
-<use  "gif/frame-99.png" > [3]
+ <use  "gif/frame-99.png" > [3]
 File: figs/radio_curve.png Graphic file (type QTm)
- <use  "figs/radio_curve.png" > [4]
-File: figs/structure_iono.png Graphic file (type QTm)
 
-<use  "figs/structure_iono.png" >
+<use  "figs/radio_curve.png" > [4]
+File: figs/structure_iono.png Graphic file (type QTm)
+ <use  "figs/structure_iono.png" >
 Overfull \hbox (26.01614pt too wide) in paragraph at lines 253--254
 [][] 
  []
@@ -1366,30 +1346,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 47--51
 See also:
  []
 
-)
-
-Package natbib Warning: There were undefined citations.
-
-
+) 
 AED: lastpage setting LastPage
 Package atenddvi Info: Last page = 16.
 [15]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 479.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 479.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 485.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 485.
  (./solution.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 479.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 479.
-
-
-LaTeX Warning: There were undefined references.
-
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 479.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 485.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 485.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 485.
  ) 
 Here is how much of TeX's memory you used:
- 26838 strings out of 493706
- 538436 string characters out of 6145769
- 716912 words of memory out of 5000000
- 29679 multiletter control sequences out of 15000+600000
+ 26835 strings out of 493706
+ 538414 string characters out of 6145769
+ 716849 words of memory out of 5000000
+ 29676 multiletter control sequences out of 15000+600000
  16439 words of font info for 59 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  55i,13n,61p,10396b,1717s stack positions out of 5000i,500n,10000p,200000b,80000s

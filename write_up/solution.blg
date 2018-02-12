@@ -3,7 +3,6 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: solution.aux
 The style file: plainnat.bst
 Database file #1: solution.bib
-Warning--I didn't find a database entry for "griffiths2005"
 Warning--to sort, need author or key in noauthor_radio_2011
 Warning--to sort, need author or key in mcm_statement
 Warning--to sort, need author or key in noauthor_tracking_nodate
@@ -14,7 +13,7 @@ Warning--empty year in seawater_index
 Warning--empty journal in maus2010us
 You've used 18 entries,
             2773 wiz_defined-function locations,
-            685 strings with 7225 characters,
+            684 strings with 7212 characters,
 and the built_in function-call counts, 5827 in all, are:
 = -- 489
 > -- 217
@@ -53,4 +52,4 @@ warning$ -- 8
 while$ -- 51
 width$ -- 0
 write$ -- 211
-(There were 9 warnings)
+(There were 8 warnings)

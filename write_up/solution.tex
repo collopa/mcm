@@ -178,31 +178,31 @@ Any rightful modeling of radio waves begins with Maxwell's Equations. For our pu
 {\bf \tilde{E}}_{I}({\bf r}, t) = {\bf \tilde{E}}_{0_I} e^{i({\bf k}_{I} \cdot {\bf r} - \omega t)}
 \end{equation}
 where ${\bf \tilde{E}}_{0_I}$ is the complex magnitude of the component, $\theta_{I}$ is the angle of incidence to the surface (which will eventually be either ocean or ionosphere), ${\bf k}_{I}$ is the wave vector of the incident component, and $\omega$ is the frequency characterizing this Fourier component.
-\par We then also consider the Law of Reflection \ref{eq:refl} and Law of Refraction \ref{eq:refr}:
+\par We then also consider the Law of Reflection (\ref{eq:refl}) and Law of Refraction (\ref{eq:refr}):
 \begin{equation}
 \theta_{I} = \theta_{R}
-\label{refl}
+\label{eq:refl}
 \end{equation}
 \begin{equation}
 \frac{\sin\theta_{T}}{\sin\theta_{I}} = \frac{n_1}{n_2}
-\label{refr}
+\label{eq:refr}
 \end{equation}
 where the subscripts $R$ and $T$ refer to reflection and transmission respectively. Using Fresnel's equations \ref{eq:fresnel} for light polarized horizontal to Earth's surface (as this polarization can reach larger distances with less attenuation)
 \begin{equation}
 \tilde{E}_{0_R} = \left( \frac{\alpha - \beta}{\alpha + \beta} \right)\tilde{E}_{0_I}, \qquad 
 \tilde{E}_{0_T} = \left( \frac{2}{\alpha + \beta} \right)\tilde{E}_{0_I}
-\label{fresnel}
+\label{eq:fresnel}
 \end{equation}
 along with the angle of incidence $alpha$, average altitude of the ionosphere $h$, height of the transmission tower $z$, index of refraction of the ionosphere and ocean (as a function of incident frequency, time of day, time of year, and roughness of sea), and dielectric constant of air, we can calculate how the signal is attenuated in frequency space. In \ref{eq:fresnel}, $\alpha$ and $\beta$ are given by
 \begin{equation}
 \alpha = \frac{\cos\theta_{T}}{\cos\theta_{I}}, \qquad \beta \approx \frac{n_1}{n_2}
 \end{equation}
-where we have made the approximation that the permeability of all materials involved is approximately the vacuum permeability, which is a solid assumption for most materials\cite{griffiths2005}. 
+where we have made the approximation that the permeability of all materials involved is approximately the vacuum permeability, which is a solid assumption for most materials.\cite{griffiths2005introduction} 
 \par We also assume that both the ocean and ionosphere are conducting, linear, dispersive media such that a wave reflected has its amplitude attenuated by the term
 \[
 e^{-\kappa z}
 \]
-where $\kappa$, derived from Maxwell's equations for linear, conducting media\cite{griffiths2005}, is given by
+where $\kappa$, derived from Maxwell's equations for linear, conducting media\cite{griffiths2005introduction}, is given by
 \begin{equation}
 \kappa = \omega \sqrt{\frac{\epsilon\mu}{2}}\left[ \sqrt{1 + \left( \frac{\sigma}{\epsilon\omega} \right)^2} - 1 \right]^{1/2}
 \end{equation}
@@ -459,11 +459,17 @@ By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index})
 \section{Conclusion}
 \label{sec:conclusion} 
 
+\subsection{Analysis} % (fold)
+\label{sub:analysis}
+
+
+% subsection analysis (end)
+
 \section*{Acknowledgments}
 \label{sec:acknowledge}
 We would like to thank our professors for lending us resources and pointing us in the direction of others. Additionally, we would also like to thank the beautiful community of StackExchange for teaching us everything we could ever need to know when we have questions we can't solve ourselves. 
 
- We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun. \shrug\cite{townsend2000modern} 
+ We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun or sleep deprived. \shrug\cite{townsend2000modern} 
 
 \newpage
 \section*{Appendix: Constants Used in Code}
