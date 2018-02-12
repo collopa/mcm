@@ -1,4 +1,4 @@
-\begin{thebibliography}{17}
+\begin{thebibliography}{18}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -74,6 +74,11 @@ Thomas Kailath.
   filtering in additive white noise.
 \newblock \emph{IEEE transactions on automatic control}, 13\penalty0
   (6):\penalty0 646--655, 1968.
+
+\bibitem[Larry K.~Lepley()]{seawater_index}
+William M.~Adams Larry K.~Lepley.
+\newblock Reflectivity of electromagnetic waves at an air-water interface for
+  pure and sea water.
 
 \bibitem[Maus et~al.(2010)Maus, Macmillan, McLean, Hamilton, Thomson, Nair, and
   Rollins]{maus2010us}
