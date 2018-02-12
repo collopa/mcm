@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 00:20
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 02:05
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1313,17 +1313,17 @@ See also:
 AED: lastpage setting LastPage
 Package atenddvi Info: Last page = 11.
 [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 416.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 416.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 418.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 418.
  (./solution.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 416.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 416.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 416.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 418.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 418.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 418.
  ) 
 Here is how much of TeX's memory you used:
  25437 strings out of 493706
  518375 string characters out of 6145769
- 695013 words of memory out of 5000000
+ 695014 words of memory out of 5000000
  28301 multiletter control sequences out of 15000+600000
  17953 words of font info for 65 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191

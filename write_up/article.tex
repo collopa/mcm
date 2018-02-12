@@ -1,0 +1,226 @@
+\documentclass[11pt]{article}
+\usepackage[super,square,comma]{natbib}
+\usepackage[letterpaper, left = 0.45in, right = 0.45 in, bottom = 0.45in, top = 0.7in]{geometry}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage[inline, shortlabels]{enumitem}
+\usepackage{amsmath}
+\newtheorem{problem}{Problem}
+\numberwithin{equation}{section}
+
+\usepackage{animate}
+\usepackage{siunitx}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{authblk}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subcaption}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Team 93463}
+\chead{\textsc{Multi-hop, HF Radio Propagation Near Japan}}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+
+\usepackage{lastpage}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\newcommand{\cn}{$^{\text{[citation needed]}}$} %citation needed
+
+% %%% Title Page Author Stuff %%%
+% \renewcommand*{\Authsep}{, }
+% \renewcommand*{\Authand}{, }
+% \renewcommand*{\Authands}{, }
+% \renewcommand*{\Affilfont}{\normalsize\normalfont}
+% % \renewcommand*{\Authfont}{\bfseries}    % make author names boldface    
+% \setlength{\affilsep}{1em}   % set the space between author and affiliation
+
+% \newsavebox\affbox
+
+% \author[1]{Colin M. Adams}
+% \author[1]{Rachel L. Barcklay}
+% \author[1,2]{Carla J. Becker}
+% \affil[1]{%
+%   \savebox\affbox{\Affilfont Department of Physics, Harvey Mudd College}%
+%   \parbox[t]{\wd\affbox}{\protect\centering Department of Physics, Harvey Mudd College}} 
+% \affil[2]{Department of Chemistry, Harvey Mudd College \par Claremont, CA 91711}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\baselinestretch}{2}
+\newcommand{\shrug}[1][]{%
+\begin{tikzpicture}[baseline,x=0.8\ht\strutbox,y=0.8\ht\strutbox,line width=0.125ex,#1]
+\def\arm{(-2.5,0.95) to (-2,0.95) (-1.9,1) to (-1.5,0) (-1.35,0) to (-0.8,0)};
+\draw \arm;
+\draw[xscale=-1] \arm;
+\def\headpart{(0.6,0) arc[start angle=-40, end angle=40,x radius=0.6,y radius=0.8]};
+\draw \headpart;
+\draw[xscale=-1] \headpart;
+\def\eye{(-0.075,0.15) .. controls (0.02,0) .. (0.075,-0.15)};
+\draw[shift={(-0.3,0.8)}] \eye;
+\draw[shift={(0,0.85)}] \eye;
+% draw mouth
+\draw (-0.1,0.2) to [out=15,in=-100] (0.4,0.95); 
+\end{tikzpicture}}
+
+
+\title{
+    \textsc{{Multi-hop, High-Frequency Radio Propagation Near Japan}}
+    }
+
+\author{\Large Team 93463}
+\date{\today}
+        
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \singlespacing %sets spacing of abstract to single
+    \clearpage 
+    \maketitle
+    \thispagestyle{empty} %gets rid of page number at bottom 
+
+    \noindent To whom it may concern, \vspace{4pt}\\
+    %
+    \indent When reading our solution, we hope that you are can read our document in Adobe Acrobat Reader as we have \texttt{.gif} files that can only be played with that particular PDF reader. Please visit \texttt{https://get.adobe.com/reader/} to download it if need be. 
+
+    We are trying to put our best foot forward and we would appreciate if you receive our work as intended. It is worth it. We promise. Thank you.
+    \vspace{4pt} \\ 
+    Respectfully,\\
+    Team 93463
+    \begin{center}
+        \rule{13cm}{0.4pt}  
+    \end{center}
+
+\begin{abstract}
+    We modeled high frequency radio-waves and their interactions with the ionosphere, turbulent and calm ocean, and smooth and rugged terrain. We did this to 
+    \\\\
+    Hi team, here is what we \emph{need} to have in our report (according to the MCM overlords):
+\begin{itemize}
+    \item Restatement and clarification of the problem
+    \item Explain assumptions and rationale/justification
+    \item Include your model design and justification
+    \item Describe model testing and sensitivity analysis
+    \item Discuss the strengths and weaknesses
+\end{itemize}
+
+They also claim to judge the quality of our writing. So remember our good friend Williams. \shrug\cite{townsend2000modern}
+\end{abstract}
+\newpage
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{page}{1} %set new page number to 1
+\twocolumn 
+
+% section motivation (end)
+
+\section{Introduction} 
+\label{sec: intro} 
+
+High frequency (HF) radio-waves (defined as 3--30\,\si{\mega\hertz}) can travel through the atmosphere by multiple reflections off of the Earth's ionosphere and the its surface unless the frequencies are larger than the maximum usable signal (MUF), then they pass through the ionosphere and are lost.\cite{mcm_statement} 
+
+Empirically, radio-waves reflect off of the ocean (or terrain) differently depending on whether the ocean is turbulent (rugged) or calm (smooth), impacting the distance the signal can faithfully.\cite{mcm_statement} We chose Tokyo, Japan as a location of study because it an ideal location to study radio-wave interactions as it is an island and is ``mostly rugged and mountainous.''\cite{factbook2010world}
+
+The goal of our model was to find the following: 
+\begin{enumerate*}[(1)]
+    \item find the number of ``skips'' a HF signal could have with ocean before losing signal integrity, 
+    \item the same but with rugged terrain rather than ocean, and
+    \item how a boat in the ocean could receive signals on turbulent waters.
+\end{enumerate*}
+
+
+\section{Model} % (fold)
+\label{sec:model}
+
+\subsection{HF Signals} % (fold)
+\label{sub:radiowaves}
+
+As radio-waves propagate over a certain distance, we expect them to pick up some noise as they go, degrading the integrity of the information they are trying to transmit. To simulate this, we additive white Gaussian noise (AWGN).\cite{shannon1984communication,kailath1968innovations}
+ \begin{figure}
+     \begin{center}
+        \animategraphics[width=4.in]{12}{gif/frame-}{0}{99}
+     \end{center}
+     \caption{A test \texttt{.gif} file. Click image to see animation. \\\\You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.}
+ \end{figure}
+
+% subsubsection noise (end)
+% subsection radiowaves (end)
+
+\subsection{The Ionosphere} % (fold)
+\label{sub:the_ionosphere}
+
+The ionosphere consists of roughly three layers that lie between 75--1000\,km above the Earth's surface:
+\begin{enumerate*}[(1)]
+    \item the F-region,
+    \item the E-region, and
+    \item the D-region
+\end{enumerate*}; each of these regions has charge-density dependent on the time of year, the number of sunspots present, the time of day, and the movement of the charged particles. The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
+
+To model the ionosphere, we modify the Chapman Law,\cite{chapman1931a,chapman1931b,budden1961radio,budden1988propagation} which describes the electron density, and make it dependent on the time of day and year. We found a simple, analytic model for the ionosphere, $\overline N(z,t),$ which is a function of altitude and time which was given by
+\begin{align}
+    \overline N(z,t) &= T(t)N(z)
+    \label{eq:final_eden}
+\end{align}
+where $N(z) = N_0\exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right] $ and $T(t) = (1 + d(t) + s(t))$ and $d(t) \in [0,1]$ is the daytime contribution of the ionosphere and $s(t)\in[0,4]$ is the seasonal contribution.
+
+To understand how to radio-waves will interact with the ionosphere, we must found  an expression for the refractive index, $n$, of light through the plasma. For an isotropic ionosphere where electrons do not collide and for purely transverse waves, we found $n^2 = 1 - \overline N e^2/\epsilon_0 m \omega^2$, which is independent in of the direction of the HF signal but is dependent on its frequency and some fundamental constants like permitivity, electron mass and charge.
+
+% subsection the_ionosphere (end)
+
+\subsection{The Ocean} % (fold)
+\label{sub:the_ocean}
+Sea water essentially reflects HF signals perfectly.\cite{seawater_index} However, turbulent and choppy waves will disrupt the signal. Using a simple square wave we were able to show that a quasi-index of refraction for the ocean, $m$ is given by $m = n (1 - \sqrt R)/(1+\sqrt{R})$ where $R = \cos^2(\phi/2)$ and $\phi$ is the phase difference created by a HF signal with wavelength $\lambda$. We derived
+\begin{equation}
+    \phi  = \frac{2}{\lambda}\sqrt{A^2 + (\lambda_s/4)^2}.
+\end{equation}
+where $A$ and $\lambda_s$ are the amplitude and wavelengths of the ocean waves, respectively.
+
+
+% subsubsection curve_fitting (end)
+
+% subsubsection data_collection (end)
+% subsection the_ocean (end)
+
+% section model (end)
+
+\section{Results} % (fold)
+\label{sec:results}
+
+ \subsection{Problem I: A Turbulent Ocean} % (fold)
+ \label{sub:part_i}
+
+ \subsection{Problem II: The Japanese Alps} % (fold)
+ \label{sub:part_ii}
+
+ \subsection{Problem III: A Message to a Boat} % (fold)
+ \label{sub:part_iii}
+ 
+ % subsection part_iii (end)
+ % subsection part_ii (end)
+ 
+ % subsection part_i (end)
+% section results (end)
+
+\section{Conclusion}
+\label{sec: conclusion}
+
+\section*{Acknowledgments}
+\label{sec: acknowledge}
+We would like to thank our professors for lending us resources and pointing us in the direction of others. We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun. 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage 
+% \nocite{*}
+\bibliographystyle{plainnat}
+\bibliography{solution}
+
+\end{document}
