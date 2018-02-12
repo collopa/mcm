@@ -4,7 +4,7 @@
 #-----------------------------------------------------------------------#
 '''
 TODO:
-learn about fft and ifft
+import iono and ocean indices correctly, change MAIN!
 '''
 #-----------------------------------------------------------------------#
 
@@ -34,10 +34,17 @@ Notes:
 '''
 
 import os
+import sys
 import numpy as numpy
 import math as math
 import constants as constants
-import ionosphere_output as iono_dict 
+
+def get_z(time, f0_t):
+    z = numpy.empty()
+    for i in range(len(time)):
+        zi = t[i] - math.arcsin(f0_t[i])
+        numpy.append(z, zi)
+    return z
 
 def decompose(time, f0_t):
     max_time = max(time)
@@ -67,7 +74,7 @@ def calc_noise(weather_severity, N, array_length):
     noise = numpy.random.normal(0, stdev, array_length)
     return noise
 
-def fresnel(ocean_index_of_refr, angle_of_incidence, [k, f0_k], N):    
+def add_fresnel(ocean_index_of_refr, angle_of_incidence, k, f0_k, N):    
 
     # Constants
     theta_I = angle_of_incidence
@@ -89,35 +96,33 @@ def fresnel(ocean_index_of_refr, angle_of_incidence, [k, f0_k], N):
     refl_tup = ((n2_iono, iono_multiplier), (n2_ocean, ocean_multiplier))
         
     # Compute Fresnel-modified signal
-    f0_k_post_Fresnel = numpy.empty())
+    f0_k_post_Fresnel = numpy.empty()
     for f0n_k in f0_k:
-        mag_sig = abs(f0n_k)
-        exp_sig = f0n_k/mag_sig
-        fn_k = 1
+        fn_k = f0n_k
         for tup in refl_tup:
             n2 = tup[0]
             m = tup[1]
             theta_T = numpy.arcsin(n1 * numpy.sin(theta_I) / n2) # By Snell's law
+            # By Fresnel's equations:
             beta = n2/n1
             alpha = numpy.cos(theta_T) / numpy.cos(theta_I)
-            fn_k = m * (alpha - beta) / (alpha + beta) * f0n_k
+            fn_k = m * (alpha - beta) / (alpha + beta) * fn_k
         numpy.append(f0_k_post_Fresnel, fn_k)
 
     # Return the Fresnel-modified signal
     return f0_k_post_Fresnel
 
-def dispersion([k, f0_k_post_Fresnel]):
+def add_dispersion(z, k, f0_k_post_Fresnel):
     sigma = constants.air_elec_cond
-    f0_k_post_dispersion = numpy.empty(f0_k_post_Fresnel)
+    f0_k_post_dispersion = numpy.empty()
     omega = 2 * math.pi * k # convert to angular frequency
     for n in range(len(k)):
-        wn = w[n]
-        f0n_k = f0_k_post_Fresnel[n]
+        zn = z[n]
+        wn = omega[n]
         kappa_n = wn * math.sqrt(constants.epsilon_perm * constants.mu_perm / 2) * math.sqrt(1 + math.sqrt(1 + (constants.air_elec_cond/ comstants.epsilon_perm / wn)**2)))
-        new_f0_k = f0n_k * math.exp(-kappa)
-    return f0_k_post_dispersion
-
-    
+        fn_k = math.exp(-kappa_n * zn) * f0_k_post_Fresnel[n]
+        numpy.append(f0_k_post_dispersion, fn_k)
+    return f0_k_post_dispersion    
     
 #-----------------------------------------------------------------------#
 
@@ -136,6 +141,7 @@ if __name__ == '__main__':
     # Get input data from .csv
     # Decompose the input signal, f0_t, to it's Fourier components f0_k
     [time, f0_t] = numpy.genfromtxt(input_file, delimiter = ',')
+    z = get_z(time, f0_t)
     [k, f0_k] = decompose(time, f0_t)
     numpy.savetxt('FT_input_signal.csv', [k, f0_k], delimiter = ',')
 
@@ -146,8 +152,8 @@ if __name__ == '__main__':
     noise = calc_noise(weather_severity, N, array_length)
     
     # For each f0_k, compute the output after Fresnel and dispersion
-    f0_k_post_Fresnel = fresnel(ocean_index_of_refr, iono_index_of_refr, angle_of_incidence, [k, f0_k] , N)
-    f0_k_post_dispersion = dispersion([k, f0_k_post_Fresnel])
+    f0_k_post_Fresnel = add_fresnel(ocean_index_of_refr, iono_index_of_refr, angle_of_incidence, k, f0_k, N)
+    f0_k_post_dispersion = add_dispersion(z, k, f0_k_post_Fresnel)
     f_k = f0_k_post_dispersion
 
     # Compose output signal and add in accumulated noise

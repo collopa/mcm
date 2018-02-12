@@ -1,29 +1,8 @@
-function input_signal(time, space)
-
-% Inputs
-% time = the amount of time over which we see 
-
-% Read in user-specified component values
-component_params = csvread('component_params.csv', 2, 2);
-[rows, cols] = size(component_params);
-params = reshape(component_params, [1, rows*cols]);
-
-% Time and Space vectors
-
-
-signal = 0;
-for i = 1:5:(rows*cols)
-    A = params[i];
-    w = params[i+1];
-    d = params[i+2];
-    B = params[i+3];
-    phi = A * sin(w*t - z + d) + B; 
-    signal = signal + phi;
-end
+function sandbox()
 
 % Variables
-keys = ['A1', 'omega1', 'delta1', 'B1', ...
-        'A2', 'omega2', 'delta2', 'B2'];
+keys = {'A1', 'omega1', 'delta1', 'B1', ...
+        'A2', 'omega2', 'delta2', 'B2'};
 values = [1, 1, 0, 0, ...
           0.5, 10, pi/3, 0];
 dict = containers.Map(keys,values);
@@ -46,7 +25,6 @@ FTsig = fft(signal);
 IFTsig = ifft(FTsig);
 
 % Plotting
-%{
 figure(1)
 plot(t, signal, 'o', t, real(IFTsig), 'o');
 hold on
@@ -78,7 +56,7 @@ for k = 2:ns
    set(g,'Ydata',joy*z(k))
    gif
 end
-%}
+
 
 figure
 plot(t, sin(t-z), t, real(ifft(exp(-z.*fft(t)).*fft(sin(t-z)))));
