@@ -41,25 +41,19 @@ plot(z, exp(-0.5*z).*real(IFTsig), 'o');
 
 figure(5)
 % Plot the first frame:
-carla = sin(t-z).*exp(-z);
-joy = sin(2*t-z*0.5).*exp(-z);
-h = plot(t,carla*z(1));
-hold on
-g = plot(t,joy*z(1));
+carla = sin(t-z);
+disp(carla)
+joy = exp(-z);
+h = plot(t,carla*joy(1));
 
 axis([0,distance,-dict('A1')*5,dict('A1')*5])
 
 gif('test.gif','DelayTime',0.2,'frame',gcf)
 
 for k = 2:ns
-   set(h,'Ydata',carla*z(k))
-   set(g,'Ydata',joy*z(k))
+   set(h,'Ydata',carla*joy(k))
    gif
 end
 
-
-figure
-plot(t, sin(t-z), t, real(ifft(exp(-z.*fft(t)).*fft(sin(t-z)))));
-disp(sin(t-z))
 
 end
