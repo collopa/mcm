@@ -342,11 +342,34 @@ To have the most accurate physical model of the ocean near Japan, we decided to 
 
 Each day, the station recorded the sea surface temperature and salinity multiple times per day. The times at which they took each sample, unfortunately, were not recorded. Because of this, we assumed that the measurements were taken at regular intervals. Using this assumption, we took four averages of the temperature and salinity of the ocean corresponding to times of 2:00\,am, 8:00\,am, 2:00\,pm, and 8:00\,pm each day. 
  
-It turns out that the refractive index for ratio-waves is approximately constant and the reflection coefficient is essentially one.\cite{seawater_index} So there was no temperature or salinity dependence. So that was a huge waste of time on our part.\footnote{*sigh*}
+It turns out that the refractive index for ratio-waves is approximately constant and the reflection coefficient is essentially one.\cite{seawater_index} So there was no temperature or salinity dependence. So that was a huge waste of time on our part.\footnote{sigh.}
 
 
-\subsubsection{Curve Fitting} % (fold)
-\label{ssub:curve_fitting}
+\subsubsection{Quasi-Index of Refraction of Turbulent Oceans} % (fold)
+\label{ssub:ocean_ind_of_ref}
+We found that ocean waves behave essentially as a mirror with an reflection coefficient of 1, so there is no appreciable index of refraction that is measured.\cite{seawater_index} However, we expect that for very turbulent waters, that the intensity of incident light will decrease as it gets scattered in various directions. Essentially, turbulent waters create a quasi-index of refraction, which we will call $m.$
+
+When a radio-wave (or any electromagnetic wave for that matter) reflect off of surface with a different index of refraction, we can find the reflection coefficient, $R$, where $R$ is defined to be the ratio of intensity of reflected light to the intensity of incident light. The relationship between $R$ and the two indices of refraction is given by a well known relation\cite{jackson1999classical,griffiths2005introduction}
+\begin{equation}
+    R \equiv \frac{I_r}{I_0} = \left(\frac{n-m}{n+m}\right)^2
+    \label{eq:refl_coef}
+\end{equation}
+where $n$ is the index of refraction of air (in our case) and $m$ is our quasi-index of refraction for turbulent water. Solving (\ref{eq:refl_coef}) for $m$ we obtain
+\begin{equation}
+    m = n \, \frac{1 - \sqrt R}{1+\sqrt{R}}.
+    \label{eq:quasi_index}
+\end{equation}
+
+Next, we need to determine how much of $R$ we expect given ocean conditions. If we consider a simple model of ocean waves as a square wave with amplitude $A$ and a wavelength $\lambda_s$. Drawing parallel rays of light with an incident angle $\theta$, we can see that the rays of light that travel and reflect off the well of the square wave travel an extra distance of $2d$. This leads to a phase factor where the light from one wave can interfere with another by creating a phase shift between light that hits the crest and light that hits the trough. We will define this phase shift as $\phi$ where 
+\begin{equation}
+    \phi = \frac{2d}{\lambda} = \frac{2}{\lambda}\sqrt{A^2 + (\lambda_s/4)^2}
+\end{equation}
+The amplitude difference between the incoming and out-coming light must be proportional to the phase difference between them up to a constant. In other words, $R \propto |1+e^{i\phi}|^2 = 4 \cos^2(\phi/2)$. To find out what the constant of proportionally is between them, we consider a limiting case where we have a single incident photon. At best, we get a perfect reflection. At worst, we have the photon absorbed. Consequently, $R \in [0,1]$. Thus, we have
+\begin{equation}
+    R = \cos^2\left(\frac\phi2\right)
+    \label{eq:refl_coef_phi}
+\end{equation}
+By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}).
 
 % subsubsection curve_fitting (end)
 
