@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 03:15
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 04:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1270,13 +1270,13 @@ File: gif/frame-99.png Graphic file (type QTm)
 File: figs/structure_iono.png Graphic file (type QTm)
 
 <use  "figs/structure_iono.png" >
-Overfull \hbox (26.01614pt too wide) in paragraph at lines 190--191
+Overfull \hbox (26.01614pt too wide) in paragraph at lines 191--192
 [][] 
  []
 
 File: figs/chapman.png Graphic file (type QTm)
 <use  "figs/chapman.png" > [4] [5] [6]
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 283.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 284.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
@@ -1302,17 +1302,17 @@ See also:
 AED: lastpage setting LastPage
 Package atenddvi Info: Last page = 11.
 [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 407.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 407.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 408.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 408.
  (./solution.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 407.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 407.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 407.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 408.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 408.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 408.
  ) 
 Here is how much of TeX's memory you used:
  25411 strings out of 493706
  517967 string characters out of 6145769
- 693683 words of memory out of 5000000
+ 694683 words of memory out of 5000000
  28278 multiletter control sequences out of 15000+600000
  16439 words of font info for 59 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191

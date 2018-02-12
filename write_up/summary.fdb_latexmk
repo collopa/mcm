@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1518434442 "summary.tex" "summary.pdf" "summary" 1518434443
+["pdflatex"] 1518437175 "summary.tex" "summary.pdf" "summary" 1518437176
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -19,7 +19,6 @@
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmsy10.tfm" 1136768653 1124 6c73e740cf17375f03eec0ee63599741 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmsy6.tfm" 1136768653 1116 933a60c408fc0a863a92debe84b2d294 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmsy8.tfm" 1136768653 1120 8b7d695260f3cff42e636090a8002094 ""
-  "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmti10.tfm" 1136768653 1480 aa8e34af0eb6a2941b776984cf1dfdc4 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm" 1136768653 768 1321e9409b4137d6fb428ac9dc956269 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/cm/cmtt8.tfm" 1136768653 768 d7b9a2629a0c353102ad947dc9221d49 ""
   "/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty" 1284331290 1458 43ab4710dc82f3edeabecd0d099626b2 ""
@@ -93,7 +92,6 @@
   "/usr/local/texlive/2015/texmf-dist/tex/latex/animate/animfp.sty" 1394143803 10437 e4b34c6b043c5344f8bf4b3407f96596 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/article.cls" 1428932888 20708 96f8bca6e380179cada1d49716376167 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty" 1428932888 5159 bb529586d444e85eb00179221b678119 ""
-  "/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd" 1428932888 2256 09a793cb810c26c97ed035dcd724a0d0 ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/base/size11.clo" 1428932888 9195 b429d9ae04d88356fbd16a7b811e600f ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translator-basic-dictionary/translator-basic-dictionary-English.dict" 1279125320 3435 0a4d096dde3f8fe682c2aedd33b8137d ""
   "/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/translator-language-mappings.tex" 1338588496 5067 f1bb98f63e0761f897f48a159127fbb6 ""
@@ -153,9 +151,9 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1432479679 3445950 7f6125c6eb78b33bcedbe55e49dbfd83 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "summary.aux" 1518434443 230 b04705ec67af00b1f58ea28a514a1f85 ""
-  "summary.tex" 1518434442 4395 0b2aeba2c576b349cfaf440a56013369 ""
+  "summary.aux" 1518437176 230 b04705ec67af00b1f58ea28a514a1f85 ""
+  "summary.tex" 1518437175 5012 f01e4bbf282efae718b2120305107b0b ""
   (generated)
-  "summary.log"
   "summary.aux"
+  "summary.log"
   "summary.pdf"

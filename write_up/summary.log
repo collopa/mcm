@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 03:20
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 04:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -970,15 +970,15 @@ LaTeX Font Info:    ... okay on input line 79.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(90.3375pt, 433.62001pt, 90.3375pt)
-* v-part:(T,H,B)=(90.3375pt, 614.295pt, 90.3375pt)
+* h-part:(L,W,R)=(72.26999pt, 469.75502pt, 72.26999pt)
+* v-part:(T,H,B)=(72.26999pt, 650.43001pt, 72.26999pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=433.62001pt
-* \textheight=614.295pt
-* \oddsidemargin=18.0675pt
-* \evensidemargin=18.0675pt
-* \topmargin=-18.9325pt
+* \textwidth=469.75502pt
+* \textheight=650.43001pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-37.0pt
 * \headheight=14.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
@@ -1013,42 +1013,26 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 79.
 \c__siunitx_mathsf_int=\count210
 \c__siunitx_mathtt_int=\count211
-
-Underfull \hbox (badness 10000) in paragraph at lines 103--107
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 107.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 107.
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
 Package atenddvi Info: Last page = 1.
  [1
 
 
-]
-
+] 
 AED: lastpage setting LastPage
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 122.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 122.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 114.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 114.
 (./summary.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 122.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 122.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 122.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 114.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 114.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 114.
  ) 
 Here is how much of TeX's memory you used:
- 24436 strings out of 493706
- 501533 string characters out of 6145769
- 630249 words of memory out of 5000000
- 27432 multiletter control sequences out of 15000+600000
- 10312 words of font info for 38 fonts, out of 8000000 for 9000
+ 24329 strings out of 493706
+ 499044 string characters out of 6145769
+ 630251 words of memory out of 5000000
+ 27329 multiletter control sequences out of 15000+600000
+ 11829 words of font info for 45 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 55i,12n,54p,10395b,605s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,12n,54p,10395b,852s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on summary.pdf (1 page).
