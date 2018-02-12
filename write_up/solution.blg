@@ -3,47 +3,50 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: solution.aux
 The style file: plainnat.bst
 Database file #1: solution.bib
+Warning--to sort, need author or key in noauthor_radio_2011
+Warning--to sort, need author or key in mcm_statement
 Warning--to sort, need author or key in noauthor_tracking_nodate
 Warning--empty year in noauthor_tracking_nodate
-You've used 10 entries,
+Warning--empty journal in maus2010us
+You've used 14 entries,
             2773 wiz_defined-function locations,
-            644 strings with 6455 characters,
-and the built_in function-call counts, 3377 in all, are:
-= -- 274
-> -- 146
-< -- 8
-+ -- 56
-- -- 45
-* -- 224
-:= -- 524
-add.period$ -- 27
-call.type$ -- 10
-change.case$ -- 42
-chr.to.int$ -- 9
-cite$ -- 23
-duplicate$ -- 186
-empty$ -- 337
-format.name$ -- 54
-if$ -- 705
+            657 strings with 6637 characters,
+and the built_in function-call counts, 4433 in all, are:
+= -- 362
+> -- 177
+< -- 10
++ -- 69
+- -- 54
+* -- 287
+:= -- 658
+add.period$ -- 36
+call.type$ -- 14
+change.case$ -- 56
+chr.to.int$ -- 13
+cite$ -- 36
+duplicate$ -- 254
+empty$ -- 462
+format.name$ -- 67
+if$ -- 943
 int.to.chr$ -- 2
 int.to.str$ -- 1
-missing$ -- 11
-newline$ -- 55
-num.names$ -- 36
-pop$ -- 119
+missing$ -- 14
+newline$ -- 72
+num.names$ -- 44
+pop$ -- 172
 preamble$ -- 1
-purify$ -- 35
+purify$ -- 46
 quote$ -- 0
-skip$ -- 133
+skip$ -- 187
 stack$ -- 0
-substring$ -- 55
-swap$ -- 12
+substring$ -- 46
+swap$ -- 17
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 90
-warning$ -- 2
-while$ -- 31
+type$ -- 129
+warning$ -- 5
+while$ -- 35
 width$ -- 0
-write$ -- 124
-(There were 2 warnings)
+write$ -- 164
+(There were 5 warnings)
