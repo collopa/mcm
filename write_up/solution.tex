@@ -81,34 +81,23 @@
 % Title Page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
     \singlespacing %sets spacing of abstract to single
-    \clearpage 
+    \clearpage
     \maketitle
     \thispagestyle{empty} %gets rid of page number at bottom 
+
+    \begin{center}
+        \rule{12cm}{0.4pt}  
+    \end{center}
 
     \noindent To whom it may concern, \vspace{5.5pt}\\
     %
     \indent When reading our solution, we hope that you are can read our document in Adobe Acrobat Reader as we have \texttt{.gif} files that can only be played with that PDF reader. Please visit \texttt{https://get.adobe.com/reader/} to download it if need be. 
 
     We are trying to put our best foot forward and we would appreciate if you receive our work as intended. It is worth it. We promise. Thank you.
-    \vspace{4pt} \\ 
+    \vspace{5pt} \\ 
     Respectfully,\\
     Team 93463
-    \begin{center}
-        \rule{11cm}{0.4pt}  
-    \end{center}
 
-\begin{abstract}
-    Hi team, here is what we \emph{need} to have in our report (according to the MCM overlords):
-\begin{itemize}
-    \item Restatement and clarification of the problem
-    \item Explain assumptions and rationale/justification
-    \item Include your model design and justification
-    \item Describe model testing and sensitivity analysis
-    \item Discuss the strengths and weaknesses
-\end{itemize}
-
-They also claim to judge the quality of our writing. So remember our good friend Williams. \shrug\cite{townsend2000modern}
-\end{abstract}
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -170,7 +159,7 @@ To have an accurate model, there are three main components of this model that ne
      \begin{center}
         \animategraphics[width=4.25in]{12}{gif/frame-}{0}{99}
      \end{center}
-     \caption{A test \texttt{.gif} file. Click image to see animation. \\\\You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.}
+     \caption{A test \texttt{.gif} file. Click image to see animation. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.)}
  \end{figure}
 
 \subsubsection{Noise} % (fold)
@@ -362,11 +351,11 @@ where $n$ is the index of refraction of air (in our case) and $m$ is our quasi-i
 
 Next, we need to determine how much of $R$ we expect given ocean conditions. If we consider a simple model of ocean waves as a square wave with amplitude $A$ and a wavelength $\lambda_s$. Drawing parallel rays of light with an incident angle $\theta$, we can see that the rays of light that travel and reflect off the well of the square wave travel an extra distance of $2d$. This leads to a phase factor where the light from one wave can interfere with another by creating a phase shift between light that hits the crest and light that hits the trough. We will define this phase shift as $\phi$ where 
 \begin{equation}
-    \phi = \frac{2d}{\lambda} = \frac{2}{\lambda}\sqrt{A^2 + (\lambda_s/4)^2}
+    \phi = \frac{2d}{\lambda} = \frac{2}{\lambda}\sqrt{A^2 + (\lambda_s/4)^2}.
 \end{equation}
 The amplitude difference between the incoming and out-coming light must be proportional to the phase difference between them up to a constant. In other words, $R \propto |1+e^{i\phi}|^2 = 4 \cos^2(\phi/2)$. To find out what the constant of proportionally is between them, we consider a limiting case where we have a single incident photon. At best, we get a perfect reflection. At worst, we have the photon absorbed. Consequently, $R \in [0,1]$. Thus, we have
 \begin{equation}
-    R = \cos^2\left(\frac\phi2\right)
+    R = \cos^2\left(\frac\phi2\right).
     \label{eq:refl_coef_phi}
 \end{equation}
 By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}).
@@ -404,7 +393,7 @@ By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index})
 \label{sec: acknowledge}
 We would like to thank our professors for lending us resources and pointing us in the direction of others. Additionally, we would also like to thank the beautiful community of StackExchange for teaching us everything we could ever need to know when we have questions we can't solve ourselves. 
 
- We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun. 
+ We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun. \shrug\cite{townsend2000modern} 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

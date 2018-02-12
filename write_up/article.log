@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 02:04
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 03:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -949,18 +949,18 @@ Package csquotes Info: ... none found.
 (./article.aux)
 \openout1 = `article.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 79.
-LaTeX Font Info:    ... okay on input line 79.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
+LaTeX Font Info:    ... okay on input line 78.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: xetex
@@ -970,27 +970,27 @@ LaTeX Font Info:    ... okay on input line 79.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(32.52127pt, 549.25246pt, 32.52127pt)
-* v-part:(T,H,B)=(50.58878pt, 711.85994pt, 32.52127pt)
+* h-part:(L,W,R)=(36.135pt, 542.02501pt, 36.135pt)
+* v-part:(T,H,B)=(50.58878pt, 704.63249pt, 39.74872pt)
 * \paperwidth=614.295pt
 * \paperheight=794.96999pt
-* \textwidth=549.25246pt
-* \textheight=711.85994pt
-* \oddsidemargin=-39.74872pt
-* \evensidemargin=-39.74872pt
+* \textwidth=542.02501pt
+* \textheight=704.63249pt
+* \oddsidemargin=-36.135pt
+* \evensidemargin=-36.135pt
 * \topmargin=-58.68121pt
 * \headheight=14.0pt
 * \headsep=25.0pt
 * \topskip=11.0pt
 * \footskip=30.0pt
-* \marginparwidth=59.0pt
+* \marginparwidth=4.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
 * \skip\footins=10.0pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
-* \@twocolumnfalse
+* \@twocolumntrue
 * \@twosidefalse
 * \@mparswitchfalse
 * \@reversemarginfalse
@@ -1010,62 +1010,32 @@ Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             https://www.ctan.org/pkg/pageslts
-(lastpage)             ! on input line 79.
+(lastpage)             ! on input line 78.
 \c__siunitx_mathsf_int=\count210
 \c__siunitx_mathtt_int=\count211
-
-Underfull \hbox (badness 10000) in paragraph at lines 101--105
-
- []
-
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 105.
-
-(/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 105.
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
- [1
-
-
-]
-Overfull \hbox (6.31119pt too wide) in paragraph at lines 130--136
-[]\OT1/cmr/m/n/10.95 The goal of our model was to find the fol-low-ing: [](1)[]
-  find
- []
-
-
-Overfull \hbox (2.20789pt too wide) in paragraph at lines 130--136
-\OT1/cmr/m/n/10.95 be-fore los-ing sig-nal in-tegrity, [](2)[]  the same but wi
-th rugged
- []
-
 File: gif/frame-0.png Graphic file (type QTm)
-<use  "gif/frame-0.png" >
+ <use  "gif/frame-0.png" >
 File: gif/frame-1.png Graphic file (type QTm)
  <use  "gif/frame-1.png" >
 File: gif/frame-2.png Graphic file (type QTm)
- <use  "gif/frame-2.png" >
-File: gif/frame-3.png Graphic file (type QTm)
 
-<use  "gif/frame-3.png" >
+<use  "gif/frame-2.png" >
+File: gif/frame-3.png Graphic file (type QTm)
+ <use  "gif/frame-3.png" >
 File: gif/frame-4.png Graphic file (type QTm)
  <use  "gif/frame-4.png" >
 File: gif/frame-5.png Graphic file (type QTm)
- <use  "gif/frame-5.png" >
-File: gif/frame-6.png Graphic file (type QTm)
 
-<use  "gif/frame-6.png" >
+<use  "gif/frame-5.png" >
+File: gif/frame-6.png Graphic file (type QTm)
+ <use  "gif/frame-6.png" >
 File: gif/frame-7.png Graphic file (type QTm)
  <use  "gif/frame-7.png" >
 File: gif/frame-8.png Graphic file (type QTm)
- <use  "gif/frame-8.png" >
-File: gif/frame-9.png Graphic file (type QTm)
 
-<use  "gif/frame-9.png" >
+<use  "gif/frame-8.png" >
+File: gif/frame-9.png Graphic file (type QTm)
+ <use  "gif/frame-9.png" >
 File: gif/frame-10.png Graphic file (type QTm)
  <use  "gif/frame-10.png" >
 File: gif/frame-11.png Graphic file (type QTm)
@@ -1291,7 +1261,7 @@ File: gif/frame-98.png Graphic file (type QTm)
 File: gif/frame-99.png Graphic file (type QTm)
 
 <use  "gif/frame-99.png" >
-Overfull \hbox (19.4511pt too wide) in paragraph at lines 147--148
+Overfull \hbox (15.83446pt too wide) in paragraph at lines 133--134
  [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1312,47 +1282,36 @@ Overfull \hbox (19.4511pt too wide) in paragraph at lines 147--148
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 149--149
-
- []
-
-
-Underfull \hbox (badness 2050) in paragraph at lines 149--149
-\OT1/cmr/m/n/10.95 You need to use Adobe Ac-ro-bat Reader to view
- []
-
-
-Overfull \hbox (3.43541pt too wide) in paragraph at lines 165--166
-\OT1/cmr/m/n/10.95 Law,$[]$ which de-scribes the elec-tron den-sity, and make
- []
-
 [1
 
-] (./article.bbl
-Underfull \hbox (badness 3525) in paragraph at lines 38--42
-[]\OT1/cmr/m/n/10.95 CIA Fact-book.  The world fact-book.  \OT1/cmr/m/it/10.95 
-See
+
+]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ (./article.bbl
+Underfull \hbox (badness 10000) in paragraph at lines 38--42
+\OT1/cmr/m/it/10.95 https://www.cia.gov/library/publications/the-
  []
 
 ) 
 AED: lastpage setting LastPage
-Package atenddvi Info: Last page = 3.
+Package atenddvi Info: Last page = 2.
 [2]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 226.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 226.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 204.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 204.
  (./article.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 226.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 226.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 226.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 204.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 204.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 204.
  ) 
 Here is how much of TeX's memory you used:
- 25318 strings out of 493706
- 515843 string characters out of 6145769
- 699318 words of memory out of 5000000
- 28204 multiletter control sequences out of 15000+600000
- 13744 words of font info for 51 fonts, out of 8000000 for 9000
+ 25288 strings out of 493706
+ 515378 string characters out of 6145769
+ 697016 words of memory out of 5000000
+ 28177 multiletter control sequences out of 15000+600000
+ 11227 words of font info for 41 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 55i,12n,61p,10395b,747s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,61p,10395b,747s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on article.pdf (3 pages).
+Output written on article.pdf (2 pages).

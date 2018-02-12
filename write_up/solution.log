@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 02:05
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 03:15
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,23 +1013,12 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 79.
 \c__siunitx_mathsf_int=\count210
 \c__siunitx_mathtt_int=\count211
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 103.
-
- (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
-File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 103.
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
-Missing character: There is no ; in font nullfont!
  [1
 
 
 ]
 File: figs/japan.png Graphic file (type QTm)
-
-<use  "figs/japan.png" > [1]
+ <use  "figs/japan.png" > [1]
 File: gif/frame-0.png Graphic file (type QTm)
  <use  "gif/frame-0.png" >
 File: gif/frame-1.png Graphic file (type QTm)
@@ -1277,26 +1266,26 @@ File: gif/frame-98.png Graphic file (type QTm)
 
 <use  "gif/frame-98.png" >
 File: gif/frame-99.png Graphic file (type QTm)
- <use  "gif/frame-99.png" >
-Underfull \hbox (badness 10000) in paragraph at lines 173--173
-
- []
-
-[2] [3]
+ <use  "gif/frame-99.png" > [2] [3]
 File: figs/structure_iono.png Graphic file (type QTm)
- <use  "figs/structure_iono.png" >
-Overfull \hbox (26.01614pt too wide) in paragraph at lines 201--202
+
+<use  "figs/structure_iono.png" >
+Overfull \hbox (26.01614pt too wide) in paragraph at lines 190--191
 [][] 
  []
 
 File: figs/chapman.png Graphic file (type QTm)
 <use  "figs/chapman.png" > [4] [5] [6]
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 294.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 283.
 
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
-) [7] [8] [9]
+) [7] [8]
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+Missing character: There is no ; in font nullfont!
+ [9]
 (./solution.bbl
 Overfull \hbox (16.6458pt too wide) in paragraph at lines 9--11
 []\OT1/cmr/m/n/10.95 Tracking So-lar Flares.  URL \OT1/cmtt/m/n/10.95 solar-cen
@@ -1313,19 +1302,19 @@ See also:
 AED: lastpage setting LastPage
 Package atenddvi Info: Last page = 11.
 [10]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 418.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 418.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 407.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 407.
  (./solution.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 418.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 418.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 418.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 407.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 407.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 407.
  ) 
 Here is how much of TeX's memory you used:
- 25437 strings out of 493706
- 518375 string characters out of 6145769
- 695014 words of memory out of 5000000
- 28301 multiletter control sequences out of 15000+600000
- 17953 words of font info for 65 fonts, out of 8000000 for 9000
+ 25411 strings out of 493706
+ 517967 string characters out of 6145769
+ 693683 words of memory out of 5000000
+ 28278 multiletter control sequences out of 15000+600000
+ 16439 words of font info for 59 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
  55i,13n,61p,10396b,864s stack positions out of 5000i,500n,10000p,200000b,80000s
 

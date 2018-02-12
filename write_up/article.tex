@@ -1,6 +1,6 @@
-\documentclass[11pt]{article}
+\documentclass[11pt, twocolumn]{article}
 \usepackage[super,square,comma]{natbib}
-\usepackage[letterpaper, left = 0.45in, right = 0.45 in, bottom = 0.45in, top = 0.7in]{geometry}
+\usepackage[letterpaper, left = 0.5in, right = 0.5 in, bottom = 0.55in, top = 0.7in]{geometry}
 \usepackage{tikz}
 \usepackage{lipsum}
 \usepackage{setspace}
@@ -21,7 +21,6 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{Team 93463}
-\chead{\textsc{Multi-hop, HF Radio Propagation Near Japan}}
 \rhead{Page \thepage\ of \pageref{LastPage}}
 \setlength{\headheight}{14pt}
 
@@ -69,57 +68,44 @@
 
 
 \title{
-    \textsc{{Multi-hop, High-Frequency Radio Propagation Near Japan}}
+    \textsc{\LARGE{Multi-hop, High-Frequency Radio Propagation Near Japan}}
     }
 
 \author{\Large Team 93463}
-\date{\today}
+\date{\empty}
         
 
 \begin{document}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Title Page
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    \singlespacing %sets spacing of abstract to single
-    \clearpage 
-    \maketitle
-    \thispagestyle{empty} %gets rid of page number at bottom 
+    \singlespacing
+    \maketitle 
+    \thispagestyle{fancy} %gets rid of page number at bottom 
 
-    \noindent To whom it may concern, \vspace{4pt}\\
-    %
-    \indent When reading our solution, we hope that you are can read our document in Adobe Acrobat Reader as we have \texttt{.gif} files that can only be played with that particular PDF reader. Please visit \texttt{https://get.adobe.com/reader/} to download it if need be. 
+    % \noindent To whom it may concern, \vspace{4pt}\\
+    % %
+    % \indent When reading our solution, we hope that you are can read our document in Adobe Acrobat Reader as we have \texttt{.gif} files that can only be played with that particular PDF reader. Please visit \texttt{https://get.adobe.com/reader/} to download it if need be. 
 
-    We are trying to put our best foot forward and we would appreciate if you receive our work as intended. It is worth it. We promise. Thank you.
-    \vspace{4pt} \\ 
-    Respectfully,\\
-    Team 93463
-    \begin{center}
-        \rule{13cm}{0.4pt}  
-    \end{center}
+    % We are trying to put our best foot forward and we would appreciate if you receive our work as intended. It is worth it. We promise. Thank you.
+    % \vspace{4pt} \\ 
+    % Respectfully,\\
+    % Team 93463
+    % \begin{center}
+    %     \rule{13cm}{0.4pt}  
+    % \end{center}
 
-\begin{abstract}
-    We modeled high frequency radio-waves and their interactions with the ionosphere, turbulent and calm ocean, and smooth and rugged terrain. We did this to 
-    \\\\
-    Hi team, here is what we \emph{need} to have in our report (according to the MCM overlords):
-\begin{itemize}
-    \item Restatement and clarification of the problem
-    \item Explain assumptions and rationale/justification
-    \item Include your model design and justification
-    \item Describe model testing and sensitivity analysis
-    \item Discuss the strengths and weaknesses
-\end{itemize}
+    % \twocolumn
 
-They also claim to judge the quality of our writing. So remember our good friend Williams. \shrug\cite{townsend2000modern}
+    \begin{abstract}
+    We attempted to model high frequency radio-waves and their interactions with the ionosphere, turbulent and calm oceans, and smooth and rugged terrain. To do this, we used used a simple and isotropic model for the ionosphere, modifying the Chapman Law to make it time-dependent, i.e. dependent on the time of day and the time of year. To model the ocean, we had a simple model in which ocean wave amplitude and wavelength are varied. By doing this we are able to change its index of refraction.
+
+    Using this we found...
 \end{abstract}
-\newpage
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Body
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{page}{1} %set new page number to 1
-\twocolumn 
-
-% section motivation (end)
-
 \section{Introduction} 
 \label{sec: intro} 
 
@@ -135,7 +121,7 @@ The goal of our model was to find the following:
 \end{enumerate*}
 
 
-\section{Model} % (fold)
+\section{The Model} % (fold)
 \label{sec:model}
 
 \subsection{HF Signals} % (fold)
@@ -144,9 +130,9 @@ The goal of our model was to find the following:
 As radio-waves propagate over a certain distance, we expect them to pick up some noise as they go, degrading the integrity of the information they are trying to transmit. To simulate this, we additive white Gaussian noise (AWGN).\cite{shannon1984communication,kailath1968innovations}
  \begin{figure}
      \begin{center}
-        \animategraphics[width=4.in]{12}{gif/frame-}{0}{99}
+        \animategraphics[width=3.9in]{12}{gif/frame-}{0}{99}
      \end{center}
-     \caption{A test \texttt{.gif} file. Click image to see animation. \\\\You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.}
+     \caption{A test \texttt{.gif} file. Click image to see animation. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.)}
  \end{figure}
 
 % subsubsection noise (end)
@@ -167,28 +153,20 @@ To model the ionosphere, we modify the Chapman Law,\cite{chapman1931a,chapman193
     \overline N(z,t) &= T(t)N(z)
     \label{eq:final_eden}
 \end{align}
-where $N(z) = N_0\exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right] $ and $T(t) = (1 + d(t) + s(t))$ and $d(t) \in [0,1]$ is the daytime contribution of the ionosphere and $s(t)\in[0,4]$ is the seasonal contribution.
+where $N(z) = N_0\exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]$ with arbitrary constants $z_0$ and $\kappa$. The time dependence is given by $T(t) = (1 + d(t) + s(t))$ and $d(t) \in [0,1]$ is the daytime contribution of the ionosphere and $s(t)\in[0,4]$ is the seasonal contribution.
 
 To understand how to radio-waves will interact with the ionosphere, we must found  an expression for the refractive index, $n$, of light through the plasma. For an isotropic ionosphere where electrons do not collide and for purely transverse waves, we found $n^2 = 1 - \overline N e^2/\epsilon_0 m \omega^2$, which is independent in of the direction of the HF signal but is dependent on its frequency and some fundamental constants like permitivity, electron mass and charge.
 
-% subsection the_ionosphere (end)
+\subsection{The Ocean } % (fold)
+\label{sub:the_ocean} 
 
-\subsection{The Ocean} % (fold)
-\label{sub:the_ocean}
 Sea water essentially reflects HF signals perfectly.\cite{seawater_index} However, turbulent and choppy waves will disrupt the signal. Using a simple square wave we were able to show that a quasi-index of refraction for the ocean, $m$ is given by $m = n (1 - \sqrt R)/(1+\sqrt{R})$ where $R = \cos^2(\phi/2)$ and $\phi$ is the phase difference created by a HF signal with wavelength $\lambda$. We derived
 \begin{equation}
     \phi  = \frac{2}{\lambda}\sqrt{A^2 + (\lambda_s/4)^2}.
 \end{equation}
 where $A$ and $\lambda_s$ are the amplitude and wavelengths of the ocean waves, respectively.
 
-
-% subsubsection curve_fitting (end)
-
-% subsubsection data_collection (end)
-% subsection the_ocean (end)
-
-% section model (end)
-
+\chead{\textsc{Multi-hop, HF Radio Propagation Near Japan}}
 \section{Results} % (fold)
 \label{sec:results}
 
@@ -212,14 +190,14 @@ where $A$ and $\lambda_s$ are the amplitude and wavelengths of the ocean waves, 
 
 \section*{Acknowledgments}
 \label{sec: acknowledge}
-We would like to thank our professors for lending us resources and pointing us in the direction of others. We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun. 
+We would like to thank our professors for lending us resources and pointing us in the direction of others. We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun.  \shrug\cite{townsend2000modern}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% Bibliography
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\newpage 
 % \nocite{*}
+
 \bibliographystyle{plainnat}
 \bibliography{solution}
 
