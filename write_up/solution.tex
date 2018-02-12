@@ -7,8 +7,10 @@
 \usepackage{enumerate}
 \usepackage[inline, shortlabels]{enumitem}
 \usepackage{amsmath}
+\newtheorem{problem}{Problem}
 \numberwithin{equation}{section}
 
+\usepackage{siunitx}
 \usepackage{csquotes}
 \usepackage{graphicx}
 \usepackage{authblk}
@@ -18,7 +20,7 @@
 \usepackage{fancyhdr}
 \pagestyle{fancy}
 \lhead{Team 93463}
-\chead{Multi-hop, HF Radio Propagation Near S. America}
+\chead{\textsc{Multi-hop, HF Radio Propagation Near Japan}}
 \rhead{Page \thepage\ of \pageref{LastPage}}
 \setlength{\headheight}{14pt}
 
@@ -66,7 +68,7 @@
 
 
 \title{
-    \textsc{{Multi-hop, High-Frequency Radio Propagation Near South America}}
+    \textsc{{Multi-hop, High-Frequency Radio Propagation Near Japan}}
     }
 
 \author{\Large Team 93463}
@@ -83,18 +85,7 @@
     \thispagestyle{empty} %gets rid of page number at bottom 
 
 \begin{abstract}
-    \shrug\cite{townsend2000modern}
-\end{abstract}
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%% Body
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\setcounter{page}{1} %set new page number to 1
-
-\section*{MCM Requirements}
-
-Hi team, here is what we \emph{need} to have in our report (according to the MCM overlords):
+    Hi team, here is what we \emph{need} to have in our report (according to the MCM overlords):
 \begin{itemize}
     \item Restatement and clarification of the problem
     \item Explain assumptions and rationale/justification
@@ -103,22 +94,74 @@ Hi team, here is what we \emph{need} to have in our report (according to the MCM
     \item Discuss the strengths and weaknesses
 \end{itemize}
 
-They also claim to judge the quality of our writing. So remember our good friend Williams.
+They also claim to judge the quality of our writing. So remember our good friend Williams. \shrug\cite{townsend2000modern}
+\end{abstract}
+\newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\setcounter{page}{1} %set new page number to 1
 
 \section{Motivation} % (fold)
 \label{sec:motivation}
 
+Quickly after its invention in the late 19th century, radio was adopted worldwide as the main form of communication for long distances near instantaneously.\cite{hilmes2002radio} When utilized correctly, the radio has accomplished remarkable things. Radios have inspired generations of scientists and tinkerers; they have allowed world-leaders to communicate with their people, soldiers to their brothers-in-arms,\footnote{Yes, we know. This terminology is a little dated.} they have allowed music to spread across cultures, and they have allowed Alex Jones spout gibberish to conspiracy theorists across the United States.\footnote{Enjoy. \texttt{https://youtu.be/aCiVsJ3b160}} 
+
+However, the often the catastrophic failures of radio have been a result of not understanding the science behind them. For example, a poor understanding of the Titanic's radio contributed to the deaths of 1,514 passengers and crew from April 14--15, 1912.\cite{noauthor_radio_2011} While much---if not most---of the engineering difficulties of radio have been overcome, some of the fundamental science behind it has not, e.g. ground-wave propagation.\cite{budden1961radio} To avoid other horrendous accidents at sea, such as the Titanic, it's important to have an accurate model of how radio-waves propagate through the atmosphere to determine the maximum distance a signal can travel at sea.
+
+Our task, if we choose to accept it,\footnote{Cue Mission Impossible music: Dun dun dada Dun dun dada Dun dun dada Dun dun dada Dun dun dada Dun dun dada doo de doo doo de doo doo de doo doo do.} is to solve the following three problems:
+\begin{problem}
+ The first problem we are trying to solve is to determine how many times a HF radio-wave can be reflected off of the ocean. The first reflection of the signal is off of a turbulent ocean. We must characterize how the signal strength changes after this first reflection.
+
+ After the first reflection, we are looking to characterize how the signal changes as it reflects off of calm oceans before falling below a signal to noise ratio (SNR) of 10\,\si{\dB}.
+ \label{pr:turb_ocean}
+\end{problem}
+
+\begin{problem}
+    This is the same problem as Problem \ref{pr:turb_ocean}, but instead of the ocean, we have rugged and smooth terrain.
+    \label{pr:mount}
+\end{problem}
+
+\begin{problem}
+    Lastly, we would like to see how a boat traveling across the ocean using HF radio-waves to communicate and how our model changes to accommodate a receiver in motion on a turbulent ocean.
+    \label{pr:boat}
+\end{problem}
 % section motivation (end)
 
 \section{Introduction} 
 \label{sec: intro}
 
+ \begin{figure}[ht]
+ \begin{center}
+     \includegraphics[width = 4.25in]{figs/japan.png}
+ \end{center}
+ \caption{The region we are studying of choice. Japan was chosen due to it being an island surrounded by ocean water and it is a very mountainous and rugged country. Image taken from Google Maps.}
+ \label{fig:jap}
+\end{figure} 
+
+High frequency radio-waves (defined to be between 3--30\,\si{\mega\hertz}) can travel through the atmosphere---by one mechanism---by multiple reflections off of the Earth's ionosphere and the its surface. For frequencies below the maximum usable frequency (MUF), they will skip from the surface of the earth to the ionosphere and back again indefinitely until the signal dies down and becomes unusable. If the frequencies are larger than the MUF, then they pass through the ionosphere and are lost to space forever. The MUF varies with the season, time of day, and solar conditions.\cite{mcm_statement}
+
+
+Empirically, radio-waves reflect off of the ocean differently depending on whether the ocean is turbulent or calm, impacting the distance the signal can faithfully.\cite{mcm_statement} Not surprisingly, radio-waves will reflect off rugged terrain differently than smooth, making it important to model how these radio-waves travel over mountains as well.
+
+With this in mind, we decided to focus on a region of with a radius of roughly 550\,\si{\km} from Tokyo, Japan (Fig.\ref{fig:jap}). We chose this location because there is a large quantity of reliable data taken in Japan, it is an island country, and is ``mostly rugged and mountainous.''\cite{factbook2010world} In essence, it is an ideal location to accurately study high-frequency (HF) radio-waves and their interactions with ionosphere and ocean.
+
+
 \section{Model} % (fold)
 \label{sec:model}
 
-\subsection{Radiowaves} % (fold)
+To have an accurate model, there are three main components of this model that need to be described. 
+
+\subsection{Radio-waves} % (fold)
 \label{sub:radiowaves}
 
+\subsubsection{Noise} % (fold)
+\label{ssub:noise}
+
+CENTRAL LIMIT THEOREM   
+
+% subsubsection noise (end)
 % subsection radiowaves (end)
 
 \subsection{The Ionosphere} % (fold)
@@ -129,9 +172,9 @@ The ionosphere consists of roughly three layers that lie between 75--1000\,km ab
     \item the F-region,
     \item the E-region, and
     \item the D-region
-\end{enumerate*}; each of these regions has charge-density dependent on the time of year, the sunspots number of sunspots present, the time of day, and the movement of the charged particles\footnote{The study of which has the impressive sounding name of magnetohydrodynamics.}(Figure \ref{fig:struct_ion}). X-rays, ultraviolet light, ejected plasma, and other high energy particles that are released by the sun interact with the atoms in the atmosphere and strip them of electrons.\cite{noauthor_tracking_nodate} The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
+\end{enumerate*}; each of these regions has charge-density dependent on the time of year, the number of sunspots present, the time of day, and the movement of the charged particles\footnote{The study of which has the impressive sounding name of magnetohydrodynamics.}(Figure \ref{fig:struct_ion}). X-rays, ultraviolet light, ejected plasma, and other high energy particles that are released by the sun interact with the atoms in the atmosphere and strip them of electrons.\cite{noauthor_tracking_nodate} The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
 
-Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are stripped atoms or molecules. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because $F \propto m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
+Early experiments demonstrated that the electrons in the ionosphere are arranged in approximately horizontal layers, meaning that the number density is a function of height above the Earth's surface. Presumably, these cations are  atoms or molecules stripped of an electron. Because the ratio between the mass of a proton (the smallest positive charge we could have in the atmosphere) and an electron is on the order of $2\times10^3$, we would expect there must be approximately $5 \times10{-4}$ more cations than electrons.\footnote{This is because the electric field of the propagating radio-waves will have $5 \times10^{-4}$ of the effect on a proton than an electron because its acceleration $\mathbf{a} \propto 1/m$.} If this were the case, the ionosphere would be unstable, due to the large repulsive forces of this unbalanced positive charge. However, due to the ionosphere's empirically determined and stable layers, the ionosphere must be nearly electrically neutral, i.e. there must be an equal number of positive and negative charges per unit volume.\cite{budden1961radio} Consequently, we assume that the radio-waves only interact with the free electrons in the ionosphere.
 
 \begin{figure}[ht]
  \begin{center}
@@ -140,14 +183,14 @@ Early experiments demonstrated that the electrons in the ionosphere are arranged
          \caption{}
     \label{fig:struct_ion} 
  \end{subfigure}
-~
+\qquad
  \begin{subfigure}[b]{0.44\textwidth}
-         \includegraphics[width = 3.25in]{figs/chapman.png}
+         \includegraphics[width = 2.35in]{figs/chapman.png}
           \caption{ }
      \label{fig:chapman}
  \end{subfigure}
  \end{center}
- \caption{\text{(a)} The charge density as a function of height in the ionosphere. It also shows how the ionosphere changes at midnight and noon. Dashed lines are for January while solid lines are for June. Also given is the number of sunspots, $R$, at the time of data collection.  Figure is taken from K.G. Budden (1961).\cite{budden1988propagation} \text{(b)} Contour plot of the Chapman Law for various azimuthal angles. Figure taken from K.G. Budden (1988).\cite{budden1988propagation} }
+ \caption{\textbf{(a)} The charge density as a function of height in the ionosphere. It also shows how the ionosphere changes at midnight and noon. Dashed lines are for January while solid lines are for June. Also given is the number of sunspots, $R$, at the time of data collection.  Figure is taken from K.G. Budden (1961).\cite{budden1988propagation} \textbf{(b)} Contour plot of the Chapman Law for various azimuthal angles of the incident sun. Figure taken from K.G. Budden (1988).\cite{budden1988propagation} }
  \label{fig:elect_density}
 \end{figure}
 
@@ -194,11 +237,85 @@ As stated above, at a first approximation, we expect that the electron density, 
         N(z) = N_0 \exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
         \label{eq:chapman}
     \end{equation}
-    where $N_0$ is a constant we can gather fro{}m experimental data. Quite simply, (\ref{eq:chapman}) is the Chapman Law.
+    where $N_0$ is a constant we can gather from experimental data. Quite simply, (\ref{eq:chapman}) is the Chapman Law.\cite{chapman1931a,chapman1931b,budden1961radio,budden1988propagation}
 
 
     % subsubsection electron_density (end)
     
+    \subsubsection{A Modified Chapman Law, $\overline N(z,t)$} % (fold)
+    \label{ssub:modified_chapman_law}
+    Unfortunately, the Chapman Law is a rather simple model. It is not time dependent. It is also almost entirely qualitative due to the $\sigma$ constant that is highly dependent on what chemical species are in the atmosphere and the energy of incident light. However, it provides a good starting place to begin modifying for more accurate and simulations.
+
+    Clearly, Fig.\ref{fig:struct_ion} demonstrates that the electron density of the ionosphere changes as a function season and time of day. In order to make the Chapman Law model of the time dependent, we can add a time dependent factor out front. To put another way, $\overline N(z,t) = T(t) N(z)$. A simple approximation is to make $T(t)$ linearly dependent on time. If we let
+    \begin{equation}
+        T(t) = 1 + d(t) + s(t)
+        \label{eq:time_dep}
+    \end{equation}
+    where $d(t)$ is the ionosphere dependence on the time of day and $s(t)$ is the dependence on the season. From Fig.\ref{fig:struct_ion} we restrict the range of $d(t)$ and $s(t)$, where $d(t) \in [0,1]$ and $s(t) \in [0,4]$, respectively. These range restrictions were chosen as Fig.\ref{fig:struct_ion} demonstrates that seasonal dependence is more important than the time of day by roughly a factor of four. In our model, we input a sawtooth function for both $s(t)$ and $d(t)$ with each function's respective range. At midday, $s(t_{noon}) = 1$ and at midnight $s(t_{mid}) = 0$. Similarly, $d(t_{dec}) = 4$ while $d(t_{jun}) = 0$.\footnote{Since we are focusing our attention near South America, the most intense solar radiation comes in the summer months, which is December for our friends in the Southern Hemisphere.}
+
+    In all, the electron-density as a function of height and time where $\overline N(t,z)$ is given by 
+    \begin{align}
+        \overline N(z,t) &= T(t)N(z) \nonumber \\
+        &= N_0(1 + d(t) + s(t))\exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]
+        \label{eq:final_eden}
+    \end{align}
+    which is a simple, analytic model for the ionosphere that is used in our model.
+    % subsubsection our_modified_chapman_law (end)
+
+    \subsubsection{The Index of Refraction of the Ionosphere} % (fold)
+    \label{ssub:index_of_refraction}
+
+    To understand how to radio-waves will interact with the ionosphere, we must find an expression for the refractive index of light through the plasma. For simplicity, we are going to consider the ionosphere to be made of electrons that do not collide with one another and is isotropic throughout. When we do this, we can derive a relatively simple expression for the index of refraction of light through the medium.
+
+    Simply put, the index of refraction relates how fast an electromagnetic wave is able to pass through a medium.\cite{jackson1999classical,townsend2000modern} We denote the index of refraction of a medium with the letter $n$; if $n = 1$ then the ray of light is moving at one of Nature's fundamental constants, $c.$
+
+    To derive an expression for $n$ in an isotropic medium without electron collisions, we look at Maxwell's equations. In any upper-level textbook on Classical Electrodynamics, we have (from Faraday's Law of Induction)
+    \begin{subequations}
+           \begin{align}
+       & \nabla \times \mathbf{E} = -i k \mathcal{H} \\& \nabla \times \mathcal{H} = \frac{ik}{\epsilon_0} \mathbf{D} 
+    \end{align} 
+    \label{eq:curls}
+    \end{subequations}
+
+    where $k$ is the wavenumber defined as $k = 2\pi/\lambda$ (where $\lambda $ is the wavelength of light), $\mathcal{H} = Z_0 \mathbf{B}$ (where $Z_0 \equiv \mu_0/\epsilon_0$ is the characteristic impedance of free space and $\mathbf{B}$ is the external magnetic field\footnote{In this case, the Earth's. Near South America, this value is $|\mathbf{B}| \approx 47 \si{\micro\tesla}$.\cite{maus2010us}}), and $\mu_0$ and $\epsilon_0$ are the permeability and permitivity of free space, respectively.\cite{jackson1999classical,griffiths2005introduction}
+    % subsubsection index_of_refraction (end)
+
+    If we are describing a progressive plane wave,\footnote{This simply means that there is no $x$ or $y$-dependence when the waves are traveling in the $z$-direction (for Cartesian coordinates). Since we haven't chosen any coordinate system, we are free to choose any direction that $z$ points in.} we have
+    \begin{align}
+         \frac{\partial}{\partial x} = \frac{\partial}{\partial y} = 0, \qquad \frac{\partial}{\partial z} = -i k n
+        \label{eq:plane_wave}
+    \end{align}
+    which when combined with equations (\ref{eq:curls}) we find
+    \begin{subequations}
+     \begin{align}
+        \mathcal{H}_x &= - n E_y \\
+        \mathcal{H}_y & = nE_x \\
+        \mathcal{H}_z & = 0
+    \end{align}
+    \label{eq:int_step}
+    \end{subequations}
+    Neglecting any damping, Newton's second law can relate the electric polarization, $\mathbf{P} = Ne\mathbf{r}$ and electric field via
+    \begin{align}
+         &\frac{Ne}{m}\mathbf{E}e = \frac{\partial^2 \mathbf{P}}{\partial t^2}
+         &\Rightarrow &\mathbf{P} = -\frac{Ne^2}{m\omega^2}\mathbf{E}
+         \label{eq:elec_polar}
+     \end{align} 
+     where we utilized the fact that the electric field varies with a phase factor, implying that $\partial^2/\partial t^2 = -\omega^2$.\cite{budden1961radio,budden1988propagation} 
+
+     Using (\ref{eq:elec_polar}), defining $X \equiv  N e^2/\epsilon_0m \omega^2$, and enforcing our plane-wave relations of (\ref{eq:plane_wave}) we get 
+     \begin{subequations}
+         \begin{align}
+             n \mathcal{H}_y &= E_x(1 - X) \\
+            -n \mathcal{H}_x &= E_y(1 - X) \\
+            0 &= E_z
+         \end{align}
+     \end{subequations}
+     which, when utilizing equations (\ref{eq:int_step}), we can find the refractive index as
+     \begin{equation}
+          n^2 = 1 - X = 1 - \frac{N e^2}{\epsilon_0 m \omega^2}
+      \end{equation}
+      which is independent in of the direction that the radio-wave travels, but is dependent on its frequency and some fundamental constants.\footnote{So long as the radio-wave is purely a transverse wave and has no longitudinal component.}
+
 % subsection the_ionosphere (end)
 
 \subsection{The Ocean} % (fold)
@@ -211,6 +328,19 @@ As stated above, at a first approximation, we expect that the electron density, 
 \section{Results} % (fold)
 \label{sec:results}
 
+ \subsection{Problem I: A Turbulent Ocean} % (fold)
+ \label{sub:part_i}
+
+ \subsection{Problem II: The Andes Mountains} % (fold)
+ \label{sub:part_ii}
+ 
+ \subsection{Problem III: A Message to a Boat} % (fold)
+ \label{sub:part_iii}
+ 
+ % subsection part_iii (end)
+ % subsection part_ii (end)
+ 
+ % subsection part_i (end)
 % section results (end)
 
 \section{Conclusion}
@@ -225,7 +355,7 @@ As stated above, at a first approximation, we expect that the electron density, 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage 
 
-\nocite{*}
+% \nocite{*}
 \bibliographystyle{plainnat}
 \bibliography{solution}
 

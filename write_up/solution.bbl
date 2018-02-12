@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{14}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -7,8 +7,15 @@
 
 \bibitem[noa()]{noauthor_tracking_nodate}
 Tracking {Solar} {Flares}.
+\newblock URL \url{solar-center.stanford.edu/SID/activities/ionosphere}.
+
+\bibitem[noa(2011)]{noauthor_radio_2011}
+Radio and the {Titanic}, July 2011.
 \newblock URL
-  \url{http://solar-center.stanford.edu/SID/activities/ionosphere.html}.
+  \url{www.environmentalhistory.org/revcomm/\\features/radio-and-the-titanic/}.
+
+\bibitem[mcm(2018)]{mcm_statement}
+{2018 MCM: Problem A: Multi-hop HF Radio Propagation}, February 2018.
 
 \bibitem[Budden(1988)]{budden1988propagation}
 Kenneth~George Budden.
@@ -36,10 +43,32 @@ Sydney Chapman.
 \newblock \emph{Proceedings of the Physical Society}, 43\penalty0 (1):\penalty0
   26, 1931{\natexlab{b}}.
 
+\bibitem[Factbook(2010)]{factbook2010world}
+CIA Factbook.
+\newblock The world factbook.
+\newblock \emph{See also: https://www. cia.
+  gov/library/publications/the-world-factbook}, 2010.
+
+\bibitem[Griffiths(2005)]{griffiths2005introduction}
+David~J Griffiths.
+\newblock Introduction to electrodynamics, 2005.
+
+\bibitem[Hilmes and Loviglio(2002)]{hilmes2002radio}
+Michele Hilmes and Jason Loviglio.
+\newblock \emph{Radio reader: Essays in the cultural history of radio}.
+\newblock Psychology Press, 2002.
+
 \bibitem[Jackson(1999)]{jackson1999classical}
 John~David Jackson.
 \newblock \emph{Classical electrodynamics}.
 \newblock Hamilton Printing Company, 3rd edition, 1999.
+
+\bibitem[Maus et~al.(2010)Maus, Macmillan, McLean, Hamilton, Thomson, Nair, and
+  Rollins]{maus2010us}
+Stefan Maus, Susan Macmillan, Susan McLean, Brian Hamilton, A~Thomson, M~Nair,
+  and Craig Rollins.
+\newblock The us/uk world magnetic model for 2010-2015.
+\newblock 2010.
 
 \bibitem[Schroeder(1999)]{schroeder1999introduction}
 Daniel~V Schroeder.
