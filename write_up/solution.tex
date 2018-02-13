@@ -232,6 +232,8 @@ The Central Limit Theorem states that when using independent, random variables\f
  \caption{A side diagram of how the HF signals travel through the atmosphere.}
  \label{fig:radio_curve}
 \end{figure}
+
+We modeled such that the standard deviation of this noise is proportional to the number of hops and the level of water turbulence, a decimal from 0-1 with 1 being the most turbulent.
 % subsubsection noise (end)
 % subsection radiowaves (end)
 
@@ -432,6 +434,9 @@ The amplitude difference between the incoming and out-coming light must be propo
 \end{equation}
 By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals. It is important to note, however, that taken together (\ref{eq:refl_coef_phi}) and (\ref{eq:quasi_index}) suggests that $m \le 1$. For physical refractive indices, this does not make sense. However, since we have a ``quasi-refractive index,'' we are not necessarily bound by the same conditions. Consequently, this is still meaningful in our model.
 
+\subsubsection{Modeling Approach}
+To implement the theory above, all of which underlies our model, we chose to have a stand alone radio wave model of signal propagation which is dependent on the turbulence value (a number in the range 0-1) and the indices of refraction of the ionosphere and ocean given time of day, time of year, and incident radio frequency. 
+
 % subsubsection curve_fitting (end)
 
 % subsubsection data_collection (end)
@@ -441,10 +446,60 @@ By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index})
 
 \subsection{Implementation in Python and Matlab}
 
+\subsubsection{Implementation Approach}
+We chose to use a suite of original scripts in Python and MATLAB to implement our model. The general architecture consists of a few main files
+\begin{itemize}
+\item \verb|component_params.csv|
+\item \verb|constants.py|
+\item \verb|input_signal.py|
+\item \verb|run_radio.sh|
+\item \verb|radio.py|
+\item \verb|ionosphere.py|
+\item \verb|ocean.py|
+\item \verb|make_gif.m|
+\end{itemize}
+
+The first item a user should consider is the file \verb|component_params.csv| which contains the amplitude, angular frequency, phase shift, and offset parameters for as many Fourier components as the user would like. For our modeling, we chose to work with two Fourier components yielding the total input signal
+\begin{equation}
+f_{0}(t) = \sin(t) + 2\sin(0.5t)
+\end{equation}
+\par The \verb|constants.py| file contains all of the constants used in our model, from electrical conductivity of air to altitude of the ionosphere.
+\par The file \verb|input_signal| takes the parameters of the constituent Fourier components, along with other parameters specified by the user in the Bash script \verb|run_radio.sh|, and produces a csv file with a vector of $z$ values, a vector of $t$ values, and a vector of $f_{0}(t)$ values. Recall, $f_{0}(t) = {\bf \tilde{E}}_{I}({\bf r}, t)$ which is a function of $z$ and $t$ where we have chosen the direction of propagation to be parallel to the Earth's surface and we have called that direction $z$.
+\par The Bash script \verb|run_radio.sh| executes the files \verb|input_signal.py| and \verb|radio.py|. At the top of the file, users can specify the number of samples of the continuous input signal, the distance from receiver to transmitter, the time over which we observe the signal decay, the angle of incidence (defined as positive from parallel to Earth's surface), and the turbulence of the ocean.
+\par The meat of the model is contained in \verb|radio.py| which calls functions contained in \verb|ionosphere.py| and \verb|ocean.py| in order to compute index of refraction as a function of each Fourier component in the frequency domain. The file first decomposes the time domain signal into its frequency components. It then modifies each component according to Fresnel's equations and the dispersion effects derived above. It then uses the inverse Fourier Transform to obtain the resulting signal when it reaches the transmitter. It outputs a \verb|.csv| file which is used for subsequent visualization.
+\par To visualize what is happening to our radio wave signal as it propagates across the ocean, we use the MATLAB script \verb|make_gif.m| which not only produces a \verb|.gif| of the signal decay over the time specified in the Bash script, but also plots the initial and final signals against each other in the frequency domain and time domain.
+
+\subsubsection{Choosing Indices of Refraction}
+To consider the two cases of a turbulent sea and a calm sea, we looked at the limiting behavior of the quasi-index of refraction. For a calm sea, $A \to 0$ and $\lambda_s \to 0$ because the sea does not wave when calm. This leads to a value of $R=0$ which yields the maximum quasi-index of refraction possible: $m=1$. For a rough sea, $A$ and $\lambda_n$ are both large, but for large enough values $\phi$ will circle round and round the unit circle and average to the calm sea case. So, for the turbulent ocean case, we take $\Phi=2/\lambda$. By Taylor expansion, 
+\begin{equation}
+R \approx 1 - (\frac{\phi}{2})^2 = 1 - \frac{1}{\lambda^2} = \frac{2\pi^2\omega^2}{c^2 - 2\pi^{2}\omega^2}
+\end{equation}
+where $c$ is the speed of light and $omega$ is the angular frequency of the incident light. 
+\par Unfortunately, this quasi-index of refraction and our model for the ionospheric index of refraction are where we ran into some issues. As an example, for an incident radio wave with frequency 15$MHz$, $m < 0$, which made Snell's Law (implemented in \verb|radio.py|) ``confused." For the ionosphere, the average index of refraction was often quite close to 1, which is the same index for air, and no reflection occurs when the indices of refraction are the same. So, while we learned a lot about modeling these two media, we ultimately chose to use the pseudo-value of 1.5 for both indices of refraction.
+
+\subsubsection{Visualization}
+Using $f_{0}(t) = \sin(t) + 2\sin(0.5t)$, $n_{iono} = n_{ocean}  = 1.5$, turbulence $=1$, distance to receiver $=8820 km$ (the distance from Tokyo to Los Angeles), a 30 second monitor period, and angle of incidence of 30 degrees, we produced the results included in Figures \ref{fig:freq_dom} and \ref{fig:time_dom}
+
+ \begin{figure}[ht]
+ \begin{center}
+     \includegraphics[width = 4.55in]{figs/time_domain_compare.png}
+ \end{center}
+ \caption{A comparison of the input and output signals in the time domain. Blue is the input and orange is the output. The signal has become quite noisy, as evidenced by the lack of a clear period in the plot.}
+ \label{fig:time_dom} 
+\end{figure}
+
+ \begin{figure}[ht]
+ \begin{center}
+     \includegraphics[width = 4.55in]{figs/freq_domain_compare.png}
+ \end{center}
+ \caption{A comparison of the input and output signals in the frequency domain. Blue is the input and orange is the output. The signal has become quite noisy, as evidenced by the lack of clear peaks in the stem plot.}
+ \label{fig:freq_dom} 
+\end{figure} 
+
+For this set of inputs, we found that there will be 16 hops to get to the receiver. After 10 hops, the 
 
 \section{Results} % (fold)
 \label{sec:results}
-
  \subsection{Problem I: A Turbulent Ocean} % (fold)
  \label{sub:part_i}
 
