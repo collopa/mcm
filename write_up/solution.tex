@@ -209,19 +209,19 @@ where $\kappa$, derived from Maxwell's equations for linear, conducting media\ci
 where $\sigma$ is the electrical conductivity of air, $\epsilon$ is the permittivity of air, and $\mu$ is the permeability of air.
 \par For a full listing of constants used throughout our modeling, see the Appendix and the file \verb|constants.py|.
 
- \begin{figure}
+ \begin{figure}[ht]
      \begin{center}
         \animategraphics[width=4.25in]{12}{gif/frame-}{0}{99}
      \end{center}
-     \caption{ Click image to see animation. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. If you do not have it, please visit \texttt{https://get.adobe.com/reader/} to download it. It is worth it.)}
+     \caption{An animation (click to view) of signal decay over the first 30 seconds as it propagates with an incident angle 30 degrees above parallel to Earth’s surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. Please visit \texttt{https://get.adobe.com/reader/} to download.)}
  \end{figure}
  
-As an introduction to the results of our modeling, we have produced an animation of signal decay over the first 30 seconds as it propagates toward Los Angeles from Tokyo, with incident angle 30 degrees above parallel to Earth's surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. The signal above has two Fourier components and is not a simple carrier wave. The animation represents signal propagation under ``nice" weather conditions. The addition of noise, though accounted for in our model, is not shown in the animation. 
+As an introduction to the results of our modeling, we have produced an animation of signal decay over the first 30 seconds as it propagates toward Los Angeles from Tokyo, with incident angle 30\si{\degree} above parallel to Earth's surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. The signal above has two Fourier components and is not a simple carrier wave. The animation represents signal propagation under ``nice" weather conditions. The addition of noise, though accounted for in our model, is not shown in the animation. 
 
 \subsubsection{Noise} % (fold)
 \label{ssub:noise}
 
-As radio-waves propagate over a certain distance, we expect them to pick up some noise as they go, degrading the integrity of the information they are trying to transmit. If they didn't, you could presumably use a \$5 hand-held radio to communicate with police officers in Australia.\footnote{It doesn't. One of the authors tried as a child.} A reasonable question becomes, how should we try and model this.
+As radio-waves propagate over a certain distance, we expect them to pick up some noise as they go, degrading the integrity of the information they are trying to transmit. If they didn't, you could presumably use a \$5 hand-held radio to communicate with police officers in Australia.\footnote{It doesn't. One of the authors tried as a child (young-adult? It's a fuzzy line.).} A reasonable question becomes, how should we try and model this.
 
 The Central Limit Theorem states that when using independent, random variables\footnote{We are assuming this in our model.} are added together, their properly normalized sums tend toward a normal distribution.\cite{central} So as the radio-wave travels, we add this Gaussian noise to the signal to degrade it as its path length increases. It turns out that this is used quite often in Information Theory, and is called Additive White Gaussian Noise (AWGN).\cite{shannon1984communication,kailath1968innovations}
 
@@ -432,7 +432,7 @@ The amplitude difference between the incoming and out-coming light must be propo
     R =  \cos^2\left(\frac\phi2\right).
     \label{eq:refl_coef_phi}
 \end{equation}
-By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals. It is important to note, however, that taken together (\ref{eq:refl_coef_phi}) and (\ref{eq:quasi_index}) suggests that $m \le 1$. For physical refractive indices, this does not make sense. However, since we have a ``quasi-refractive index,'' we are not necessarily bound by the same conditions. Consequently, this is still meaningful in our model.
+By using (\ref{eq:refl_coef_phi}) we can calculate $m$ in (\ref{eq:quasi_index}) which is used in the time evolution of our HF signals (See \ref{sub:implementation}). It is important to note, however, that taken together (\ref{eq:refl_coef_phi}) and (\ref{eq:quasi_index}) suggests that $m \le 1$. For physical refractive indices, this does not make sense. However, since we have a ``quasi-refractive index,'' we are not necessarily bound by the same conditions. Consequently, this is still meaningful and useful in our model.
 
 \subsubsection{Modeling Approach}
 To implement the theory above, all of which underlies our model, we chose to have a stand alone radio wave model of signal propagation which is dependent on the turbulence value (a number in the range 0-1) and the indices of refraction of the ionosphere and ocean given time of day, time of year, and incident radio frequency. 
@@ -445,6 +445,7 @@ To implement the theory above, all of which underlies our model, we chose to hav
 % section model (end)
 
 \subsection{Implementation in Python and Matlab}
+\label{sub:implementation}
 
 \subsubsection{Implementation Approach}
 We chose to use a suite of original scripts in Python and MATLAB to implement our model. The general architecture consists of a few main files
@@ -500,22 +501,32 @@ For this set of inputs, we found that there will be 16 hops to get to the receiv
 
 \section{Results} % (fold)
 \label{sec:results}
- \subsection{Problem I: A Turbulent Ocean} % (fold)
+
+ \subsection{Problem 1: A Turbulent Ocean} % (fold)
+>>>>>>> 0742ced5a515d86b705671156bb1101bf01ffe69
  \label{sub:part_i}
 
- \subsection{Problem II: The Japanese Alps} % (fold)
+ \subsection{Problem 2: The Japanese Alps} % (fold)
  \label{sub:part_ii}
- West and southwest of Tokyo, Japan, there is an extensive mountain range called the Japanese Alps. This mountain range is perfect for testing how rugged, mountainous terrain affect the integrity of a signal as compared to smooth terrain or ocean.
+ West and southwest of Tokyo, Japan, there is an extensive mountain range called the Japanese Alps. This mountain range is perfect for testing how rugged, mountainous terrain affect the integrity of a signal as compared to smooth terrain or ocean. In fact, both Problem \ref{pr:turb_ocean} and Problem \ref{pr:mount} can be folded into the same problem. In reference to Section \ref{sub:implementation}, the only thing that would change in our model would be the index of refraction and the quasi-index of refraction. We would map a turbulent ocean (See Section \ref{sub:the_ocean}) to  a``rugged, mountainous terrain.'' This would require us to find a new refractive index for land rather than sea.
 
- \subsection{Problem III: A Message to a Boat} % (fold)
+ Unfortunately, as you may have seen coming, we did not have enough time to search for literature values of an index of refraction for terrestrial mediums for HF signals. However, we expect\footnote{Although we are almost certain that we are missing some subtleties that we likely could have worked out if we had more time. }  that the results would identical to the turbulent ocean as a first approximation. Terrestrial mediums are better absorbers of HF waves that ocean. Because of this, we would expect there to be fewer hops than we saw in Section \ref{sub:part_i}.
+
+ \subsection{Problem 3: A Message to a Boat} % (fold)
  \label{sub:part_iii}
  
+ Unfortunately, we did not have enough time to try and tackle Problem \ref{pr:boat} as part of our model. However, our basic approach would be to try and account for a moving target---which will inherently have a Doppler shift of the signal.\cite{taylor2005classical} It is unclear how much the boat's speed will integrity of the signal as the boat's velocity, $v$, will be significantly slower\footnote{At least for every boat I've ever seen.} than the speed of light, $c$, i.e. $v\ll c$. If this condition is met, then we often would expect a negligible Doppler shift in both the receiving and transmission of a signal.
+
+ If this is the case, then we would expect the largest distortion of our signal to come from the turbulent waters that the boat is apart of. This would be addressed almost identically as it was in Section \ref{sub:the_ocean}. 
 
 \section{Conclusion}
-\label{sec:conclusion} 
+\label{sec:conclusion}
+
+Using simple models for both the ionosphere and the ocean, we were successfully able to model how many times a 100\,\si{\watt} HF signal could be skip off of the ocean and ionosphere before the signal integrity decays and the messages original meaning was lost. We found it can skip off the ionosphere and ocean eight times each before signal loss. Presumably, our model can be readily applied to terrestrial mediums by changing the relative indices and quasi-indices of refraction for our new medium. Although we did not have time to solve, because boats tend to travel at a velocity $v$ that is much less than the speed of light, will likely only have signal distortion from the turbulent waters rather than any sort of Doppler shift. 
 
 \subsection{Analysis} % (fold)
 \label{sub:analysis}
+    RACHEL: YOU NEED TO LOOK AT SECTION 4 OF \texttt{http://www.comap.com/undergraduate/contests/mcm/instructions.php}
 
 
 % subsection analysis (end)
