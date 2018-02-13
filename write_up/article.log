@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 16:41
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 16:48
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1013,29 +1013,43 @@ Package lastpage Info: Please have a look at the pageslts package at
 (lastpage)             ! on input line 78.
 \c__siunitx_mathsf_int=\count210
 \c__siunitx_mathtt_int=\count211
+
+Overfull \hbox (3.4796pt too wide) in paragraph at lines 108--110
+[]\OT1/cmr/m/n/10.95 >>>>>>> 72c9533d7bdbb859ed07de60e7bdca064f326316
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 108--110
+
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 File: gif/frame-0.png Graphic file (type QTm)
- <use  "gif/frame-0.png" >
+
+<use  "gif/frame-0.png" >
 File: gif/frame-1.png Graphic file (type QTm)
  <use  "gif/frame-1.png" >
 File: gif/frame-2.png Graphic file (type QTm)
-
-<use  "gif/frame-2.png" >
+ <use  "gif/frame-2.png" >
 File: gif/frame-3.png Graphic file (type QTm)
- <use  "gif/frame-3.png" >
+
+<use  "gif/frame-3.png" >
 File: gif/frame-4.png Graphic file (type QTm)
  <use  "gif/frame-4.png" >
 File: gif/frame-5.png Graphic file (type QTm)
-
-<use  "gif/frame-5.png" >
+ <use  "gif/frame-5.png" >
 File: gif/frame-6.png Graphic file (type QTm)
- <use  "gif/frame-6.png" >
+
+<use  "gif/frame-6.png" >
 File: gif/frame-7.png Graphic file (type QTm)
  <use  "gif/frame-7.png" >
 File: gif/frame-8.png Graphic file (type QTm)
-
-<use  "gif/frame-8.png" >
+ <use  "gif/frame-8.png" >
 File: gif/frame-9.png Graphic file (type QTm)
- <use  "gif/frame-9.png" >
+
+<use  "gif/frame-9.png" >
 File: gif/frame-10.png Graphic file (type QTm)
  <use  "gif/frame-10.png" >
 File: gif/frame-11.png Graphic file (type QTm)
@@ -1261,7 +1275,7 @@ File: gif/frame-98.png Graphic file (type QTm)
 File: gif/frame-99.png Graphic file (type QTm)
 
 <use  "gif/frame-99.png" >
-Overfull \hbox (15.83446pt too wide) in paragraph at lines 131--132
+Overfull \hbox (15.83446pt too wide) in paragraph at lines 138--139
  [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1284,18 +1298,14 @@ Overfull \hbox (15.83446pt too wide) in paragraph at lines 131--132
 
 Missing character: There is no ’ in font cmr10!
 Missing character: There is no ’ in font cmr10!
-
-Underfull \vbox (badness 1571) has occurred while \output is active []
-
- [1
+[1
 
 
 ]
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
 Missing character: There is no ; in font nullfont!
-
-(./article.bbl [2]
+ (./article.bbl [2]
 Underfull \hbox (badness 10000) in paragraph at lines 38--42
 \OT1/cmr/m/it/10.95 https://www.cia.gov/library/publications/the-
  []
@@ -1306,17 +1316,17 @@ Package atenddvi Info: Last page = 3.
 [3
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 193.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 200.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 200.
  (./article.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 193.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 193.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 200.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 200.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 200.
  ) 
 Here is how much of TeX's memory you used:
  25286 strings out of 493706
  515354 string characters out of 6145769
- 699156 words of memory out of 5000000
+ 717098 words of memory out of 5000000
  28175 multiletter control sequences out of 15000+600000
  11395 words of font info for 42 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191

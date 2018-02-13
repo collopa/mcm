@@ -1,0 +1,110 @@
+\begin{thebibliography}{19}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[noa()]{noauthor_tracking_nodate}
+Tracking {Solar} {Flares}.
+\newblock URL \url{solar-center.stanford.edu/SID/activities/ionosphere}.
+
+\bibitem[noa(2011)]{noauthor_radio_2011}
+Radio and the {Titanic}, July 2011.
+\newblock URL
+  \url{www.environmentalhistory.org/revcomm/\\features/radio-and-the-titanic/}.
+
+\bibitem[mcm(2018)]{mcm_statement}
+{2018 MCM: Problem A: Multi-hop HF Radio Propagation}, February 2018.
+
+\bibitem[Budden(1988)]{budden1988propagation}
+Kenneth~George Budden.
+\newblock \emph{The propagation of radio waves: the theory of radio waves of
+  low power in the ionosphere and magnetosphere}.
+\newblock Cambridge University Press, 1988.
+
+\bibitem[Budden(1961)]{budden1961radio}
+KG~Budden.
+\newblock \emph{Radio Waves in the Ionospere: The Mathematical Theory of the
+  Reflection of Radio Waves from Stratified Ionised Layers}.
+\newblock Cambridge University Press, 1961.
+
+\bibitem[Chapman(1931{\natexlab{a}})]{chapman1931b}
+S~Chapman.
+\newblock The absorption and dissociative or ionizing effect of monochromatic
+  radiation in an atmosphere on a rotating earth part ii. grazing incidence.
+\newblock \emph{Proceedings of the physical society}, 43\penalty0 (5):\penalty0
+  483, 1931{\natexlab{a}}.
+
+\bibitem[Chapman(1931{\natexlab{b}})]{chapman1931a}
+Sydney Chapman.
+\newblock The absorption and dissociative or ionizing effect of monochromatic
+  radiation in an atmosphere on a rotating earth.
+\newblock \emph{Proceedings of the Physical Society}, 43\penalty0 (1):\penalty0
+  26, 1931{\natexlab{b}}.
+
+\bibitem[Factbook(2010)]{factbook2010world}
+CIA Factbook.
+\newblock The world factbook.
+\newblock \emph{See also:
+  https://www.cia.gov/library/publications/the-world-factbook}, 2010.
+
+\bibitem[Griffiths(2005)]{griffiths2005introduction}
+David~J Griffiths.
+\newblock Introduction to electrodynamics, 2005.
+
+\bibitem[Heyde(2006)]{central}
+CC~Heyde.
+\newblock Central limit theorem.
+\newblock \emph{Encyclopedia of Actuarial Science}, 2006.
+
+\bibitem[Hilmes and Loviglio(2002)]{hilmes2002radio}
+Michele Hilmes and Jason Loviglio.
+\newblock \emph{Radio reader: Essays in the cultural history of radio}.
+\newblock Psychology Press, 2002.
+
+\bibitem[Jackson(1999)]{jackson1999classical}
+John~David Jackson.
+\newblock \emph{Classical electrodynamics}.
+\newblock Hamilton Printing Company, 3rd edition, 1999.
+
+\bibitem[Kailath(1968)]{kailath1968innovations}
+Thomas Kailath.
+\newblock An innovations approach to least-squares estimation--part i: Linear
+  filtering in additive white noise.
+\newblock \emph{IEEE transactions on automatic control}, 13\penalty0
+  (6):\penalty0 646--655, 1968.
+
+\bibitem[Larry K.~Lepley()]{seawater_index}
+William M.~Adams Larry K.~Lepley.
+\newblock Reflectivity of electromagnetic waves at an air-water interface for
+  pure and sea water.
+
+\bibitem[Maus et~al.(2010)Maus, Macmillan, McLean, Hamilton, Thomson, Nair, and
+  Rollins]{maus2010us}
+Stefan Maus, Susan Macmillan, Susan McLean, Brian Hamilton, A~Thomson, M~Nair,
+  and Craig Rollins.
+\newblock The us/uk world magnetic model for 2010-2015.
+\newblock 2010.
+
+\bibitem[Schroeder(1999)]{schroeder1999introduction}
+Daniel~V Schroeder.
+\newblock An introduction to thermal physics, 1999.
+
+\bibitem[Shannon(1984)]{shannon1984communication}
+Claude~E Shannon.
+\newblock Communication in the presence of noise.
+\newblock \emph{Proceedings of the IEEE}, 72\penalty0 (9):\penalty0 1192--1201,
+  1984.
+
+\bibitem[Taylor(2005)]{taylor2005classical}
+John~R Taylor.
+\newblock \emph{Classical mechanics}.
+\newblock University Science Books, 2005.
+
+\bibitem[Townsend(2000)]{townsend2000modern}
+John~S Townsend.
+\newblock \emph{A modern approach to quantum mechanics}.
+\newblock University Science Books, 2000.
+
+\end{thebibliography}

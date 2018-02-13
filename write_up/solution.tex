@@ -479,7 +479,12 @@ where $c$ is the speed of light and $omega$ is the angular frequency of the inci
 \par Unfortunately, this quasi-index of refraction and our model for the ionospheric index of refraction are where we ran into some issues. As an example, for an incident radio wave with frequency 15\si{\mega \Hz}, $m < 0$, which made Snell's Law (implemented in \verb|radio.py|) ``confused." For the ionosphere, the average index of refraction was often quite close to 1, which is the same index for air, and no reflection occurs when the indices of refraction are the same. So, while we learned a lot about modeling these two media, we ultimately chose to use the pseudo-value of 1.5 for both indices of refraction.
 
 \subsubsection{Visualization}
+<<<<<<< HEAD
 Using $f_{0}(t) = \sin(t) + 2\sin(0.5t)$, $n_{iono} = n_{ocean}  = 1.5$, turbulence $=1$, distance to receiver $=8820 \si{km}$ (the distance from Tokyo to Los Angeles), a 30 second monitor period, and angle of incidence of 30 degrees, we produced the results included in Figures \ref{fig:freq_dom} and \ref{fig:time_dom}.
+=======
+\label{ssub:visualization}
+Using $f_{0}(t) = \sin(t) + 2\sin(0.5t)$, $n_{iono} = n_{ocean}  = 1.5$, turbulence $=1$, distance to receiver $=8820 km$ (the distance from Tokyo to Los Angeles), a 30 second monitor period, and angle of incidence of 30 degrees, we produced the results included in Figures \ref{fig:freq_dom} and \ref{fig:time_dom}
+>>>>>>> 72c9533d7bdbb859ed07de60e7bdca064f326316
 
  \begin{figure}[ht]
  \begin{center}
@@ -497,12 +502,13 @@ Using $f_{0}(t) = \sin(t) + 2\sin(0.5t)$, $n_{iono} = n_{ocean}  = 1.5$, turbule
  \label{fig:freq_dom} 
 \end{figure} 
 
-For this set of inputs, we found that there will be 16 hops to get to the receiver. After 10 hops, the 
-
 \section{Results} % (fold)
 \label{sec:results}
 
  \subsection{Problem 1: A Turbulent Ocean} % (fold)
+<<<<<<< HEAD
+=======
+For the inputs specified in \ref{ssub:visualization}, we found that there will be 16 hops to get to the receiver. After 6 hops, the signal to noise ratio drops below 10 dB and after the first reflection from a turbulent ocean the decibel level was 64.2 dB. We were not able to calculate a different decibel level for after the first reflection from a calm ocean. 
  \label{sub:part_i}
 
  Our first objective was to compare the strength of an HF signal after one reflection off of calm ocean with its strength after one reflection off of a turbulent ocean.

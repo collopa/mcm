@@ -1,0 +1,55 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: carla_solution.aux
+The style file: plainnat.bst
+Database file #1: solution.bib
+Warning--to sort, need author or key in noauthor_radio_2011
+Warning--to sort, need author or key in mcm_statement
+Warning--to sort, need author or key in noauthor_tracking_nodate
+Warning--empty year in noauthor_tracking_nodate
+Warning--empty journal in seawater_index
+Warning--empty year in seawater_index
+Warning--empty year in seawater_index
+Warning--empty journal in maus2010us
+You've used 19 entries,
+            2773 wiz_defined-function locations,
+            688 strings with 7284 characters,
+and the built_in function-call counts, 6119 in all, are:
+= -- 511
+> -- 227
+< -- 15
++ -- 89
+- -- 69
+* -- 396
+:= -- 921
+add.period$ -- 50
+call.type$ -- 19
+change.case$ -- 75
+chr.to.int$ -- 18
+cite$ -- 49
+duplicate$ -- 352
+empty$ -- 636
+format.name$ -- 87
+if$ -- 1293
+int.to.chr$ -- 2
+int.to.str$ -- 1
+missing$ -- 20
+newline$ -- 96
+num.names$ -- 64
+pop$ -- 222
+preamble$ -- 1
+purify$ -- 61
+quote$ -- 0
+skip$ -- 248
+stack$ -- 0
+substring$ -- 112
+swap$ -- 21
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 179
+warning$ -- 8
+while$ -- 54
+width$ -- 0
+write$ -- 223
+(There were 8 warnings)

@@ -146,8 +146,9 @@ def add_dispersion(z, t, k, f0_t, f0_k_post_Fresnel):
 def calc_SNR(kappa, z):
     SNR = []
     for n in range(len(kappa)):
-        arg = math.exp(-2 * kappa[n] * z[n])
+        arg = math.exp(2 * kappa[n] * z[n])
         SNR.append(10 * math.log10(arg))
+    print SNR
     return SNR
 
 def calc_hops(SNR, N, kappa, z, f0_t):
@@ -158,8 +159,9 @@ def calc_hops(SNR, N, kappa, z, f0_t):
     for n in range(N+1):
         for i in range(multiplier):
             Ns.append(n)
+    print Ns
     for s in range(len(SNR)):
-        if SNR[s] < -10:
+        if SNR[len(SNR) - 1 - s] < 10:
             max_hops = Ns[s]
             break
     for n in range(len(Ns)):
@@ -168,7 +170,7 @@ def calc_hops(SNR, N, kappa, z, f0_t):
             z_1 = z[n]
             break
     og_strength = 10 * math.log10(max(f0_t)**2)
-    strength = 10 * math.log10(math.exp(-2 * kappa_1 * z_1))
+    strength = 10 * math.log10(math.exp(2 * kappa_1 * z_1))
     return [max_hops, og_strength, strength]
     
 #-----------------------------------------------------------------------#

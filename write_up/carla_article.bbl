@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[mcm(2018)]{mcm_statement}
+{2018 MCM: Problem A: Multi-hop HF Radio Propagation}, February 2018.
+
+\bibitem[Budden(1988)]{budden1988propagation}
+Kenneth~George Budden.
+\newblock \emph{The propagation of radio waves: the theory of radio waves of
+  low power in the ionosphere and magnetosphere}.
+\newblock Cambridge University Press, 1988.
+
+\bibitem[Budden(1961)]{budden1961radio}
+KG~Budden.
+\newblock \emph{Radio Waves in the Ionospere: The Mathematical Theory of the
+  Reflection of Radio Waves from Stratified Ionised Layers}.
+\newblock Cambridge University Press, 1961.
+
+\bibitem[Chapman(1931{\natexlab{a}})]{chapman1931b}
+S~Chapman.
+\newblock The absorption and dissociative or ionizing effect of monochromatic
+  radiation in an atmosphere on a rotating earth part ii. grazing incidence.
+\newblock \emph{Proceedings of the physical society}, 43\penalty0 (5):\penalty0
+  483, 1931{\natexlab{a}}.
+
+\bibitem[Chapman(1931{\natexlab{b}})]{chapman1931a}
+Sydney Chapman.
+\newblock The absorption and dissociative or ionizing effect of monochromatic
+  radiation in an atmosphere on a rotating earth.
+\newblock \emph{Proceedings of the Physical Society}, 43\penalty0 (1):\penalty0
+  26, 1931{\natexlab{b}}.
+
+\bibitem[Factbook(2010)]{factbook2010world}
+CIA Factbook.
+\newblock The world factbook.
+\newblock \emph{See also:
+  https://www.cia.gov/library/publications/the-world-factbook}, 2010.
+
+\bibitem[Kailath(1968)]{kailath1968innovations}
+Thomas Kailath.
+\newblock An innovations approach to least-squares estimation--part i: Linear
+  filtering in additive white noise.
+\newblock \emph{IEEE transactions on automatic control}, 13\penalty0
+  (6):\penalty0 646--655, 1968.
+
+\bibitem[Larry K.~Lepley()]{seawater_index}
+William M.~Adams Larry K.~Lepley.
+\newblock Reflectivity of electromagnetic waves at an air-water interface for
+  pure and sea water.
+
+\bibitem[Shannon(1984)]{shannon1984communication}
+Claude~E Shannon.
+\newblock Communication in the presence of noise.
+\newblock \emph{Proceedings of the IEEE}, 72\penalty0 (9):\penalty0 1192--1201,
+  1984.
+
+\bibitem[Townsend(2000)]{townsend2000modern}
+John~S Townsend.
+\newblock \emph{A modern approach to quantum mechanics}.
+\newblock University Science Books, 2000.
+
+\end{thebibliography}

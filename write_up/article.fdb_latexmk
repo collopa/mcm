@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex article"] 1518482486 "article.aux" "article.bbl" "article" 1518482488
+["bibtex article"] 1518482915 "article.aux" "article.bbl" "article" 1518482921
   "/usr/local/texlive/2015/texmf-dist/bibtex/bst/natbib/plainnat.bst" 1233624470 26816 ffe5423d2019860bad9f54bc402fac15 ""
-  "article.aux" 1518482487 2836 9903feda3b1920eec5769b31e26175d4 ""
+  "article.aux" 1518482916 2836 899d6cfc45195768626597056e5ab8ee ""
   "article.bcf" 0 -1 0 ""
   "solution.bib" 1518470797 4751 56cab0008a9f2270af3753e599cd228e ""
   (generated)
-  "article.blg"
   "article.bbl"
-["pdflatex"] 1518482486 "article.tex" "article.pdf" "article" 1518482488
+  "article.blg"
+["pdflatex"] 1518482915 "article.tex" "article.pdf" "article" 1518482921
   "/usr/local/texlive/2015/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2015/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -161,9 +161,9 @@
   "/usr/local/texlive/2015/texmf-dist/web2c/texmf.cnf" 1428852030 31983 18aeec08f48baa3cf3508d538dd5f459 ""
   "/usr/local/texlive/2015/texmf-var/web2c/xetex/xelatex.fmt" 1432479679 3445950 7f6125c6eb78b33bcedbe55e49dbfd83 ""
   "/usr/local/texlive/2015/texmf.cnf" 1432479636 577 0d611272082f3cdb8e80e09a3c69cf07 ""
-  "article.aux" 1518482487 2836 9903feda3b1920eec5769b31e26175d4 ""
-  "article.bbl" 1518482486 2500 9648d226bc6f7e5b98b838f20b2cb836 "bibtex article"
-  "article.tex" 1518482476 11286 95b9de940a6e648e6e86670d8505d98b ""
+  "article.aux" 1518482916 2836 899d6cfc45195768626597056e5ab8ee ""
+  "article.bbl" 1518482915 2500 9648d226bc6f7e5b98b838f20b2cb836 "bibtex article"
+  "article.tex" 1518482613 12375 f175593bf2061e0175897f05fc45a670 ""
   "gif/frame-0.png" 1518440707 8006 694aa152fd53af7b1879e531d09c6df3 ""
   "gif/frame-1.png" 1518440707 8131 24d1d32a78eb2804ce9b95bdb403857b ""
   "gif/frame-10.png" 1518440707 9332 3a8a19cb90076f8b015109ffc2d96c2d ""
@@ -265,6 +265,6 @@
   "gif/frame-98.png" 1518440709 4705 f8ad91dc903fd81d3e081b0b9403da51 ""
   "gif/frame-99.png" 1518440709 4694 65032f958a81119a005e45e77e82c925 ""
   (generated)
+  "article.log"
   "article.aux"
   "article.pdf"
-  "article.log"

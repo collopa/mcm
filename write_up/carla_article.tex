@@ -1,0 +1,202 @@
+\documentclass[11pt, twocolumn]{article}
+\usepackage[super,square,comma]{natbib}
+\usepackage[letterpaper, left = 0.5in, right = 0.5 in, bottom = 0.55in, top = 0.7in]{geometry}
+\usepackage{tikz}
+\usepackage{lipsum}
+\usepackage{setspace}
+\usepackage{enumerate}
+\usepackage[inline, shortlabels]{enumitem}
+\usepackage{amsmath}
+\newtheorem{problem}{Problem}
+\numberwithin{equation}{section}
+
+\usepackage{animate}
+\usepackage{siunitx}
+\usepackage{csquotes}
+\usepackage{graphicx}
+\usepackage{authblk}
+\usepackage[labelfont=bf]{caption}
+\usepackage{subcaption}
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\lhead{Team 93463}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\setlength{\headheight}{14pt}
+
+\usepackage{lastpage}
+
+\renewcommand{\thefootnote}{\arabic{footnote}}
+\newcommand{\cn}{$^{\text{[citation needed]}}$} %citation needed
+
+% %%% Title Page Author Stuff %%%
+% \renewcommand*{\Authsep}{, }
+% \renewcommand*{\Authand}{, }
+% \renewcommand*{\Authands}{, }
+% \renewcommand*{\Affilfont}{\normalsize\normalfont}
+% % \renewcommand*{\Authfont}{\bfseries}    % make author names boldface    
+% \setlength{\affilsep}{1em}   % set the space between author and affiliation
+
+% \newsavebox\affbox
+
+% \author[1]{Colin M. Adams}
+% \author[1]{Rachel L. Barcklay}
+% \author[1,2]{Carla J. Becker}
+% \affil[1]{%
+%   \savebox\affbox{\Affilfont Department of Physics, Harvey Mudd College}%
+%   \parbox[t]{\wd\affbox}{\protect\centering Department of Physics, Harvey Mudd College}} 
+% \affil[2]{Department of Chemistry, Harvey Mudd College \par Claremont, CA 91711}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+\renewcommand{\baselinestretch}{2}
+\newcommand{\shrug}[1][]{%
+\begin{tikzpicture}[baseline,x=0.8\ht\strutbox,y=0.8\ht\strutbox,line width=0.125ex,#1]
+\def\arm{(-2.5,0.95) to (-2,0.95) (-1.9,1) to (-1.5,0) (-1.35,0) to (-0.8,0)};
+\draw \arm;
+\draw[xscale=-1] \arm;
+\def\headpart{(0.6,0) arc[start angle=-40, end angle=40,x radius=0.6,y radius=0.8]};
+\draw \headpart;
+\draw[xscale=-1] \headpart;
+\def\eye{(-0.075,0.15) .. controls (0.02,0) .. (0.075,-0.15)};
+\draw[shift={(-0.3,0.8)}] \eye;
+\draw[shift={(0,0.85)}] \eye;
+% draw mouth
+\draw (-0.1,0.2) to [out=15,in=-100] (0.4,0.95); 
+\end{tikzpicture}}
+
+
+\title{
+    \textsc{\LARGE{Multi-hop, High-Frequency Radio Propagation Near Japan}}
+    }
+
+\author{\Large Team 93463}
+\date{\empty}
+        
+
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Title Page
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \singlespacing
+    \maketitle 
+    \thispagestyle{fancy} %gets rid of page number at bottom 
+
+    % \noindent To whom it may concern, \vspace{4pt}\\
+    % %
+    % \indent When reading our solution, we hope that you are can read our document in Adobe Acrobat Reader as we have \texttt{.gif} files that can only be played with that particular PDF reader. Please visit \texttt{https://get.adobe.com/reader/} to download it if need be. 
+
+    % We are trying to put our best foot forward and we would appreciate if you receive our work as intended. It is worth it. We promise. Thank you.
+    % \vspace{4pt} \\ 
+    % Respectfully,\\
+    % Team 93463
+    % \begin{center}
+    %     \rule{13cm}{0.4pt}  
+    % \end{center}
+
+    % \twocolumn
+
+    \begin{abstract}
+    We attempted to model high frequency radio-waves and their interactions with the ionosphere, turbulent and calm oceans, and smooth and rugged terrain. To do this, we used used a simple and isotropic model for the ionosphere, modifying the Chapman Law (which quantifies the charge density as a function of altitude) to make it time-dependent. In other words, we made the charge density of the ionosphere dependent on the time of day and the time of year. To model the ocean, we had a simple model in which ocean waves have an  amplitude and wavelength that can be varied. By doing this, we are able to model the ocean's ability to transmit signal with integrity. We quantify this with a parameter that we call a ``quasi-index of refraction.''
+
+    Using this we found after 6 hops the signal to noise ratio drops below 10 dB and after the first reflection from a turbulent ocean the decibel level was 64.2 dB from 779 dB. We were not able to calculate a different decibel level for after the first reflection from a calm ocean. 
+
+\end{abstract}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Body
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Introduction} 
+\label{sec: intro} 
+
+High frequency (HF) radio-waves (defined as 3--30\,\si{\mega\hertz}) can travel through the atmosphere by multiple reflections off of the Earth's ionosphere and the its surface unless the frequencies are larger than the maximum usable signal (MUF), then they pass through the ionosphere and are lost.\cite{mcm_statement} 
+
+Empirically, radio-waves reflect off of the ocean (or terrain) differently depending on whether the ocean is turbulent (rugged) or calm (smooth), impacting the distance the signal can faithfully.\cite{mcm_statement} We chose Tokyo, Japan as a location of study because it an ideal location to study radio-wave interactions as it is an island and is ``mostly rugged and mountainous.''\cite{factbook2010world}
+
+The goal of our model was to find the following: 
+\begin{enumerate*}[(1)]
+    \item find the number of ``skips'' a HF signal could have with ocean before losing signal integrity, 
+    \item the same but with rugged terrain rather than ocean, and
+    \item how a boat in the ocean could receive signals on turbulent waters.
+\end{enumerate*}
+
+
+\section{The Model} % (fold)
+\label{sec:model}
+
+\subsection{HF Signals} % (fold)
+\label{sub:radiowaves}
+
+As radio-waves propagate over a certain distance, we expect them to pick up some noise as they go, degrading the integrity of the information they are trying to transmit. To simulate this, we additive white Gaussian noise (AWGN).\cite{shannon1984communication,kailath1968innovations}
+ \begin{figure}
+     \begin{center}
+        \animategraphics[width=3.9in]{12}{gif/frame-}{0}{99}
+     \end{center}
+     \caption{\small An animation (click to view) of signal decay over the first 30 seconds as it propagates with an incident angle 30 degrees above parallel to Earth’s surface. Over that distance, the signal reflects off of the ionosphere and ocean 8 times each. (You need to use Adobe Acrobat Reader to view this \texttt{.gif} file. Visit \texttt{https://get.adobe.com/reader/} to download.)}
+ \end{figure}
+
+% subsubsection noise (end)
+% subsection radiowaves (end)
+
+\subsection{The Ionosphere} % (fold)
+\label{sub:the_ionosphere}
+
+The ionosphere consists of roughly three layers that lie between 75--1000\,km above the Earth's surface:
+\begin{enumerate*}[(1)]
+    \item the F-region,
+    \item the E-region, and
+    \item the D-region
+\end{enumerate*}; each of these regions has charge-density dependent on the time of year, the number of sunspots present, the time of day, and the movement of the charged particles. The ionosphere interacts heavily with radio waves, mainly through the interaction of these free electrons.\cite{budden1961radio}
+
+To model the ionosphere, we modify the Chapman Law,\cite{chapman1931a,chapman1931b,budden1961radio,budden1988propagation} which describes the electron density, and make it dependent on the time of day and year. We found a simple, analytic model for the ionosphere, $\overline N(z,t),$ which is a function of altitude and time which was given by
+\begin{align}
+    \overline N(z,t) &= T(t)N(z)
+    \label{eq:final_eden}
+\end{align}
+where $N(z) = N_0\exp\left[\frac12\left(1 - \frac{z-z_0}{\kappa} - \sec(\alpha) e^{- (z - z_0)/\kappa}\right)\right]$ with arbitrary constants $z_0$ and $\kappa$. The time dependence is given by $T(t) = (1 + d(t) + s(t))$ and $d(t) \in [0,1]$ is the daytime contribution of the ionosphere and $s(t)\in[0,4]$ is the seasonal contribution.
+
+To understand how to radio-waves will interact with the ionosphere, we must found  an expression for the refractive index, $n$, of light through the plasma. For an isotropic ionosphere where electrons do not collide and for purely transverse waves, we found $n^2 = 1 - \overline N e^2/\epsilon_0 m \omega^2$, which is independent in of the direction of the HF signal but is dependent on its frequency and some fundamental constants like permitivity, electron mass and charge.
+
+\subsection{The Ocean } % (fold)
+\label{sub:the_ocean} 
+
+Sea water essentially reflects HF signals perfectly.\cite{seawater_index} However, turbulent and choppy waves will disrupt the signal. Using a simple square wave we were able to show that a quasi-index of refraction for the ocean, $m$ is given by $m = n (1 - \sqrt R)/(1+\sqrt{R})$ where $R = \cos^2(\phi/2)$ and $\phi$ is the phase difference created by a HF signal with wavelength $\lambda$. We derived
+\begin{equation}
+    \phi  = \frac{2}{\lambda}\sqrt{A^2 + (\lambda_s/4)^2}.
+\end{equation}
+where $A$ and $\lambda_s$ are the amplitude and wavelengths of the ocean waves, respectively.
+
+\subsection{Radio Waves} % (fold)
+\label{sub:the_radio} 
+
+Beginning with Maxwell's equations, we are able to derive Fresnel's equations for reflection and transmission of polarized light at oblique incidence to an interface. We make the simplifying assumption that both the ionosphere and ocean are conducting, linear media, meaning that we must take into account dispersion for non-simple carrier waves. Given that the ionosphere is a plasma of ions and the electrical conductivity of water, this is a fair assumption. A strong point of our model is the ability to handle radio input signals with multiple Fourier components. To account for dispersion of the signal due to reflection off of conducting surfaces, we calculate a damping factor $\kappa$ which is frequency and conductivity dependent. Then, our signal falls off in space, $z$, as $e^{-\kappa z}$.
+
+
+\chead{\textsc{Multi-hop, HF Radio Propagation Near Japan}}
+\section{Results} % (fold)
+\label{sec:results}
+ 
+ We implemented our models in a combination of \texttt{python} and \texttt{Matlab} to run the necessary simulations. We only had the time to solve the first problem given: namely, how HF signal quality is changed by reflecting off of calm and turbulent ocean waves. We found that the HF signal could reflect 6 times off of the ocean and ionosphere each before degrading to below 10 dB. Under turbulent ocean conditions, the first reflection reduces from 77.9 dB to 64.2 dB. Presumably, the only thing that in our model that is dependent on the terrain is the index and quasi-index of refraction for our medium So our solution could readily be applied to a terrestrial system with mountains interfering. Because terrestrial mediums absorb radio-waves more readily than the ocean, we would expect the number of skips to decrease as compared to a turbulent ocean. The turbulent ocean would likely be the main source of distortion for a boat moving in the its rough waters.
+ 
+% section results (end)
+
+\section{Conclusion}
+\label{sec: conclusion}
+
+Using simple models for both the ionosphere and the ocean, we were successfully able to model how many times a 100\,\si{\watt} HF signal could be skip off of the ocean and ionosphere before the signal integrity decays and the messages original meaning was lost. We found it can skip off the ionosphere and ocean eight times each before signal loss. Presumably, our model can be readily applied to terrestrial mediums by changing the relative indices and quasi-indices of refraction for our new medium. Although we did not have time to solve, because boats tend to travel at a velocity $v$ that is much less than the speed of light, will likely only have signal distortion from the turbulent waters rather than any sort of Doppler shift.
+
+\section*{Acknowledgments}
+\label{sec: acknowledge}
+We would like to thank our professors for lending us resources and pointing us in the direction of others. We would like to thank our College for financial support allowing us to enter this competition. Without it, we would not have been able to have this much fun.  \shrug\cite{townsend2000modern}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bibliography
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% \nocite{*}
+
+\bibliographystyle{plainnat}
+\bibliography{solution}
+
+\end{document}
