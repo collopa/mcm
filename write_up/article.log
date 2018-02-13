@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 14:23
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex 2015.5.24)  12 FEB 2018 16:41
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1261,7 +1261,7 @@ File: gif/frame-98.png Graphic file (type QTm)
 File: gif/frame-99.png Graphic file (type QTm)
 
 <use  "gif/frame-99.png" >
-Overfull \hbox (15.83446pt too wide) in paragraph at lines 133--134
+Overfull \hbox (15.83446pt too wide) in paragraph at lines 131--132
  [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
 ][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -1285,7 +1285,7 @@ Overfull \hbox (15.83446pt too wide) in paragraph at lines 133--134
 Missing character: There is no ’ in font cmr10!
 Missing character: There is no ’ in font cmr10!
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
+Underfull \vbox (badness 1571) has occurred while \output is active []
 
  [1
 
@@ -1306,20 +1306,20 @@ Package atenddvi Info: Last page = 3.
 [3
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 195.
-Package atveryend Info: Executing hook `AfterLastShipout' on input line 195.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 193.
+Package atveryend Info: Executing hook `AfterLastShipout' on input line 193.
  (./article.aux)
-Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 195.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 195.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 195.
+Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 193.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 193.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 193.
  ) 
 Here is how much of TeX's memory you used:
  25286 strings out of 493706
  515354 string characters out of 6145769
- 699032 words of memory out of 5000000
+ 699156 words of memory out of 5000000
  28175 multiletter control sequences out of 15000+600000
  11395 words of font info for 42 fonts, out of 8000000 for 9000
  1328 hyphenation exceptions out of 8191
- 55i,13n,61p,10395b,747s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,13n,61p,10395b,777s stack positions out of 5000i,500n,10000p,200000b,80000s
 
 Output written on article.pdf (3 pages).
