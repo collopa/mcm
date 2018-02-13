@@ -473,12 +473,13 @@ f_{0}(t) = \sin(t) + 2\sin(0.5t)
 \subsubsection{Choosing Indices of Refraction}
 To consider the two cases of a turbulent sea and a calm sea, we looked at the limiting behavior of the quasi-index of refraction. For a calm sea, $A \to 0$ and $\lambda_s \to 0$ because the sea does not wave when calm. This leads to a value of $R=0$ which yields the maximum quasi-index of refraction possible: $m=1$. For a rough sea, $A$ and $\lambda_n$ are both large, but for large enough values $\phi$ will circle round and round the unit circle and average to the calm sea case. So, for the turbulent ocean case, we take $\Phi=2/\lambda$. By Taylor expansion, 
 \begin{equation}
-R \approx 1 - (\frac{\phi}{2})^2 = 1 - \frac{1}{\lambda^2} = \frac{2\pi^2\omega^2}{c^2 - 2\pi^{2}\omega^2}
+R \approx 1 - \left(\frac{\phi}{2}\right)^2 = 1 - \frac{1}{\lambda^2} = \frac{2\pi^2\omega^2}{c^2 - 2\pi^{2}\omega^2}
 \end{equation}
 where $c$ is the speed of light and $omega$ is the angular frequency of the incident light. 
 \par Unfortunately, this quasi-index of refraction and our model for the ionospheric index of refraction are where we ran into some issues. As an example, for an incident radio wave with frequency 15$MHz$, $m < 0$, which made Snell's Law (implemented in \verb|radio.py|) ``confused." For the ionosphere, the average index of refraction was often quite close to 1, which is the same index for air, and no reflection occurs when the indices of refraction are the same. So, while we learned a lot about modeling these two media, we ultimately chose to use the pseudo-value of 1.5 for both indices of refraction.
 
 \subsubsection{Visualization}
+\label{ssub:visualization}
 Using $f_{0}(t) = \sin(t) + 2\sin(0.5t)$, $n_{iono} = n_{ocean}  = 1.5$, turbulence $=1$, distance to receiver $=8820 km$ (the distance from Tokyo to Los Angeles), a 30 second monitor period, and angle of incidence of 30 degrees, we produced the results included in Figures \ref{fig:freq_dom} and \ref{fig:time_dom}
 
  \begin{figure}[ht]
@@ -497,13 +498,11 @@ Using $f_{0}(t) = \sin(t) + 2\sin(0.5t)$, $n_{iono} = n_{ocean}  = 1.5$, turbule
  \label{fig:freq_dom} 
 \end{figure} 
 
-For this set of inputs, we found that there will be 16 hops to get to the receiver. After 10 hops, the 
-
 \section{Results} % (fold)
 \label{sec:results}
 
  \subsection{Problem 1: A Turbulent Ocean} % (fold)
->>>>>>> 0742ced5a515d86b705671156bb1101bf01ffe69
+For the inputs specified in \ref{ssub:visualization}, we found that there will be 16 hops to get to the receiver. After 6 hops, the signal to noise ratio drops below 10 dB and after the first reflection from a turbulent ocean the decibel level was 64.2 dB. We were not able to calculate a different decibel level for after the first reflection from a calm ocean. 
  \label{sub:part_i}
 
  \subsection{Problem 2: The Japanese Alps} % (fold)
