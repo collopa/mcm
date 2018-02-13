@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 FEB 2018 16:31
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.5.24)  12 FEB 2018 16:48
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1100,14 +1100,7 @@ g> <./gif/frame-81.png> <./gif/frame-82.png> <./gif/frame-83.png> <./gif/frame-
 rame-88.png> <./gif/frame-89.png> <./gif/frame-90.png> <./gif/frame-91.png> <./
 gif/frame-92.png> <./gif/frame-93.png> <./gif/frame-94.png> <./gif/frame-95.png
 > <./gif/frame-96.png> <./gif/frame-97.png> <./gif/frame-98.png> <./gif/frame-9
-9.png>
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
-Missing character: There is no â in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ™ in font cmr10!
- [3] <figs/radio_curve.png, id=603, 797.98125pt x 644.4075pt>
+9.png> [3] <figs/radio_curve.png, id=603, 797.98125pt x 644.4075pt>
 File: figs/radio_curve.png Graphic file (type png)
 
 <use figs/radio_curve.png>
@@ -1167,13 +1160,8 @@ File: figs/freq_domain_compare.png Graphic file (type png)
 <use figs/freq_domain_compare.png>
 Package pdftex.def Info: figs/freq_domain_compare.png used on input line 495.
 (pdftex.def)             Requested size: 328.82872pt x 246.6236pt.
-
-
-LaTeX Warning: Reference `ssub:visualization' on page 13 undefined on input lin
-e 505.
-
-[13 <./figs/time_domain_compare.png (PNG copy)>] [14 <./figs/freq_domain_compar
-e.png (PNG copy)>]
+ [13 <./figs/time_domain_compare.png (PNG copy)>] [14 <./figs/freq_domain_compa
+re.png (PNG copy)>]
 Overfull \hbox (197.24pt too wide) in paragraph at lines 528--529
 \OT1/cmr/m/n/10.95 RACHEL: YOU NEED TO LOOK AT SEC-TION 4 OF \OT1/cmtt/m/n/10.9
 5 http://www.comap.com/undergraduate/contests/mcm/instructions.php 
@@ -1211,19 +1199,12 @@ Package atveryend Info: Executing hook `AfterLastShipout' on input line 550.
  (./solution.aux)
 Package atveryend Info: Empty hook `AtVeryEndDocument' on input line 550.
 Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 550.
-
-
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 550.
  ) 
 Here is how much of TeX's memory you used:
  27252 strings out of 493089
  543485 string characters out of 6134842
- 697694 words of memory out of 5000000
+ 697671 words of memory out of 5000000
  30219 multiletter control sequences out of 15000+600000
  16439 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1253,7 +1234,7 @@ t/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/local/texlive/2015/texmf-dist/f
 onts/type1/public/amsfonts/cm/cmtt9.pfb></usr/local/texlive/2015/texmf-dist/fon
 ts/type1/public/cm-super/sfrm0900.pfb>
-Output written on solution.pdf (20 pages, 5251749 bytes).
+Output written on solution.pdf (20 pages, 5251499 bytes).
 PDF statistics:
  750 PDF objects out of 1000 (max. 8388607)
  317 compressed objects within 4 object streams
